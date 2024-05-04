@@ -52,7 +52,7 @@ if (isset($_POST['login_btn'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>login page</title>
-  <link rel="stylesheet" href="styleLogin.css">
+  <link rel="stylesheet" href="style/stylelogin.css">
 </head>
 
 <body>
