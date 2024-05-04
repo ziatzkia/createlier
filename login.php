@@ -79,6 +79,8 @@ if (isset($_POST['login_btn'])) {
           </div>
           <div class="footer">
             <a href="#">Forgot your password?</a>
+            <p>Don't have an account? <a href="register.php">Register here</a>.</p>
+
           </div>
         </div>
       </div>
