@@ -52,7 +52,7 @@ $dataMasuk = isset($_GET["dataMasuk"]) && $_GET["dataMasuk"] == "true";
         </div>
         <div class="right-section">
             <div class="form-container">
-                <h2>Registration Form</h2>
+                <img src="gambar/createlier-removebg-preview.png" alt="brand">
                 <form method="post" action="register.php">
                     <div class="form-group">
                         <label for="username">Username:</label>

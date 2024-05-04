@@ -95,3 +95,8 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+img {
+    width: 50%;
+    height: 7%;
+}
