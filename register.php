@@ -20,7 +20,6 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
     }
 }
 
-$dataMasuk = isset($_GET["dataMasuk"]) && $_GET["dataMasuk"] == "true";
 ?>
 
 
@@ -36,16 +35,6 @@ $dataMasuk = isset($_GET["dataMasuk"]) && $_GET["dataMasuk"] == "true";
 
 <body>
     <div class="container">
-
-    <?php if ($dataMasuk) { ?>
-            <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
-                Registration successful! Thank you for signing up
-                <a href="index.php" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </a>
-            </div>
-        <?php } ?>
-
         <div class="left-section">
             <h1>Sign Up to</h1>
             <h1>find your treasure</h1>
@@ -83,3 +72,4 @@ $dataMasuk = isset($_GET["dataMasuk"]) && $_GET["dataMasuk"] == "true";
 </body>
 
 </html>
+

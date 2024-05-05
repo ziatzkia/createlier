@@ -3,7 +3,7 @@ session_start();
 include('server/connection.php');
 
 if (isset($_SESSION['logged_in'])) {
-  header('location: welcome.php');
+  header('location: login.php');
   exit;
 }
 
@@ -57,7 +57,7 @@ if (isset($_POST['login_btn'])) {
 
 <body>
   <div class="top"> <!--wrapper-->
-    <form autocomplete="off" id="login-form" method="POST" action="indexW2.php">
+    <form autocomplete="off" id="login-form" method="POST" action="index.php">
       <?php if (isset($_GET['error'])) ?>
       <div role="alert">
         <?php if (isset($_GET['error'])) {
