@@ -2,12 +2,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background-image: url('Walpaper.jpg');
 }
 
 .container {
     display: flex;
     height: 100vh;
-    background-image: url('Walpaper.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -42,7 +42,7 @@ body {
     max-width: 400px;
     width: 100%;
     background-color: white; /* tambahkan */
-    padding: 20px; /* tambahkan */
+    padding: 25px; /* tambahkan */
     border-radius: 5px; /* tambahkan */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* tambahkan */
     align-items: center;
@@ -54,6 +54,7 @@ body {
 
 .form-group {
     margin-bottom: 15px;
+    margin-right: 25px;
 }
 
 .form-group label {
@@ -71,7 +72,7 @@ body {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #EE6983;
     color: white;
     border: none;
     border-radius: 5px;
@@ -79,7 +80,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #850E35;
 }
 
 p {
@@ -88,12 +89,13 @@ p {
 }
 
 a {
-    color: #007bff;
+    color: #FFC4C4;
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #EE6983;
 }
 
 img {

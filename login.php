@@ -35,10 +35,10 @@ if (isset($_POST['login_btn'])) {
 
       header('location: welcome.php?message=Logged in succesfully');
     } else {
-      header('location: test.php?error=Cound not verify your account');
+      header('location: login.php?error=Cound not verify your account');
     }
   } else {
-    header('location: test.php?error=Something went wrong!');
+    header('location: login.php?error=Something went wrong!');
   }
 }
 
@@ -51,12 +51,12 @@ if (isset($_POST['login_btn'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>login page</title>
-  <link rel="stylesheet" href="style/stylelogin.css">
+  <title>Login | createlier</title>
+  <link rel="stylesheet" href="style/registrasi.css">
 </head>
 
 <body>
-  <div class="top"> <!--wrapper-->
+  <div class=""> <!--wrapper-->
     <form autocomplete="off" id="login-form" method="POST" action="index.php">
       <?php if (isset($_GET['error'])) ?>
       <div role="alert">
@@ -64,21 +64,18 @@ if (isset($_POST['login_btn'])) {
           echo $_GET['error'];
         }
         ?>
-        <div class="bottom">
-          <img src="media/createlier-removebg-preview.png" alt="logo tulisan">
+        <div class="form-container">
+          <img src="gambar/logo.png" alt="logo tulisan">
           <h1>Login</h1>
-          <div class="form">
-            <!-- <input type="email" palceholder="email address" -->
+          <div class="form-group">
             <input autocomplete="new-email" type="text" name="email_or_phone" placeholder="Email/Phone">
-            <!-- <input type="password" palceholder="password"> -->
+          </div>
+          <div class="form-group">
             <input autocomplete="new-password" type="password" name="password" placeholder="Password">
           </div>
-          <div class="button-login">
-            <!-- <button> Login </button> -->
-            <input type="submit" id="login-btn" name="login_btn" value="Login">
-          </div>
-          <div class="footer">
-            <a href="#">Forgot your password?</a>
+          <button type="submit">Login</button>
+          <div>
+            <p><a href="#">Forgot your password?</a></p>
             <p>Don't have an account? <a href="register.php">Register here</a>.</p>
 
           </div>

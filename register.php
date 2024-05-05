@@ -41,7 +41,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
         </div>
         <div class="right-section">
             <div class="form-container">
-                <img src="gambar/createlier-removebg-preview.png" alt="brand">
+                <img src="gambar/logo.png" alt="brand">
                 <form method="post" action="register.php">
                     <div class="form-group">
                         <label for="username">Username:</label>
