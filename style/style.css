@@ -5,3 +5,18 @@
 .logout:hover {
     background-color: red;
 }
+
+.photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.profile {
+    border-color: black;
+    color: #850e35;
+}
+
+.profile:hover {
+    background-color: #ee6983;
+}
