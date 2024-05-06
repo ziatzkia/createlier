@@ -52,7 +52,7 @@ if (isset($_POST['login_btn'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | createlier</title>
-  <link rel="stylesheet" href="style/registrasi.css">
+  <link rel="stylesheet" href="style/loginRegister.css">
 </head>
 
 <body>
@@ -65,7 +65,8 @@ if (isset($_POST['login_btn'])) {
         }
         ?>
         <div class="form-container">
-          <img src="img/logo.png" alt="logo tulisan">
+          <img src="img/logo createlier.png" alt="logo" width="100px">
+          <h2>Sign in</h2>
           <div class="form-group">
             <input autocomplete="new-email" type="text" name="email_or_phone" placeholder="Email/Phone">
           </div>
