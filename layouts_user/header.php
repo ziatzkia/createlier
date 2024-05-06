@@ -1,8 +1,7 @@
 <?php
-session_start();
 include('../server/connection.php');
 
-if (isset($_SESSION['logged in'])) {
+if (isset($_SESSION['logged in'])){
     header('location: index.php');
     exit;
 }
@@ -35,7 +34,7 @@ $result = mysqli_query($conn, $q_select);
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="../index.php">
                 <img src="../img/logo createlier.png" alt="logo" width="40px">
                 <img src="../img/logo.png" alt="brand" width="200px" height="30px">
             </a>
@@ -55,10 +54,10 @@ $result = mysqli_query($conn, $q_select);
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <a href="shoppingBag.php">
+                    <a href="../user/shoppingBag.php">
                         <img src="../img/shopping-bag.png" alt="shopping bag" width="35px" height="35px">
                     </a>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0 profile" type="button" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
                 </form>
             </div>
         </div>
@@ -79,7 +78,7 @@ $result = mysqli_query($conn, $q_select);
                         while ($row = $result->fetch_assoc()) {
                             echo '<div class="row">';
                             echo '<div class="col">';
-                            echo '<td><a href="' . $row["photo"] . '"><img src="' . $row["photo"] . '" alt="Foto User"></a></td>';
+                            echo '<td><a href="' . $row["photo"] . '"><img src="../img/' . $row["photo"] . '" alt="Foto User" class="photo"></a></td>';
                             echo '<p><strong>Email:</strong> ' . $row["email"] . '</p>';
                             echo '<p><strong>Phone:</strong> ' . $row["phone"] . '</p>';
                             echo '<p><strong>Address:</strong> ' . $row["alamat"] . '</p>';
@@ -99,7 +98,9 @@ $result = mysqli_query($conn, $q_select);
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary logout">Logout</button>
+                    <a href="../login.php">
+                        <button type="button" class="btn btn-primary logout">Logout</button>
+                    </a>
                 </div>
             </div>
         </div>

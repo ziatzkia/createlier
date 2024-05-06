@@ -1,6 +1,7 @@
 <?php
-include('layouts/header.php');
-include('layouts/footer.php');
+include('server/connection.php');
+include('layouts_user/header.php');
+include('layouts_user/footer.php');
 ?>
 
 <!DOCTYPE html>
