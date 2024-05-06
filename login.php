@@ -86,3 +86,7 @@ if (isset($_POST['login_btn'])) {
 </body>
 
 </html>
+
+<?php
+# include('layouts/footer.php');
+?>
