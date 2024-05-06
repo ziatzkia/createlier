@@ -65,8 +65,7 @@ if (isset($_POST['login_btn'])) {
         }
         ?>
         <div class="form-container">
-          <img src="gambar/logo.png" alt="logo tulisan">
-          <h1>Login</h1>
+          <img src="img/logo.png" alt="logo tulisan">
           <div class="form-group">
             <input autocomplete="new-email" type="text" name="email_or_phone" placeholder="Email/Phone">
           </div>
