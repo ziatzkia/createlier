@@ -1,0 +1,7 @@
+.logout {
+    background-color: #850e35;
+}
+
+.logout:hover {
+    background-color: red;
+}
