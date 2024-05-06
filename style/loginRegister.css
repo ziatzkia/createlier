@@ -115,10 +115,13 @@ img {
     gap: 20px;
     height: 100%;
     margin-top: 70px;
+<<<<<<< HEAD:style/loginRegister.css
 }
 
 h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+=======
+>>>>>>> d2376e5 (register.css):style/registrasi.css
 }
