@@ -86,7 +86,7 @@ $result = mysqli_query($conn, $q_select);
                         while ($row = $result->fetch_assoc()) {
                             echo '<div class="row">';
                             echo '<div class="col">';
-                            echo '<td><a href="' . $row["photo"] . '"><img src="' . $row["photo"] . '" alt="Foto User"></a></td>';
+                            echo '<td><a href="' . $row["photo"] . '"><img src="../img/' . $row["photo"] . '" alt="Foto User" class="profpic"></a></td>';
                             echo '<p><strong>Email:</strong> ' . $row["email"] . '</p>';
                             echo '<p><strong>Phone:</strong> ' . $row["phone"] . '</p>';
                             echo '<p><strong>Address:</strong> ' . $row["alamat"] . '</p>';
