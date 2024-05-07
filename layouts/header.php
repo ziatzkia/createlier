@@ -51,6 +51,9 @@ $result = mysqli_query($conn, $q_select);
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Custom</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About us</a>
+                    </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <a href="shoppingBag.php">
@@ -61,6 +64,11 @@ $result = mysqli_query($conn, $q_select);
             </div>
         </div>
     </nav>
+
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
 
     <!-- Modal -->
     <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
@@ -87,7 +95,6 @@ $result = mysqli_query($conn, $q_select);
                             echo '</div>';
                             echo '<hr>';
                         }
-
                     } else {
                         echo "0 results";
                     }
