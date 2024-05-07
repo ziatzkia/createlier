@@ -39,10 +39,10 @@
                         <div class="mb-4">
                             <h3>Contact Us:</h3>
                         </div>
-                        <li><a target="_blank" href="https://www.instagram.com/alfiusstevanus">www.instagram.com/alfiusstevanus</a></li>
-                        <li><a target="_blank" href="https://www.instagram.com/azziladest">www.instagram.com/azziladest</a></li>
-                        <li><a target="_blank" href="https://www.instagram.com/ramdhan_mzh">www.instagram.com/ramdhan_mzh</a></li>
-                        <li><a target="_blank" href="https://www.instagram.com/slmnalfdzi_">www.instagram.com/slmnalfdzi_</a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/diyanpe_">www.instagram.com/diyanpe_</a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/ziatul">www.instagram.com/ziatul</a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/jamiatul">www.instagram.com/jamiatul</a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/anandul">www.instagram.com/anandul</a></li>
                         <br>
                         <p>© CREATELIER - 2024</p>
                     </ul>
