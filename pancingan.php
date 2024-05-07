@@ -7,6 +7,6 @@
 </head>
 <body>
     <h1>coba 1</h1>
-    
+    <h2>apa coba</h2>
 </body>
 </html>
