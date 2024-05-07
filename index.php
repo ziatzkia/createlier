@@ -1,5 +1,9 @@
 <?php
+include('server/connection.php');
 include('layouts/header.php');
+include('layouts/footer.php');
+
+
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +11,7 @@ include('layouts/header.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Createlier</title>
+    <title>Index | Createlier</title>
     
 </head>
 <body>
