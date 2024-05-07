@@ -3,7 +3,7 @@ session_start();
 include('server/connection.php');
 
 if (isset($_SESSION['logged_in'])) {
-  header('location: login.php');
+  header('location: index.php');
   exit;
 }
 
@@ -33,9 +33,9 @@ if (isset($_POST['login_btn'])) {
       $_SESSION['photo'] = $photo;
       $_SESSION['logged_in'] = true;
 
-      header('location: welcome.php?message=Logged in succesfully');
+      header('location: index.php?message=Logged in succesfully');
     } else {
-      header('location: login.php?error=Cound not verify your account');
+      header('location: login.php?error=Could not verify your account');
     }
   } else {
     header('location: login.php?error=Something went wrong!');
@@ -58,7 +58,7 @@ if (isset($_POST['login_btn'])) {
 
 <body>
   <div class="wrapper"> <!--wrapper-->
-    <form autocomplete="off" id="login-form" method="POST" action="index.php">
+    <form autocomplete="off" id="login-form" method="POST" action="login.php">
       <?php if (isset($_GET['error'])) ?>
       <div role="alert">
         <?php if (isset($_GET['error'])) {
@@ -77,7 +77,7 @@ if (isset($_POST['login_btn'])) {
           <button type="submit">Login</button>
           <div>
             <p><a href="#">Forgot your password?</a></p>
-            <p>Don't have an account? <a href="register.php">Register here</a>.</p>
+            <p>Don't have an account? <a href="register.php">Get started</a>.</p>
 
           </div>
         </div>
