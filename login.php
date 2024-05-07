@@ -9,15 +9,15 @@ if (isset($_SESSION['logged_in'])) {
 
 if (isset($_POST['login_btn'])) {
   $email_or_phone = $_POST['email_or_phone'];
-  $password = $_POST['password'];
+  $pwd = $_POST['pwd'];
 
-  $query = "SELECT * FROM akun WHERE (email = ? OR phone = ?) AND password = ? LIMIT 1";
+  $query = "SELECT * FROM akun WHERE (email = ? OR phone = ?) AND pwd = ? LIMIT 1";
 
   $stmt_login = $conn->prepare($query);
-  $stmt_login->bind_param('sss', $email_or_phone, $email_or_phone, $password);
+  $stmt_login->bind_param('sss', $email_or_phone, $email_or_phone, $pwd);
 
   if ($stmt_login->execute()) {
-    $stmt_login->bind_result($id, $username, $email, $phone, $gender, $alamat, $saldo, $photo, $password);
+    $stmt_login->bind_result($id, $username, $email, $phone, $gender, $alamat, $saldo, $photo, $pwd);
     $stmt_login->store_result();
 
     if ($stmt_login->num_rows() == 1) {
@@ -72,7 +72,7 @@ if (isset($_POST['login_btn'])) {
             <input autocomplete="new-email" type="text" name="email_or_phone" placeholder="Email/Phone">
           </div>
           <div class="form-group">
-            <input autocomplete="new-password" type="password" name="password" placeholder="Password">
+            <input autocomplete="new-pwd" type="pwd" name="pwd" placeholder="Password">
           </div>
           <button type="submit">Login</button>
           <div>
