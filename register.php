@@ -29,6 +29,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo/logo cc.png">
     <title>Sign Up | Createlier</title>
     <link rel="stylesheet" href="style/loginRegister.css">
 </head>
@@ -41,7 +42,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
         </div>
         <div class="right-section">
             <div class="form-container">
-                <img src="img/logo.png" alt="brand" width="70%" >
+                <img src="img/logo/logo.png" alt="brand" width="70%" >
                 <form method="post" action="register.php">
                     <div class="form-group">
                         <label for="username">Username:</label>

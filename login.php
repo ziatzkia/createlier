@@ -51,6 +51,7 @@ if (isset($_POST['login_btn'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/logo/logo cc.png">
   <title> Login | Createlier</title>
   <link rel="stylesheet" href="style/loginRegister.css">
 </head>
@@ -65,7 +66,7 @@ if (isset($_POST['login_btn'])) {
         }
         ?>
         <div class="form-container">
-          <img src="img/logo createlier.png" alt="logo" width="100px">
+          <img src="img/logo/logo createlier.png" alt="logo" width="100px">
           <h2>Sign in</h2>
           <div class="form-group">
             <input autocomplete="new-email" type="text" name="email_or_phone" placeholder="Email/Phone">
