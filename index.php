@@ -22,7 +22,7 @@ include 'layouts/header.php';
 ?>
 <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="img/brand.jpeg">
+            <div class="hero__items set-bg" data-setbg= "img">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
@@ -43,7 +43,7 @@ include 'layouts/header.php';
                     </div>
                 </div>
             </div>
-            <div class="hero__items set-bg" data-setbg="img/hero/hero-2.jpg">
+            <div class="hero__items set-bg" data-setbg="img/hero/brand">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
@@ -66,24 +66,6 @@ include 'layouts/header.php';
             </div>
         </div>
     </section>
-    <!-- Hero Section End -->
-<!-- <section class="hero ms-5">
-    <div class="hero-label justify-content-center ms-5">
-        <h4 class="h4 mb-4">DISCOUNT UP TO 30%</h4>
-        <h1 class="mt-2">Welcome to Createlier, Where Every</h1>
-        <h1 class="mt-2">Piece Tells a Stroy</h1>
-
-            <a href=""><i class="fa-brands fa-square-github ms-2 c-60"></i></a>
-            <a href=""><i class="fa-brands fa-square-instagram ms-2 c-60 "></i></a>
-            <a href=""><i class="fa-brands fa-square-facebook ms-2 c-60"></i></a>
-        </div>
-    </div>
-
-</section>
-<div class="bg-dark">
-    <img class="images-fluid " src="images/Hero2.jpg">
-</div> -->
-
 
 <!-- content PAGE -->
 <div class="container mt-1 mb-4">
