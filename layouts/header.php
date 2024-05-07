@@ -16,7 +16,10 @@ if (isset($_GET['logout'])) {
     }
 }
 
-$q_select = 'SELECT * FROM akun';
+//ngambil info user yg login
+$email = $_SESSION['email'];
+
+$q_select = "SELECT * FROM akun WHERE email = '$email'";
 $result = mysqli_query($conn, $q_select);
 ?>
 
@@ -74,7 +77,7 @@ $result = mysqli_query($conn, $q_select);
     <!-- Modal -->
     <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content modalBg">
                 <div class="modal-header">
                     <h5 class="modal-title" id="profileModalLabel">Profile</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -86,7 +89,7 @@ $result = mysqli_query($conn, $q_select);
                         while ($row = $result->fetch_assoc()) {
                             echo '<div class="row">';
                             echo '<div class="col">';
-                            echo '<td><a href="' . $row["photo"] . '"><img src="../img/' . $row["photo"] . '" alt="Foto User" class="profpic"></a></td>';
+                            echo '<td><a href="' . $row["photo"] . '"><img src="../img/profil/' . $row["photo"] . '" alt="Foto User" class="profpic"></a></td>';
                             echo '<p><strong>Email:</strong> ' . $row["email"] . '</p>';
                             echo '<p><strong>Phone:</strong> ' . $row["phone"] . '</p>';
                             echo '<p><strong>Address:</strong> ' . $row["alamat"] . '</p>';
@@ -105,7 +108,7 @@ $result = mysqli_query($conn, $q_select);
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="login.php">
+                    <a href="logout.php">
                         <button type="button" class="btn btn-primary logout">Logout</button>
                     </a>
                 </div>

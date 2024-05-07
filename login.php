@@ -58,7 +58,7 @@ if (isset($_POST['login_btn'])) {
 
 <body>
   <div class="wrapper"> <!--wrapper-->
-    <form autocomplete="off" id="login-form" method="POST" action="login.php">
+    <form autocomplete="off" id="login-form" method="POST" action="index.php">
       <?php if (isset($_GET['error'])) ?>
       <div role="alert">
         <?php if (isset($_GET['error'])) {
