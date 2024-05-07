@@ -5,17 +5,18 @@
             <div class="col-lg-4">
                 <div>
                     <div class="mb-2 text-center">
-                        <a href=""><img src="images/logo books corner 2.png" width="95" height="auto" alt="logo"></a>
+                        <a href=""><img src="/img/logo/logo createlier.png" width="95" height="auto" alt="logo"></a>
                     </div>
 
-                    <p class="ps-4" style="text-align: justify;">
-                    <div>
-                        <ul>
-                            <li><a href="index.php">HOME</a></li>
-                            <li><a href="buku.php">SHOP</a></li>
-                            <li><a href="aboutus.php">ABOUT US</a></li>
-                        </ul>
-                    </div>
+                    <p class="ps-4">
+                    <!-- <p><a href="mailto:info@createlier.com">info@createlier.com</a></p>
+                    <p>Phone: +123-456-7890</p> -->
+                    <p>© 2024 Createlier. All rights reserved.</p>
+                    </p>
+                    <p class="ps-4">
+                    <!-- <p><a href="mailto:info@createlier.com">info@createlier.com</a></p>
+                    <p>Phone: +123-456-7890</p> -->
+                    <p>© 2024 Createlier. All rights reserved.</p>
                     </p>
 
                 </div>
@@ -44,7 +45,6 @@
                         <li><a target="_blank" href="https://www.instagram.com/jamiatul">www.instagram.com/jamiatul</a></li>
                         <li><a target="_blank" href="https://www.instagram.com/anandul">www.instagram.com/anandul</a></li>
                         <br>
-                        <p>© CREATELIER - 2024</p>
                     </ul>
                 </div>
             </div>

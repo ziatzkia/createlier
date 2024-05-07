@@ -20,82 +20,90 @@ $result = mysqli_query($conn, $q_select);
 
 include 'layouts/header.php';
 ?>
+ <!-- Hero Section Begin -->
 <section class="hero">
-        <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg= "img">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-5 col-lg-7 col-md-8">
-                            <div class="hero__text">
-                                <h6>Summer Collection</h6>
-                                <h2>Fall - Winter Collections 2030</h2>
-                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                    commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                                <div class="hero__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__items set-bg" data-setbg="img/hero/brand">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-5 col-lg-7 col-md-8">
-                            <div class="hero__text">
-                                <h6>Summer Collection</h6>
-                                <h2>Fall - Winter Collections 2030</h2>
-                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                    commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                                <div class="hero__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                </div>
+    <div class="hero__slider owl-carousel">
+        <div class="hero__items set-bg" data-setbg="/img/hero/brand.jpeg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-7 col-md-8">
+                        <div class="hero__text">
+                            <h6>Summer Collection</h6>
+                            <h2>Fall - Winter Collections 2030</h2>
+                            <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
+                                commitment to exceptional quality.</p>
+                            <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                            <div class="hero__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-<!-- content PAGE -->
-<div class="container mt-1 mb-4">
-    <div class="row justify-content-center">
-        <div class="col-md-7">
-            <div class="justify-content-center">
-                <video class="ms-1 mt-5 pt-4 img-fluid " controls autoplay="true" width="700px" loop="true">
-                    <source src="media/video.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-
-        <div class="col-md-5 mt-5">
-            <div class="jumbotron bg-30">
-                <div class="card bg-dark text-white">
-                    <img src="images/12 Life-Changing Habits You Can Honestly Start Today.jpeg" style="opacity: 0.5;" width="400px" height="450px" class="card-img object-fit-cover" alt="...">
-                    <div class="card-img-overlay mt-5 ">
-                        <div class="align-items-center mt-5 pt-5">
-                            <h5 class="card-title text-center">Books & Train</h5>
-                            <p class="card-text text-center">its realy relax when you read on a train</p>
+        <div class="hero__items set-bg" data-setbg="/img/hero/brand.jpeg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-7 col-md-8">
+                        <div class="hero__text">
+                            <h6>Summer Collection</h6>
+                            <h2>Fall - Winter Collections 2030</h2>
+                            <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
+                                commitment to exceptional quality.</p>
+                            <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                            <div class="hero__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
+<!-- Hero Section End -->
 
+<!-- Content page 2 -->
+<div class="container mt-1 mb-4">
+    <div class="row">
+        <div class="col-md-5 mt-5">
+            <div class="jumbotron bg-30">
+                <div class="card bg-dark text-white">
+                    <img src="img/hero/brand 3.jpeg" style="opacity: 0.5;" width="400px" height="450px" class="card-img object-fit-cover" alt="...">
+                    <div class="card-img-overlay mt-5">
+                        <div class="align-items-center mt-5 pt-5">
+                            <h5 class="card-title text-center">Customize your own accessories</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 mt-5">
+            <div class="jumbotron jumbo-right translucent-grid p-2">
+                <div>
+                    <h4>Enhance Your Style with Your Own Unique Touch at Createlier</h4>
+                    <hr>
+                </div>
+                <ul class="list-unstyled">
+                    <p>At Createlier, we don't just offer beautiful ready-to-wear accessories,</p>
+                    <p>but also provide you with the opportunity to create something truly unique.</p>
+                    <p>With our custom product service, you can express your own creativity</p> 
+                    <p>and have accessories made specifically to your liking.</p>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
-<div class="container mt-2 mb-3">
+
+<!-- <div class="container mt-2 mb-3">
     <div class="row p-2">
         <div class="col-md-3">
             <div class="ads">
@@ -123,7 +131,9 @@ include 'layouts/header.php';
             </div>
 
         </div>
-        <!-- <div class="col-md-9">
+
+
+        <div class="col-md-9">
             <div class="jumbotron jumbo-right bg-30 p-3">
                 <div>
                     <h6>SPRING-DISCOUNT List</h6>
@@ -167,9 +177,9 @@ include 'layouts/header.php';
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="container mb-4 mt-3">
+<!-- <div class="container mb-4 mt-3">
     <div class="row text-center">
         <div class="col-md-12">
             <div class="jumbotron bg-30 p-3">
@@ -183,12 +193,12 @@ include 'layouts/header.php';
             </div>
         </div>
     </div>
-</div>
 </div> -->
+</div>
 
 
 
-    
+
 <?php
 include 'layouts/footer.php';
 ?>
