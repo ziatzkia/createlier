@@ -13,3 +13,6 @@
     border-radius: 10px;
 }
 
+.carousel-control-prev, .carousel-control-next {
+    color: black; /* Ganti dengan warna teks yang diinginkan */
+}

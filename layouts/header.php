@@ -55,21 +55,23 @@ $result = mysqli_query($conn, $q_select);
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">About us</a>
                     </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <a href="shoppingBag.php">
-                        <img src="../img/shopping-bag.png" alt="shopping bag" width="35px" height="35px">
-                    </a>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
-                </form>
+                    </ul>
+
+                    <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 60%;">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+
+                    <form class="form-inline my-2 my-lg-0">
+                        <a href="shoppingBag.php">
+                            <img src="../img/icon/shopping-bag.png" alt="shopping bag" width="35px" height="35px">
+                        </a>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
+                    </form>
             </div>
         </div>
     </nav>
 
-    <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 60%;">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
-    </form>
 
     <!-- Modal -->
     <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
