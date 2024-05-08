@@ -30,14 +30,14 @@ include 'layouts/header.php';
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="img/hero/brand.jpeg" class="d-block w-100" alt="kalung">
+            <img src="img/hero/a.png" class="d-block w-100" alt="kalung">
             <div class="carousel-caption d-none d-md-block">
                 <h3>Necklaces</h3>
                 <p>Some representative placeholder content for the first slide.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="img/hero/b.jpg" class="d-block w-100" alt="gelang">
+            <img src="img/hero/b.png" class="d-block w-100" alt="gelang">
             <div class="carousel-caption d-none d-md-block">
                 <h3>Bricelet</h3>
                 <p>Some representative placeholder content for the second slide.</p>
@@ -140,7 +140,7 @@ include 'layouts/header.php';
         <div class="col-md-12">
             <div class="justify-content-center">
                 <video class="ms-1 mt-5 pt-4 img-fluid " controls autoplay="true" width="1200px" loop="true">
-                    <source src="media/video.mp4" type="video/mp4">
+                    <source src="vidio/vid.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
