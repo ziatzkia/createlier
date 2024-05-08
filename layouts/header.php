@@ -2,6 +2,11 @@
 session_start();
 include 'server/connection.php';
 
+if (isset($_SESSION['logged in'])) {
+    header('location: index.php');
+    exit;
+}
+
 if (isset($_GET['logout'])) {
     if (isset($_SESSION['logged_in'])) {
         unset($_SESSION['logged_in']);
@@ -10,6 +15,12 @@ if (isset($_GET['logout'])) {
         exit;
     }
 }
+
+//ngambil info user yg login
+$email = $_SESSION['email'];
+
+$q_select = "SELECT * FROM akun WHERE email = '$email'";
+$result = mysqli_query($conn, $q_select);
 ?>
 
 <!DOCTYPE html>
@@ -48,30 +59,20 @@ if (isset($_GET['logout'])) {
                         <a class="nav-link active" aria-current="page" href="#">About us</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 60%;">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
-                </form>
                 <form class="form-inline my-2 my-lg-0">
                     <a href="../user/shoppingBag.php">
                         <img src="../img/icon/shopping-bag.png" alt="shopping bag" width="35px" height="35px">
                     </a>
-                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
-                    <?php } else { ?>
-                        <a href="login.php">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Login</button>
-                        </a>
-                    <?php } ?>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
                 </form>
             </div>
         </div>
     </nav>
 
-    <!-- <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+    <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 60%;">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
-    </form> -->
+    </form>
 
     <!-- Modal -->
     <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
@@ -83,17 +84,26 @@ if (isset($_GET['logout'])) {
                 </div>
                 <div class="modal-body">
                     <?php
-                    echo '<div class="row">';
-                    echo '<div class="col">';
-                    echo '<td><a href="' . $_SESSION['photo'] . '"><img src="../img/profil/' . $_SESSION['photo'] . '" alt="Foto User" class="profpic"></a></td>';
-                    echo '<p><strong>Email:</strong> ' . $_SESSION['email'] . '</p>';
-                    echo '<p><strong>Phone:</strong> ' . $_SESSION['phone'] . '</p>';
-                    echo '<p><strong>Address:</strong> ' . $_SESSION['alamat'] . '</p>';
-                    echo '<p><strong>Gender:</strong> ' . $_SESSION['gender'] . '</p>';
-                    echo '<p><strong>Saldo:</strong> ' . $_SESSION['saldo'] . '</p>';
-                    echo '</div>';
-                    echo '</div>';
-                    echo '<hr>';
+
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<div class="row">';
+                            echo '<div class="col">';
+                            echo '<td><a href="' . $row["photo"] . '"><img src="../img/profil/' . $row["photo"] . '" alt="Foto User" class="profpic"></a></td>';
+                            echo '<p><strong>Email:</strong> ' . $row["email"] . '</p>';
+                            echo '<p><strong>Phone:</strong> ' . $row["phone"] . '</p>';
+                            echo '<p><strong>Address:</strong> ' . $row["alamat"] . '</p>';
+                            echo '<p><strong>Gender:</strong> ' . $row["gender"] . '</p>';
+                            echo '<p><strong>Saldo:</strong> ' . $row["saldo"] . '</p>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '<hr>';
+                        }
+                    } else {
+                        echo "0 results";
+                    }
+
+                    $conn->close();
                     ?>
                 </div>
                 <div class="modal-footer">

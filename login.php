@@ -72,7 +72,7 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
             <input autocomplete="new-email" type="text" name="email_or_phone" placeholder="Email/Phone">
           </div>
           <div class="form-group">
-            <input autocomplete="new-pwd" type="pwd" name="pwd" placeholder="Password">
+            <input autocomplete="new-pwd" type="password" name="pwd" placeholder="Password" required>
           </div>
           <button type="submit">Login</button>
           <div>

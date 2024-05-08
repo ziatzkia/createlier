@@ -1,10 +1,10 @@
 <?php
 include 'server/connection.php';
 
-if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['phone']) && isset($_POST['alamat'])) {
+if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['pwd']) && isset($_POST['phone']) && isset($_POST['alamat'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $pwd = $_POST['pwd'];
     $phone = $_POST['phone'];
     $alamat = $_POST['alamat'];
 
@@ -14,7 +14,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
     if (mysqli_num_rows($result) > 0) {
         echo "Username already exists. Please choose a different username.";
     } else {
-        $query = "INSERT INTO akun (username, email, password, phone, alamat) VALUES ('$username', '$email', '$password', '$phone', '$alamat')";
+        $query = "INSERT INTO akun (username, email, pwd, phone, alamat) VALUES ('$username', '$email', '$pwd', '$phone', '$alamat')";
         mysqli_query($conn, $query);
         echo "Record inserted successfully!";
     }
@@ -53,8 +53,8 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required>
+                        <label for="pwd">Password:</label>
+                        <input type="password" id="pwd" name="pwd" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone:</label>
