@@ -16,7 +16,10 @@ if (isset($_GET['logout'])) {
     }
 }
 
-$q_select = 'SELECT * FROM akun';
+//ngambil info user yg login
+$email = $_SESSION['email'];
+
+$q_select = "SELECT * FROM akun WHERE email = '$email'";
 $result = mysqli_query($conn, $q_select);
 ?>
 
@@ -42,7 +45,7 @@ $result = mysqli_query($conn, $q_select);
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <<ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
@@ -55,28 +58,26 @@ $result = mysqli_query($conn, $q_select);
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">About us</a>
                     </li>
-                    </ul>
-
-                    <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 60%;">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
-                    </form>
-
-                    <form class="form-inline my-2 my-lg-0">
-                        <a href="shoppingBag.php">
-                            <img src="../img/icon/shopping-bag.png" alt="shopping bag" width="35px" height="35px">
-                        </a>
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
-                    </form>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a href="../user/shoppingBag.php">
+                        <img src="../img/icon/shopping-bag.png" alt="shopping bag" width="35px" height="35px">
+                    </a>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
+                </form>
             </div>
         </div>
     </nav>
 
+    <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 60%;">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+    </form>
 
     <!-- Modal -->
     <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content modalBg">
                 <div class="modal-header">
                     <h5 class="modal-title" id="profileModalLabel">Profile</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -88,7 +89,7 @@ $result = mysqli_query($conn, $q_select);
                         while ($row = $result->fetch_assoc()) {
                             echo '<div class="row">';
                             echo '<div class="col">';
-                            echo '<td><a href="' . $row["photo"] . '"><img src="../img/' . $row["photo"] . '" alt="Foto User" class="profpic"></a></td>';
+                            echo '<td><a href="' . $row["photo"] . '"><img src="../img/profil/' . $row["photo"] . '" alt="Foto User" class="profpic"></a></td>';
                             echo '<p><strong>Email:</strong> ' . $row["email"] . '</p>';
                             echo '<p><strong>Phone:</strong> ' . $row["phone"] . '</p>';
                             echo '<p><strong>Address:</strong> ' . $row["alamat"] . '</p>';
@@ -107,7 +108,9 @@ $result = mysqli_query($conn, $q_select);
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary logout">Logout</button>
+                    <a href="logout.php">
+                        <button type="button" class="btn btn-primary logout">Logout</button>
+                    </a>
                 </div>
             </div>
         </div>

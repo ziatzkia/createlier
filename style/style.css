@@ -10,9 +10,21 @@
 .profpic {
     width: 100px;
     height: 100px;
-    border-radius: 10px;
+    border-radius: 100px;
+    border: 2px solid #ee6983;
 }
 
 .carousel-control-prev, .carousel-control-next {
-    color: black; /* Ganti dengan warna teks yang diinginkan */
+    color: black;
 }
+
+.modalBg {
+    background-color:  #FFC4C4;
+    border: 10px solid #ee6983;
+}
+
+.footerBg {
+    background-color: #850e35;
+    color: white;
+}
+

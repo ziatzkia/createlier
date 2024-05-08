@@ -1,11 +1,11 @@
 </main>
-<footer id="aboutus" class="footer bg-30">
+<footer id="aboutus" class="footer bg-30 footerBg">
     <div class="container pt-5">
         <div class="row text-center">
             <div class="col-lg-4">
                 <div>
                     <div class="mb-2 text-center">
-                        <a href=""><img src="/img/logo/logo createlier.png" width="95" height="auto" alt="logo"></a>
+                        <a href=""><img src="/img/logo/logo cc.png" width="95" height="auto" alt="logo"></a>
                     </div>
 
                     <p class="ps-4">
