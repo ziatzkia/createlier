@@ -77,7 +77,7 @@ include 'layouts/header.php';
                     <p>accessories are not just additions to your appearance,</p>
                     <p>but are the embodiment of personal elegance and uniqueness.</p>
                     <p>Every accessory we produce is the result of skilled hand craftsmanship and attention to detail.</p><br><br><br><br>
-                    < <a href="#" class="primary-btn">Buy now</a>
+                    <a href="#" class="primary-btn">Buy now</a>
                 </ul>
             </div>
         </div>

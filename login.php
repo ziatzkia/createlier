@@ -7,7 +7,7 @@ if (isset($_SESSION['logged_in'])) {
   exit;
 }
 
-if (isset($_POST['login_btn'])) {
+if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
   $email_or_phone = $_POST['email_or_phone'];
   $pwd = $_POST['pwd'];
 
@@ -17,10 +17,10 @@ if (isset($_POST['login_btn'])) {
   $stmt_login->bind_param('sss', $email_or_phone, $email_or_phone, $pwd);
 
   if ($stmt_login->execute()) {
-    $stmt_login->bind_result($id, $username, $email, $phone, $gender, $alamat, $saldo, $photo, $pwd);
     $stmt_login->store_result();
 
     if ($stmt_login->num_rows() == 1) {
+      $stmt_login->bind_result($id, $username, $email, $phone, $gender, $alamat, $saldo, $photo, $pwd);
       $stmt_login->fetch();
 
       $_SESSION['id'] = $id;
@@ -58,7 +58,7 @@ if (isset($_POST['login_btn'])) {
 
 <body>
   <div class="wrapper"> <!--wrapper-->
-    <form autocomplete="off" id="login-form" method="POST" action="index.php">
+    <form autocomplete="off" id="login-form" method="POST" action="login.php">
       <?php if (isset($_GET['error'])) ?>
       <div role="alert">
         <?php if (isset($_GET['error'])) {
@@ -78,12 +78,10 @@ if (isset($_POST['login_btn'])) {
           <div>
             <p><a href="#">Forgot your password?</a></p>
             <p>Don't have an account? <a href="register.php">Get started</a>.</p>
-
           </div>
         </div>
       </div>
     </form>
-
   </div>
 </body>
 
