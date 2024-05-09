@@ -48,10 +48,10 @@ if (isset($_GET['logout'])) {
                         <a class="nav-link active" href="about.php">About Us</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+                <!-- <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 60%;">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
-                </form>
+                </form> -->
                 <form class="form-inline my-2 my-lg-0">
                     <a href="../user/shoppingBag.php">
                         <img src="../img/icon/shopping-bag.png" alt="shopping bag" width="30px" height="30px">
