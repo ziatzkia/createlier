@@ -2,6 +2,8 @@
 session_start();
 include('server/connection.php');
 
+
+
 if (isset($_SESSION['logged_in'])) {
   header('location: index.php');
   exit;
@@ -73,6 +75,12 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
           </div>
           <div class="form-group">
             <input autocomplete="new-pwd" type="password" name="pwd" placeholder="Password" required>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="checkId">
+            <label class="form-check-label" for="checkId">
+              Remember me
+            </label>
           </div>
           <button type="submit">Login</button>
           <div>
