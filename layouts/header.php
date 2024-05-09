@@ -2,11 +2,6 @@
 session_start();
 include 'server/connection.php';
 
-if (isset($_SESSION['logged in'])) {
-    header('location: index.php');
-    exit;
-}
-
 if (isset($_GET['logout'])) {
     if (isset($_SESSION['logged_in'])) {
         unset($_SESSION['logged_in']);
@@ -15,12 +10,6 @@ if (isset($_GET['logout'])) {
         exit;
     }
 }
-
-//ngambil info user yg login
-$email = $_SESSION['email'];
-
-$q_select = "SELECT * FROM akun WHERE email = '$email'";
-$result = mysqli_query($conn, $q_select);
 ?>
 
 <!DOCTYPE html>
@@ -47,32 +36,43 @@ $result = mysqli_query($conn, $q_select);
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Shop</a>
+                        <a class="nav-link active" href="shop.php">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Custom</a>
+                        <a class="nav-link active" href="custom.php">Custom</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">About us</a>
+                        <a class="nav-link active" href="about.php">About Us</a>
                     </li>
                 </ul>
+                <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 60%;">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+                </form>
                 <form class="form-inline my-2 my-lg-0">
                     <a href="../user/shoppingBag.php">
-                        <img src="../img/icon/shopping-bag.png" alt="shopping bag" width="35px" height="35px">
+                        <img src="../img/icon/shopping-bag.png" alt="shopping bag" width="30px" height="30px">
                     </a>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
+                    <?php } else { ?>
+                        <div class="btn-container">
+                            <a href="login.php">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sign in</button>
+                            </a>
+                            <a href="register.php">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sign up</button>
+                            </a>
+                        </div>
+                    <?php } ?>
                 </form>
             </div>
         </div>
     </nav>
 
-    <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 60%;">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
-    </form>
 
     <!-- Modal -->
     <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
@@ -84,26 +84,17 @@ $result = mysqli_query($conn, $q_select);
                 </div>
                 <div class="modal-body">
                     <?php
-
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo '<div class="row">';
-                            echo '<div class="col">';
-                            echo '<td><a href="' . $row["photo"] . '"><img src="../img/profil/' . $row["photo"] . '" alt="Foto User" class="profpic"></a></td>';
-                            echo '<p><strong>Email:</strong> ' . $row["email"] . '</p>';
-                            echo '<p><strong>Phone:</strong> ' . $row["phone"] . '</p>';
-                            echo '<p><strong>Address:</strong> ' . $row["alamat"] . '</p>';
-                            echo '<p><strong>Gender:</strong> ' . $row["gender"] . '</p>';
-                            echo '<p><strong>Saldo:</strong> ' . $row["saldo"] . '</p>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '<hr>';
-                        }
-                    } else {
-                        echo "0 results";
-                    }
-
-                    $conn->close();
+                    echo '<div class="row">';
+                    echo '<div class="col">';
+                    echo '<td><a href="' . $_SESSION['photo'] . '"><img src="../img/profil/' . $_SESSION['photo'] . '" alt="Foto User" class="profpic"></a></td>';
+                    echo '<p><strong>Email:</strong> ' . $_SESSION['email'] . '</p>';
+                    echo '<p><strong>Phone:</strong> ' . $_SESSION['phone'] . '</p>';
+                    echo '<p><strong>Address:</strong> ' . $_SESSION['alamat'] . '</p>';
+                    echo '<p><strong>Gender:</strong> ' . $_SESSION['gender'] . '</p>';
+                    echo '<p><strong>Saldo:</strong> ' . $_SESSION['saldo'] . '</p>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '<hr>';
                     ?>
                 </div>
                 <div class="modal-footer">

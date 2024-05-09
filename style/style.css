@@ -19,8 +19,8 @@
 }
 
 .modalBg {
-    background-color:  #FFC4C4;
-    border: 10px solid #ee6983;
+    background-color:  #ffffff;
+    border: 10px solid #850e35;
 }
 
 .footerBg {
@@ -28,3 +28,52 @@
     color: white;
 }
 
+.btn-container {
+    display: flex;
+    gap: 20px; 
+}
+
+.btn-secondary {
+    background-color: #850e35;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #850e35;
+    color: white;
+}
+
+.banner .banner__item {
+    margin-bottom: 30px;
+}
+
+.banner .banner__item__pic img {
+    max-width: 100%;
+}
+
+.banner .banner__item__text {
+    text-align: center;
+}
+
+.banner .banner__item__text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.banner .banner__item__text a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.banner .banner__item__text a:hover {
+    background-color: #850e35;
+}

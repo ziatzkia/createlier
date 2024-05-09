@@ -32,7 +32,7 @@ body {
 
 .right-section {
     display: flex;
-    flex-direction: column; /* tambahkan */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -41,15 +41,15 @@ body {
 .form-container {
     max-width: 400px;
     width: 100%;
-    background-color: white; /* tambahkan */
-    padding: 25px; /* tambahkan */
-    border-radius: 15px; /* tambahkan */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* tambahkan */
+    background-color: white; 
+    padding: 25px;
+    border-radius: 15px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     align-items: center;
 }
 
 .form-container h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .form-group {
@@ -121,4 +121,18 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.form-check {
+    display: flex;
+    align-items: center; /* Mengatur input dan label agar sejajar */
+}
+
+.form-check-label {
+    margin-right: 10px; /* Atur jarak antara label dan radio button */
+    order: 2; /* Mengatur urutan tampilan label */
+}
+
+.form-check-input {
+    order: 2; /* Mengatur urutan tampilan input */
 }
