@@ -155,7 +155,7 @@ include 'layouts/header.php';
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="justify-content-center">
-                    <video class="ms-1 mt-5 pt-4 img-fluid " controls autoplay="true" width="1100px" loop="true">
+                    <video class="ms-1 mt-5 pt-4 img-fluid " controls autoplay="true" width="1200px" loop="true">
                         <source src="vidio/vid.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -165,7 +165,7 @@ include 'layouts/header.php';
 
         <div class="container mb-4 mt-3">
             <div class="row text-center">
-                <div class="col-md-12">
+                <div class="col-md-13">
                     <div class="jumbotron" style="background-color: #850e35;">
                         <div style="color: white">
                             <h2>Beauty accessories</h2>
@@ -189,7 +189,6 @@ include 'layouts/header.php';
                             </div>
                             <div class="banner__item__text">
                                 <h2>Classic Elegance</h2>
-                                <a href="#">Shop now</a>
                             </div>
                         </div>
                     </div>
@@ -200,7 +199,6 @@ include 'layouts/header.php';
                             </div>
                             <div class="banner__item__text">
                                 <h2>Bohemian Chic</h2>
-                                <a href="#">Shop now</a>
                             </div>
                         </div>
                     </div>
@@ -211,7 +209,6 @@ include 'layouts/header.php';
                             </div>
                             <div class="banner__item__text">
                                 <h2>Minimalist Modern</h2>
-                                <a href="#">Shop now</a>
                             </div>
                         </div>
                     </div>

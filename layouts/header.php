@@ -63,9 +63,6 @@ if (isset($_GET['logout'])) {
                             <a href="login.php">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sign in</button>
                             </a>
-                            <a href="register.php">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sign up</button>
-                            </a>
                         </div>
                     <?php } ?>
                 </form>

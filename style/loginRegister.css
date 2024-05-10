@@ -7,7 +7,7 @@ body {
 
 .container {
     display: flex;
-    height: 100vh;
+    height: 130vh;
     background-size: cover;
     background-position: center;
 }
@@ -135,4 +135,15 @@ h2 {
 
 .form-check-input {
     order: 2; /* Mengatur urutan tampilan input */
+}
+
+.form-check-input {
+    order: 2; 
+    margin-top: -8px;
+}
+
+
+.form-check-label {
+    font-size: 12px;
+    margin-top: -8px;
 }
