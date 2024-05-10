@@ -1,11 +1,11 @@
 <?php
 session_start();
-include('server/connection.php');
+include'../server/connection.php';
 
 
 
 if (isset($_SESSION['logged_in'])) {
-  header('location: index.php');
+  header('location: indexAdmin.php');
   exit;
 }
 
@@ -13,7 +13,7 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
   $email_or_phone = $_POST['email_or_phone'];
   $pwd = $_POST['pwd'];
 
-  $query = "SELECT * FROM akun WHERE (email = ? OR phone = ?) AND pwd = ? LIMIT 1";
+  $query = "SELECT * FROM akunadmin WHERE (email = ? OR phone = ?) AND pwd = ? LIMIT 1";
 
   $stmt_login = $conn->prepare($query);
   $stmt_login->bind_param('sss', $email_or_phone, $email_or_phone, $pwd);
@@ -22,25 +22,23 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
     $stmt_login->store_result();
 
     if ($stmt_login->num_rows() == 1) {
-      $stmt_login->bind_result($id, $username, $email, $phone, $gender, $alamat, $saldo, $photo, $pwd);
+      $stmt_login->bind_result($id, $photo, $username, $email, $phone, $saldo, $pwd);
       $stmt_login->fetch();
 
       $_SESSION['id'] = $id;
+      $_SESSION['photo'] = $photo;
       $_SESSION['username'] = $username;
       $_SESSION['email'] = $email;
       $_SESSION['phone'] = $phone;
-      $_SESSION['gender'] = $gender;
-      $_SESSION['alamat'] = $alamat;
       $_SESSION['saldo'] = $saldo;
-      $_SESSION['photo'] = $photo;
       $_SESSION['logged_in'] = true;
 
-      header('location: index.php?message=Logged in succesfully');
+      header('location: indexAdmin.php?message=Logged in succesfully');
     } else {
-      header('location: login.php?error=Could not verify your account');
+      header('location: loginAdmin.php?error=Could not verify your account');
     }
   } else {
-    header('location: login.php?error=Something went wrong!');
+    header('location: loginAdmin.php?error=Something went wrong!');
   }
 }
 
@@ -53,14 +51,14 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="img/logo/logo cc.png">
-  <title> Login | Createlier</title>
-  <link rel="stylesheet" href="style/loginRegister.css">
+  <link rel="icon" href="../img/logo/logo cc.png">
+  <title> Login Admin | Createlier</title>
+  <link rel="stylesheet" href="../style/loginRegister.css">
 </head>
 
-<body>
+<body class="login-admin-bg">
   <div class="wrapper"> <!--wrapper-->
-    <form autocomplete="off" id="login-form" method="POST" action="login.php">
+    <form autocomplete="off" id="login-form" method="POST" action="loginAdmin.php">
       <?php if (isset($_GET['error'])) ?>
       <div role="alert">
         <?php if (isset($_GET['error'])) {
@@ -68,8 +66,8 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
         }
         ?>
         <div class="form-container">
-          <img src="img/logo/logo createlier.png" alt="logo" width="100px">
-          <h2>Sign in</h2>
+          <img src="../img/logo/logo createlier.png" alt="logo" width="100px">
+          <h2>Login Admin</h2>
           <div class="form-group">
             <input autocomplete="new-email" type="text" name="email_or_phone" placeholder="Email/Phone">
           </div>
@@ -83,10 +81,6 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
             </label>
           </div>
           <button type="submit">Login</button>
-          <div>
-            <p><a href="#">Forgot your password?</a></p>
-            <p>Don't have an account? <a href="register.php">Get started</a>.</p>
-          </div>
         </div>
       </div>
     </form>

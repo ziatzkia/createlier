@@ -58,7 +58,7 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
   <link rel="stylesheet" href="style/loginRegister.css">
 </head>
 
-<body>
+<body class="login-bg">
   <div class="wrapper"> <!--wrapper-->
     <form autocomplete="off" id="login-form" method="POST" action="login.php">
       <?php if (isset($_GET['error'])) ?>
@@ -84,7 +84,6 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
           </div>
           <button type="submit">Login</button>
           <div>
-            <p><a href="#">Forgot your password?</a></p>
             <p>Don't have an account? <a href="register.php">Get started</a>.</p>
           </div>
         </div>

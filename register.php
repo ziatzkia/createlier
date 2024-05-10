@@ -36,7 +36,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['pwd']) 
     <link rel="stylesheet" href="style/loginRegister.css">
 </head>
 
-<body>
+<body class="login-bg">
     <div class="container">
         <div class="left-section">
             <h1>Sign Up to</h1>

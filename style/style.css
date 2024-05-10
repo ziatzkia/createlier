@@ -1,26 +1,5 @@
-.logout {
-    background-color: #850e35;
-}
-
-.logout:hover {
-    background-color: red;
-}
-
-
-.profpic {
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    border: 2px solid #ee6983;
-}
-
 .carousel-control-prev, .carousel-control-next {
     color: black;
-}
-
-.modalBg {
-    background-color:  #ffffff;
-    border: 10px solid #850e35;
 }
 
 .footerBg {
@@ -76,4 +55,22 @@
 
 .banner .banner__item__text a:hover {
     background-color: #850e35;
+}
+
+.dd-logout {
+    color: #850e35;
+}
+
+.dd-logout:hover {
+    color: #fff;
+    background-color: #850e35;
+}
+
+.dd-item:hover {
+    color: #ee6983;
+    background-color: #ffc4c4;
+}
+
+.dd-profile {
+    border-radius: 100px;
 }

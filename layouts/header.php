@@ -10,6 +10,21 @@ if (isset($_GET['logout'])) {
         exit;
     }
 }
+
+$id = $_SESSION['id'];
+
+$query = "SELECT * FROM akun WHERE id = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param('i', $id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc(); // Ambil data pengguna
+} else {
+    echo "User not found";
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -54,9 +69,22 @@ if (isset($_GET['logout'])) {
                     </a>
                     <span class="vertical-line">|</span>
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
+                        <div class="btn-group dropstart">
+                            <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../img/profil/<?php echo $user['photo']; ?>" alt="Profile Picture" width="30px" class="dd-profile">
+                            </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item dd-item" href="../profil.php">Profile</a></li>
+                                    <li><a class="dropdown-item dd-item" href="#">Cart</a></li>
+                                    <li><a class="dropdown-item dd-item" href="../balance.php">Balance</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item dd-logout" href="../logout.php">Logout</a></li>
+                                </ul>
+                        </div>
                     <?php } else { ?>
-                        <div class="btn-container"> 
+                        <div class="btn-container">
                             <a href="login.php">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sign in</button>
                             </a>
@@ -66,40 +94,6 @@ if (isset($_GET['logout'])) {
             </div>
         </div>
     </nav>
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content modalBg">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="profileModalLabel"> Profile</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <?php
-                    echo '<div class="row">';
-                    echo '<div class="col">';
-                    echo '<td><a href="' . $_SESSION['photo'] . '"><img src="../img/profil/' . $_SESSION['photo'] . '" alt="Foto User" class="profpic"></a></td>';
-                    echo '<p><strong>Email:</strong> ' . $_SESSION['email'] . '</p>';
-                    echo '<p><strong>Phone:</strong> ' . $_SESSION['phone'] . '</p>';
-                    echo '<p><strong>Address:</strong> ' . $_SESSION['alamat'] . '</p>';
-                    echo '<p><strong>Gender:</strong> ' . $_SESSION['gender'] . '</p>';
-                    echo '<p><strong>Saldo:</strong> ' . $_SESSION['saldo'] . '</p>';
-                    echo '</div>';
-                    echo '</div>';
-                    echo '<hr>';
-                    ?>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="logout.php">
-                        <button type="button" class="btn btn-primary logout">Logout</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
