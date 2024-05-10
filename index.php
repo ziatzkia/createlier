@@ -89,7 +89,7 @@ include 'layouts/header.php';
                         <p>accessories are not just additions to your appearance,</p>
                         <p>but are the embodiment of personal elegance and uniqueness.</p>
                         <p>Every accessory we produce is the result of skilled hand craftsmanship and attention to detail.</p><br><br><br>
-                        <a href="login.php">
+                        <a href="shop.php">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Buy now</button>
                         </a>
                     </ul>
@@ -139,7 +139,7 @@ include 'layouts/header.php';
                         <p>but also provide you with the opportunity to create something truly unique.</p>
                         <p>With our custom product service, you can express your own creativity</p>
                         <p>and have accessories made specifically to your liking.</p><br><br><br>
-                        <a href="login.php">
+                        <a href="custom.php">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Custom now</button>
                         </a>
                     </ul>
@@ -217,7 +217,12 @@ include 'layouts/header.php';
         </section>
 
 </body>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </html>
 <?php
 include 'layouts/footer.php';

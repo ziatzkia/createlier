@@ -48,18 +48,15 @@ if (isset($_GET['logout'])) {
                         <a class="nav-link active" href="about.php">About Us</a>
                     </li>
                 </ul>
-                <!-- <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 60%;">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
-                </form> -->
                 <form class="form-inline my-2 my-lg-0">
                     <a href="../user/shoppingBag.php">
                         <img src="../img/icon/shopping-bag.png" alt="shopping bag" width="30px" height="30px">
                     </a>
+                    <span class="vertical-line">|</span>
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>
                         <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-bs-toggle="modal" data-bs-target="#profileModal">Profile</button>
                     <?php } else { ?>
-                        <div class="btn-container">
+                        <div class="btn-container"> 
                             <a href="login.php">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sign in</button>
                             </a>
@@ -76,7 +73,7 @@ if (isset($_GET['logout'])) {
         <div class="modal-dialog">
             <div class="modal-content modalBg">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="profileModalLabel">Profile</h5>
+                    <h5 class="modal-title" id="profileModalLabel"> Profile</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

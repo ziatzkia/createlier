@@ -32,6 +32,7 @@
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Payment Methods</a></li>
                         <li><a href="#">Delivery Service</a></li>
+                        <li><a href="about.php">About us</a></li>
                     </ul>
                 </div>
             </div>
