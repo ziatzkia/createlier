@@ -77,6 +77,7 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    margin-top: 17px;
 }
 
 button:hover {
@@ -134,7 +135,14 @@ h2 {
 }
 
 .form-check-input {
-    order: 2; /* Mengatur urutan tampilan input */
+    order: 2; 
+    margin-top: -8px;
+}
+
+/* CSS */
+.form-check-label {
+    font-size: 12px;
+    margin-top: -8px;
 }
 
 .form-check-input {
