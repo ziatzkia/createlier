@@ -74,3 +74,33 @@
 .dd-profile {
     border-radius: 100px;
 }
+
+
+
+.bg-profile-1 {
+    border-radius: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 7%;
+}
+
+.text-profile-1 {
+    color: #850e35;
+}
+
+.img-profile {
+    border-radius: 100%;
+}
+
+.btn-edit-profile {
+    margin-top: 20px;
+    background-color: #ee6983;
+    border: none;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.text-profile {
+    text-decoration: none;
+    color: white;
+}

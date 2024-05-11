@@ -20,7 +20,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    $user = $result->fetch_assoc(); // Ambil data pengguna
+    $user = $result->fetch_assoc();
 } else {
     echo "User not found";
     exit;
@@ -64,7 +64,7 @@ if ($result->num_rows > 0) {
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <a href="../user/shoppingBag.php">
+                    <a href="../cart.php">
                         <img src="../img/icon/shopping-bag.png" alt="shopping bag" width="30px" height="30px">
                     </a>
                     <span class="vertical-line">|</span>
