@@ -10,21 +10,6 @@ if (isset($_GET['logout'])) {
         exit;
     }
 }
-
-$id = $_SESSION['id'];
-
-$query = "SELECT * FROM akun WHERE id = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param('i', $id);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows > 0) {
-    $user = $result->fetch_assoc();
-} else {
-    echo "User not found";
-    exit;
-}
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +50,7 @@ if ($result->num_rows > 0) {
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <a href="../cart.php">
-                        <img src="../img/icon/shopping-bag.png" alt="shopping bag" width="30px" height="30px">
+                        <img src="../img/banner/icon/shopping-bag (2).png" alt="shopping bag" width="30px" height="30px">
                     </a>
                     <span class="vertical-line">|</span>
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>

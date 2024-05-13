@@ -1,4 +1,5 @@
 <?php
+
 include 'server/connection.php';
 
 if (isset($_SESSION['logged in'])) {
@@ -89,8 +90,8 @@ include 'layouts/header.php';
                         <p>accessories are not just additions to your appearance,</p>
                         <p>but are the embodiment of personal elegance and uniqueness.</p>
                         <p>Every accessory we produce is the result of skilled hand craftsmanship and attention to detail.</p><br><br><br>
-                        <a href="shop.php">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Buy now</button>
+                        <a href="shop.php" >
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #850e35;">Buy now</button>
                         </a>
                     </ul>
                 </div>
@@ -140,7 +141,7 @@ include 'layouts/header.php';
                         <p>With our custom product service, you can express your own creativity</p>
                         <p>and have accessories made specifically to your liking.</p><br><br><br>
                         <a href="custom.php">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Custom now</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #850e35;">Custom now</button>
                         </a>
                     </ul>
                 </div>

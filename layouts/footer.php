@@ -39,7 +39,7 @@
             <div class="col-lg-2 col-md-3 col-sm-6">
                 <div class="footer__widget">
                     <h4>Contact us</h4>
-                    <ul class="list-unstyled d-flex justify-content-start" style="color: black;">
+                    <ul class="list-unstyled d-flex justify-content-start" style="color: white;">
                         <li class="me-3"><a href="https://www.instagram.com/ndnptrr_?igsh=bXg1bmNuNHpiOXF6" target="_blank"><i class="bi bi-instagram" style="font-size: 30px;"></i></a></li>
                         <li class="me-3"><a href="zia.tazkiatul@mhs.itenas.ac.id"><i class="bi bi-envelope" style="font-size: 30px;"></i></a></li>
                         <li class="me-3"><a href="tel:+6285156332712"><i class="bi bi-telephone" style="font-size: 30px;"></i></a></li>
@@ -48,8 +48,6 @@
                     </ul>
                 </div>
             </div>
-
-
 
         </div>
         <div class="row">
