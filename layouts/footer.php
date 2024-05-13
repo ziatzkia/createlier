@@ -19,9 +19,9 @@
                 <div class="footer__widget">
                     <h4>Product</h4>
                     <ul style="list-style-type: none;">
-                        <li><a href="#">Necklaces</a></li>
-                        <li><a href="#">Bricelet</a></li>
-                        <li><a href="#">Ring</a></li>
+                        <li><a href="shop.php">Necklaces</a></li>
+                        <li><a href="shop.php">Bricelet</a></li>
+                        <li><a href="shop.php">Ring</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,11 +40,11 @@
                 <div class="footer__widget">
                     <h4>Contact us</h4>
                     <ul class="list-unstyled d-flex justify-content-start" style="color: black;">
-                        <li class="me-3"><a href="https://www.instagram.com/akun-instragam" target="_blank"><i class="bi bi-instagram" style="font-size: 30px;"></i></a></li>
-                        <li class="me-3"><a href="mailto:example@example.com"><i class="bi bi-envelope" style="font-size: 30px;"></i></a></li>
-                        <li class="me-3"><a href="tel:+1234567890"><i class="bi bi-telephone" style="font-size: 30px;"></i></a></li>
-                        <li class="me-3"><a href="https://www.facebook.com/akun-facebook" target="_blank"><i class="bi bi-facebook" style="font-size: 30px;"></i></a></li>
-                        <li><a href="https://twitter.com/akun-twitter" target="_blank"><i class="bi bi-twitter-x" style="font-size: 30px;"></i></a></li>
+                        <li class="me-3"><a href="https://www.instagram.com/ndnptrr_?igsh=bXg1bmNuNHpiOXF6" target="_blank"><i class="bi bi-instagram" style="font-size: 30px;"></i></a></li>
+                        <li class="me-3"><a href="zia.tazkiatul@mhs.itenas.ac.id"><i class="bi bi-envelope" style="font-size: 30px;"></i></a></li>
+                        <li class="me-3"><a href="tel:+6285156332712"><i class="bi bi-telephone" style="font-size: 30px;"></i></a></li>
+                        <li class="me-3"><a href="https://www.instagram.com/jmlhkmlh?igsh=NndlbmN6anNiOWwz" target="_blank"><i class="bi bi-facebook" style="font-size: 30px;"></i></a></li>
+                        <li><a href="https://www.instagram.com/diyanpe_?igsh=MTAxNDI1cmt5dXgxbA==" target="_blank"><i class="bi bi-twitter-x" style="font-size: 30px;"></i></a></li>
                     </ul>
                 </div>
             </div>

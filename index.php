@@ -56,7 +56,7 @@ include 'layouts/header.php';
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="img/hero/c.jpg" class="d-block w-100" alt="cincin">
+                <img src="img/hero/c.png" class="d-block w-100" alt="cincin">
                 <div class="carousel-caption d-none d-md-block">
                     <h2>Ring</h2>
                     <p>Some representative placeholder content for the third slide.</p>
@@ -156,7 +156,7 @@ include 'layouts/header.php';
             <div class="col-md-12">
                 <div class="justify-content-center">
                     <video class="ms-1 mt-5 pt-4 img-fluid " controls autoplay="true" width="1200px" loop="true">
-                        <source src="vidio/vid.mp4" type="video/mp4">
+                        <source src="vidio/vidcreatelier.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>

@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <p>Halaman utama</p>
 </body>
 </html>
