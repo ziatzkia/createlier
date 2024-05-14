@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'server/connection.php';
 
 if (isset($_GET['logout'])) {
@@ -59,7 +58,7 @@ if (isset($_GET['logout'])) {
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>
                         <div class="btn-group dropstart">
                             <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../img/profil/<?php echo $user['photo']; ?>" alt="Profile Picture" width="30px" class="dd-profile">
+                                <img src="../img/profil/<?php echo $_SESSION['photo'] ?>" alt="Profile Picture" width="30px" class="dd-profile">
                             </button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item dd-item" href="../profil.php">Profile</a></li>
