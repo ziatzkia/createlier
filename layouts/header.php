@@ -35,24 +35,27 @@ if (isset($_GET['logout'])) {
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <li class="nav-item jarak">
                         <a class="nav-link active" href="index.php">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item jarak">
                         <a class="nav-link active" href="shop.php">Shop</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item jarak">
                         <a class="nav-link active" href="custom.php">Custom</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item jarak">
                         <a class="nav-link active" href="about.php">About Us</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <a href="../cart.php">
+                    <a class="jarak-ikon" href="../favorite.php">
+                        <img src="../img/banner/icon/like.png" alt="favorite" width="25px" height="25px">
+                    </a>
+                    <a class="jarak-ikon" href="../cart.php">
                         <img src="../img/banner/icon/shopping-bag (2).png" alt="shopping bag" width="30px" height="30px">
                     </a>
-                    <span class="vertical-line">|</span>
+                    <span class="vertical-line  jarak-ikon">|</span>
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>
                         <div class="btn-group dropstart">
                             <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
