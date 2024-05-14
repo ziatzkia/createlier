@@ -5,7 +5,7 @@ include'../server/connection.php';
 
 
 if (isset($_SESSION['logged_in'])) {
-  header('location: indexAdmin.php');
+  header('location: index.php');
   exit;
 }
 
@@ -13,7 +13,7 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
   $email_or_phone = $_POST['email_or_phone'];
   $pwd = $_POST['pwd'];
 
-  $query = "SELECT * FROM akunadmin WHERE (email = ? OR phone = ?) AND pwd = ? LIMIT 1";
+  $query = "SELECT * FROM admins WHERE (email = ? OR phone = ?) AND pwd = ? LIMIT 1";
 
   $stmt_login = $conn->prepare($query);
   $stmt_login->bind_param('sss', $email_or_phone, $email_or_phone, $pwd);
@@ -33,12 +33,12 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
       $_SESSION['saldo'] = $saldo;
       $_SESSION['logged_in'] = true;
 
-      header('location: indexAdmin.php?message=Logged in succesfully');
+      header('location: index.php?message=Logged in succesfully');
     } else {
-      header('location: loginAdmin.php?error=Could not verify your account');
+      header('location: login.php?error=Could not verify your account');
     }
   } else {
-    header('location: loginAdmin.php?error=Something went wrong!');
+    header('location: login.php?error=Something went wrong!');
   }
 }
 
