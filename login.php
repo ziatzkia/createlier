@@ -22,17 +22,17 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
     $stmt_login->store_result();
 
     if ($stmt_login->num_rows() == 1) {
-      $stmt_login->bind_result($id, $username, $email, $phone, $gender, $alamat, $saldo, $photo, $pwd);
+      $stmt_login->bind_result($id, $photo, $username, $email, $phone, $alamat, $gender, $saldo, $pwd);
       $stmt_login->fetch();
 
       $_SESSION['id'] = $id;
+      $_SESSION['photo'] = $photo;
       $_SESSION['username'] = $username;
       $_SESSION['email'] = $email;
       $_SESSION['phone'] = $phone;
-      $_SESSION['gender'] = $gender;
       $_SESSION['alamat'] = $alamat;
+      $_SESSION['gender'] = $gender;
       $_SESSION['saldo'] = $saldo;
-      $_SESSION['photo'] = $photo;
       $_SESSION['logged_in'] = true;
 
       header('location: index.php?message=Logged in succesfully');
