@@ -58,15 +58,18 @@ if (isset($_GET['logout'])) {
                         <a class="nav-link active" href="custom.php">Custom</a>
                     </li>
                     <li class="nav-item jarak">
-                        <a class="nav-link active" href="about.php">About Us</a>
+                        <a class="nav-link active" href="blog.php">Blog</a>
+                    </li>
+                    <li class="nav-item jarak">
+                        <a class="nav-link active" href="about.php">About us</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <a class="jarak-ikon" href="../favorite.php">
-                        <img src="../img/banner/icon/like.png" alt="favorite" width="25px" height="25px">
+                        <img src="../img/icon/like.png" alt="favorite" width="25px" height="25px">
                     </a>
-                    <a class="jarak-ikon" href="../cart.php">
-                        <img src="../img/banner/icon/shopping-bag (2).png" alt="shopping bag" width="30px" height="30px">
+                    <a class="jarak-ikon" href="../shop-cart.php">
+                        <img src="../img/icon/shopping-bag (2).png" alt="shopping bag" width="30px" height="30px">
                     </a>
                     <span class="vertical-line  jarak-ikon">|</span>
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>

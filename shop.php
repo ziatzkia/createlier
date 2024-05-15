@@ -1,5 +1,6 @@
 <?php
-$kurs_dollar = 15000; 
+session_start();
+$kurs_dollar = 15000;
 include('server/connection.php');
 
 if (isset($_POST['search']) && isset($_POST['product_category'])) {
@@ -48,13 +49,13 @@ include('layouts/header.php');
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
+                <div class="shop__sidebar__search">
+                    <form action="#">
+                        <input type="text" placeholder="Search...">
+                        <button type="submit"><span class="icon_search"></span></button>
+                    </form>
+                </div>
                 <div class="shop__sidebar">
-                    <div class="shop__sidebar__search">
-                        <form action="#">
-                            <input type="text" placeholder="Search...">
-                            <button type="submit"><span class="icon_search"></span></button>
-                        </form>
-                    </div>
                     <div class="shop__sidebar__accordion">
                         <form method="POST" action="shop.php">
                             <div class="accordion" id="accordionExample">

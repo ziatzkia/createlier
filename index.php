@@ -34,46 +34,64 @@ include 'layouts/header.php';
 
 <body>
 
-    <!-- Carousel Begin -->
-    <div id="carouselExampleCaptions" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__items set-bg" data-setbg="img/hero/5.png">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-7 col-md-8">
+                            <div class="hero__text">
+                                <h6>Summer Collection</h6>
+                                <h2>Fall - Winter Collections 2030</h2>
+                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
+                                    commitment to exceptional quality.</p>
+                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                                <div class="hero__social">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="img/hero/c.png">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-7 col-md-8">
+                            <div class="hero__text">
+                                <h6>Summer Collection</h6>
+                                <h2>Fall - Winter Collections 2030</h2>
+                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
+                                    commitment to exceptional quality.</p>
+                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                                <div class="hero__social">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="img/hero/1.png">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-7 col-md-8">
+                            <div class="hero__text">
+                                <h4 style="color: #850e35;">Collaboration</h4>
+                                <h2>Spring Collections 2025</h2>
+                                <p>A specialist collaboration with K-pop superstars Jennie.
+                                    bringing you the latest trends infused with their unique style and flair.
+                                    Dive into a world where fashion meets music,
+                                    where each piece tells a story of creativity and innovation</p>
+                                <div class="hero__social">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/hero/a.png" class="d-block w-100" alt="kalung">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2>Necklaces</h2>
-                    <p>Some representative placeholder content for the first slide.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="img/hero/b.png" class="d-block w-100" alt="gelang">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2>Bricelet</h2>
-                    <p>Some representative placeholder content for the second slide.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="img/hero/c.png" class="d-block w-100" alt="cincin">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2>Ring</h2>
-                    <p>Some representative placeholder content for the third slide.</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <!-- Crousel end -->
+    </section>
+    <!-- Hero Section End -->
 
 
     <!-- Content page 1 -->
@@ -81,16 +99,15 @@ include 'layouts/header.php';
         <div class="row">
             <div class="col-md-7 mt-5">
                 <div class="jumbotron jumbo-right translucent-grid p-2" style="background-color: rgba(255, 255, 255, 0.5);">
-                    <div style="color: #850e35">
+                    <div>
                         <h4>Handmade Accessories Bring an Elegant and Personal Touch</h4>
-                        <hr>
+                        <hr style="background-color: #850e35;">
                     </div>
                     <ul class="list-unstyled">
-                        <p>In the world of Createlier,</p>
-                        <p>accessories are not just additions to your appearance,</p>
+                        <p>In the world of Createlier,accessories are not just additions to your appearance,</p>
                         <p>but are the embodiment of personal elegance and uniqueness.</p>
                         <p>Every accessory we produce is the result of skilled hand craftsmanship and attention to detail.</p><br><br><br>
-                        <a href="shop.php" >
+                        <a href="shop.php">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #850e35;">Buy now</button>
                         </a>
                     </ul>
@@ -133,7 +150,7 @@ include 'layouts/header.php';
                 <div class="jumbotron jumbo-right translucent-grid p-2" style="background-color: rgba(255, 255, 255, 0.5);">
                     <div style="color: #850e35">
                         <h4>Enhance Your Style with Your Own Unique Touch at Createlier</h4>
-                        <hr>
+                        <hr style="background-color: #850e35;">
                     </div>
                     <ul class="list-unstyled">
                         <p>At Createlier, we don't just offer beautiful ready-to-wear accessories,</p>
@@ -150,80 +167,67 @@ include 'layouts/header.php';
     </div>
     </div>
     <!-- end page 2 -->
-
-    <!-- vidio page -->
-    <div class="container mt-1 mb-4">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="justify-content-center">
-                    <video class="ms-1 mt-5 pt-4 img-fluid " controls autoplay="true" width="1200px" loop="true">
-                        <source src="vidio/vidcreatelier.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-        <!-- end vidio page -->
-
-        <div class="container mb-4 mt-3">
-            <div class="row text-center">
-                <div class="col-md-13">
-                    <div class="jumbotron" style="background-color: #850e35;">
-                        <div style="color: white">
-                            <h2>Beauty accessories</h2>
-                            <hr>
-                        </div>
-                        <div style="color: white">
-                            <p>Enjoy every accessory that the designer has crafted for you, as each piece is made with passion, dedication, and creativity.</p>
-                        </div>
+<hr style="background-color: #850e35;">
+    <!-- Latest Blog Section Begin -->
+    <section class="latest spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Latest News</span>
+                        <h2>Createlir x Jennie</h2>
+                        <p>Coming soon</p>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <section class="banner spad">
-            <div class="container">
+            <div class="container mt-1 mb-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="justify-content-center">
+                            <video class="ms-1 mt-5 pt-4 img-fluid " controls autoplay="true" width="1200px" loop="true">
+                                <source src="vidio/vidcreatelier.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div><br><br>
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="banner__item">
-                            <div class="banner__item__pic">
-                                <img src="img/banner/banner3.png" alt="">
-                            </div>
-                            <div class="banner__item__text">
-                                <h2>Classic Elegance</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="banner__item banner__item--middle">
-                            <div class="banner__item__pic">
-                                <img src="img/banner/banner2.png" alt="">
-                            </div>
-                            <div class="banner__item__text">
-                                <h2>Bohemian Chic</h2>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="blog__item">
+                            <div class="blog__item__pic set-bg" data-setbg="img/blog/blog1.jpg"></div>
+                            <div class="blog__item__text">
+                                <span><img src="img/icon/calendar.png" alt=""> 15 Oktober 2025</span>
+                                <h5>What Curling Irons Are The Best Ones</h5>
+                                <a href="#">Read More</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="banner__item banner__item--last">
-                            <div class="banner__item__pic">
-                                <img src="img/banner/banner1.png" alt="">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="blog__item">
+                            <div class="blog__item__pic set-bg" data-setbg="img/blog/blog2.jpg"></div>
+                            <div class="blog__item__text">
+                                <span><img src="img/icon/calendar.png" alt=""> 21 Oktober 2025</span>
+                                <h5>Eternity Bands Do Last Forever</h5>
+                                <a href="#">Read More</a>
                             </div>
-                            <div class="banner__item__text">
-                                <h2>Minimalist Modern</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="blog__item">
+                            <div class="blog__item__pic set-bg" data-setbg="img/blog/blog3.jpg"></div>
+                            <div class="blog__item__text">
+                                <span><img src="img/icon/calendar.png" alt=""> 28 FOktober 2025</span>
+                                <h5>Necklaces Pink</h5>
+                                <a href="#">Read More</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+    </section>
+    <!-- Latest Blog Section End -->
 
 </body>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 </html>
 <?php
 include 'layouts/footer.php';

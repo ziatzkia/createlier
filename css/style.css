@@ -109,12 +109,15 @@ ol {
 /*---------------------
   Helper CSS
 -----------------------*/
-.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
+.glyphicon {
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
 
 small {
-display: block;
-line-height: 1.428571429;
-color: #999;
+	display: block;
+	line-height: 1.428571429;
+	color: #999;
 }
 
 .section-title {
@@ -1437,7 +1440,12 @@ color: #999;
 
 .shop__product__option__right {
 	text-align: right;
+	border: 1px solid #000000;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: #fff;
 }
+
 
 .shop__product__option__right p {
 	display: inline-block;
@@ -2069,7 +2077,7 @@ color: #999;
 -----------------------*/
 
 .breadcrumb-option {
-	background: #0173b2;
+	background: #850E35;
 	padding: 40px 0;
 }
 

@@ -1,17 +1,14 @@
+<link rel="stylesheet" href="../style/style.css">
 <!-- Footer Section Begin -->
-
-<head>
-    <link rel="stylesheet" href="../style/style.css">
-</head>
 <footer class="footer ">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer__about">
                     <div class="footer__logo" style="text-align: center;">
-                        <a href="../index.php"><img src="img/logo/logo.png" alt="" width="200x" height="auto"></a>
+                        <a href="../index.php"><img src="img/logo/logowhite.png" alt="" width="200x" height="auto"></a>
                     </div>
-                    <p>Specializing in bracelets, necklaces, and rings, Createlier offers a unique selection of accessories to elevate your style.</p>
+                    <p>Specializing in bracelets, necklaces, rings, hair accessories and key chain. Createlier offers a unique selection of accessories to elevate your style.</p><br>
                     <a href="#"><img src="img/payment.png" alt=""></a>
                 </div>
             </div>
@@ -22,6 +19,8 @@
                         <li><a href="shop.php">Necklaces</a></li>
                         <li><a href="shop.php">Bricelet</a></li>
                         <li><a href="shop.php">Ring</a></li>
+                        <li><a href="shop.php">Hair Acc</a></li>
+                        <li><a href="shop.php">Key Chain</a></li>
                     </ul>
                 </div>
             </div>
@@ -29,7 +28,7 @@
                 <div class="footer__widget">
                     <h4>Service</h4>
                     <ul style="list-style-type: none;">
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="blog.php">Blog</a></li>
                         <li><a href="#">Payment Methods</a></li>
                         <li><a href="#">Delivery Service</a></li>
                         <li><a href="about.php">About us</a></li>
@@ -38,7 +37,7 @@
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6">
                 <div class="footer__widget">
-                    <h4>Contact us</h4>
+                    <h4>Contact us</h4><br>
                     <ul class="list-unstyled d-flex justify-content-start" style="color: white;">
                         <li class="me-3"><a href="https://www.instagram.com/ndnptrr_?igsh=bXg1bmNuNHpiOXF6" target="_blank"><i class="bi bi-instagram" style="font-size: 30px;"></i></a></li>
                         <li class="me-3"><a href="zia.tazkiatul@mhs.itenas.ac.id"><i class="bi bi-envelope" style="font-size: 30px;"></i></a></li>
@@ -58,7 +57,7 @@
                         <script>
                             document.write(new Date().getFullYear());
                         </script>
-                        | Createlier Co <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        | All Rights Reserved
                     </p>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </div>
@@ -68,21 +67,12 @@
 </footer>
 <!-- Footer Section End -->
 
-<!-- Search Begin -->
-<!-- <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div> -->
-<!-- Search End -->
 
 <!-- Js Plugins -->
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Core plugin JavaScript-->
+
 <script src="js/jquery-easing/jquery.easing.min.js"></script>
 <script src="js/jquery.nice-select.min.js"></script>
 <script src="js/jquery.nicescroll.min.js"></script>
