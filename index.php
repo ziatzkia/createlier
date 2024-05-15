@@ -157,7 +157,7 @@ include 'layouts/header.php';
             <div class="col-md-12">
                 <div class="justify-content-center">
                     <video class="ms-1 mt-5 pt-4 img-fluid " controls autoplay="true" width="1200px" loop="true">
-                        <source src="vidio/vidcreatelier.mp4" type="video/mp4">
+                        <source src="vidio/createlier.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
