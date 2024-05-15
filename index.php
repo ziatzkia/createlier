@@ -167,6 +167,7 @@ include 'layouts/header.php';
     </div>
     </div>
     <!-- end page 2 -->
+<<<<<<< HEAD
 <hr style="background-color: #850e35;">
     <!-- Latest Blog Section Begin -->
     <section class="latest spad">
@@ -177,6 +178,33 @@ include 'layouts/header.php';
                         <span>Latest News</span>
                         <h2>Createlir x Jennie</h2>
                         <p>Coming soon</p>
+=======
+
+    <!-- vidio page -->
+    <div class="container mt-1 mb-4">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="justify-content-center">
+                    <video class="ms-1 mt-5 pt-4 img-fluid " controls autoplay="true" width="1200px" loop="true">
+                        <source src="vidio/createlier.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <!-- end vidio page -->
+
+        <div class="container mb-4 mt-3">
+            <div class="row text-center">
+                <div class="col-md-13">
+                    <div class="jumbotron" style="background-color: #850e35;">
+                        <div style="color: white">
+                            <h2>Beauty accessories</h2>
+                            <hr>
+                        </div>
+                        <div style="color: white">
+                            <p>Enjoy every accessory that the designer has crafted for you, as each piece is made with passion, dedication, and creativity.</p>
+                        </div>
+>>>>>>> 4c9bbf036d45894bc12e136d6d0a748c415f4a03
                     </div>
                 </div>
             </div>

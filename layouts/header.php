@@ -5,6 +5,7 @@ if (isset($_GET['logout'])) {
     if (isset($_SESSION['logged_in'])) {
         unset($_SESSION['logged_in']);
         unset($_SESSION['user_email']);
+        unset($_SESSION['photo']);
         header('location: index.php');
         exit;
     }
@@ -19,6 +20,7 @@ if (isset($_GET['logout'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="img/logo/logo cc.png">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -33,7 +35,6 @@ if (isset($_GET['logout'])) {
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <link rel="icon" href="img/icon/store.png" type="image/png">
 </head>
 
 <body>
@@ -73,19 +74,22 @@ if (isset($_GET['logout'])) {
                     </a>
                     <span class="vertical-line  jarak-ikon">|</span>
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>
+                        <?php
+                        // Path relatif untuk foto profil
+                        $profilePhoto = isset($_SESSION['photo']) ? '../img/profil/' . $_SESSION['photo'] : 'default_photo.png'; ?>
                         <div class="btn-group dropstart">
                             <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../img/profil/<?php echo $_SESSION['photo'] ?>" alt="Profile Picture" width="30px" class="dd-profile">
+                                <img src="<?php echo $profilePhoto; ?>" alt="Profile Picture" width="30px" class="dd-profile">
                             </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item dd-item" href="../profil.php">Profile</a></li>
-                                    <li><a class="dropdown-item dd-item" href="#">Cart</a></li>
-                                    <li><a class="dropdown-item dd-item" href="../balance.php">Balance</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item dd-logout" href="../logout.php">Logout</a></li>
-                                </ul>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item dd-item" href="../profil.php">Profile</a></li>
+                                <li><a class="dropdown-item dd-item" href="#">Cart</a></li>
+                                <li><a class="dropdown-item dd-item" href="../balance.php">Balance</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item dd-logout" href="../logout.php">Logout</a></li>
+                            </ul>
                         </div>
                     <?php } else { ?>
                         <div class="btn-container">

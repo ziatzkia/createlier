@@ -1,14 +1,13 @@
 <?php
 include 'server/connection.php';
 
-if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['pwd']) && isset($_POST['phone']) && isset($_POST['alamat']) && isset($_POST['gender']) && isset($_POST['photo'])) {
+if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['alamat']) && isset($_POST['gender']) && isset($_POST['pwd'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $pwd = $_POST['pwd'];
     $phone = $_POST['phone'];
     $alamat = $_POST['alamat'];
     $gender = $_POST['gender'];
-    $photo = $_POST['photo'];
+    $pwd = $_POST['pwd'];
 
     $checkQuery = "SELECT * FROM akun WHERE username = '$username'";
     $result = mysqli_query($conn, $checkQuery);
@@ -16,7 +15,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['pwd']) 
     if (mysqli_num_rows($result) > 0) {
         echo "Username already exists. Please choose a different username.";
     } else {
-        $query = "INSERT INTO akun (username, email, pwd, phone, alamat ,gender,photo) VALUES ('$username', '$email', '$pwd', '$phone', '$alamat' ,'$gender','$photo')";
+        $query = "INSERT INTO akun (username, email, phone, alamat ,gender, pwd) VALUES ('$username', '$email', '$phone', '$alamat' ,'$gender', '$pwd')";
         mysqli_query($conn, $query);
         echo "Record inserted successfully!";
     }
@@ -59,12 +58,6 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['pwd']) 
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="pwd" class="col-sm-3 col-form-label">Password:</label>
-                        <div class="col-sm-9">
-                            <input type="password" id="pwd" name="pwd" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group row">
                         <label for="phone" class="col-sm-3 col-form-label">Phone:</label>
                         <div class="col-sm-9">
                             <input type="text" id="phone" name="phone" class="form-control" required>
@@ -79,13 +72,17 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['pwd']) 
                     <div class="form-group row">
                         <label for="gender" class="col-sm-3 col-form-label">Gender:</label>
                         <div class="col-sm-9">
-                            <input type="text" id="gender" name="gender" class="form-control" required>
+                            <select class="form-control" id="gender" name="gender" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
                         </div>
                     </div>
+
                     <div class="form-group row">
-                        <label for="photo" class="col-sm-3 col-form-label">Photo:</label>
+                        <label for="pwd" class="col-sm-3 col-form-label">Password:</label>
                         <div class="col-sm-9">
-                            <input type="file" id="photo" name="photo" class="form-control-file mb-2" required>
+                            <input type="password" id="pwd" name="pwd" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row">
