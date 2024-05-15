@@ -75,13 +75,13 @@
     border-radius: 100px;
 }
 
-
-
 .bg-profile-1 {
-    border-radius: 50px;
+    border-radius: 40px;
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 7%;
+    margin-top: 3%;
+    border: 5px solid #ee6983;
+    background-color: #fff;
 }
 
 .text-profile-1 {
@@ -100,6 +100,10 @@
     padding: 6px;
 }
 
+.btn-edit-profile:hover {
+    background-color: #850e35;
+}
+
 .text-profile {
     text-decoration: none;
     color: white;
@@ -111,4 +115,10 @@
 
 .jarak {
     padding-right: 70px;
+}
+
+.h1-profil {
+    justify-content: center;
+    display: flex;
+    margin-top: 10px;
 }
