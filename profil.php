@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
 </head>
 
 <body class="p-3 m-0 border-0 bd-example m-0 border-0" background="img/walpaper.jpg">
-    <a href="index.php"><img src="img/banner/icon/close.png" alt="close" width="30px"></a>
+    <a href="index.php"><img src="img/icon/close.png" alt="close" width="30px"></a>
     <div class="row g-0 position-relative bg-profile-1">
     <h1 class="h1-profil">Profile</h1>
         <div class="col-md-6 mb-md-0 p-md-4">

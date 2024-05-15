@@ -1,4 +1,5 @@
 <?php
+session_start();
     include('server/connection.php');
 
     $query_blogs = "SELECT * FROM blogs ORDER BY blog_id";

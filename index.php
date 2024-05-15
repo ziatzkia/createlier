@@ -167,8 +167,24 @@ include 'layouts/header.php';
     </div>
     </div>
     <!-- end page 2 -->
-<<<<<<< HEAD
-<hr style="background-color: #850e35;">
+
+    <hr style="background-color: #850e35;">
+
+    <!-- vidio end -->
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="justify-content-center">
+                <video class="ms-1 mt-5 pt-4 img-fluid" controls autoplay loop width="100%">
+                    <source src="vidio/createlier.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- vidio end -->
+
+    <hr style="background-color: #850e35;">
+
     <!-- Latest Blog Section Begin -->
     <section class="latest spad">
         <div class="container">
@@ -176,84 +192,56 @@ include 'layouts/header.php';
                 <div class="col-lg-12">
                     <div class="section-title">
                         <span>Latest News</span>
-                        <h2>Createlir x Jennie</h2>
+                        <h2>Createlier x Jennie</h2>
                         <p>Coming soon</p>
-=======
-
-    <!-- vidio page -->
-    <div class="container mt-1 mb-4">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="justify-content-center">
-                    <video class="ms-1 mt-5 pt-4 img-fluid " controls autoplay="true" width="1200px" loop="true">
-                        <source src="vidio/createlier.mp4" type="video/mp4">
-                    </video>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-13">
+                    <div class="justify-content-center">
+                        <video class="ms-1 mt-5 pt-4 img-fluid" controls autoplay loop width="100%">
+                            <source src="vidio/vidcreatelier.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog1.jpg"></div>
+                        <div class="blog__item__text">
+                            <span><img src="img/icon/calendar.png" alt=""> 15 Oktober 2025</span>
+                            <h5>New Pop Store</h5>
+                            <a href="blog.php">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog2.jpg"></div>
+                        <div class="blog__item__text">
+                            <span><img src="img/icon/calendar.png" alt=""> 21 Oktober 2025</span>
+                            <h5>Product Release With Jennie</h5>
+                            <a href="blog.php">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog3.jpg"></div>
+                        <div class="blog__item__text">
+                            <span><img src="img/icon/calendar.png" alt=""> 28 Oktober 2025</span>
+                            <h5>Launching New Accessories</h5>
+                            <a href="blog.php">Read More</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- end vidio page -->
-
-        <div class="container mb-4 mt-3">
-            <div class="row text-center">
-                <div class="col-md-13">
-                    <div class="jumbotron" style="background-color: #850e35;">
-                        <div style="color: white">
-                            <h2>Beauty accessories</h2>
-                            <hr>
-                        </div>
-                        <div style="color: white">
-                            <p>Enjoy every accessory that the designer has crafted for you, as each piece is made with passion, dedication, and creativity.</p>
-                        </div>
->>>>>>> 4c9bbf036d45894bc12e136d6d0a748c415f4a03
-                    </div>
-                </div>
-            </div>
-            <div class="container mt-1 mb-4">
-                <div class="row justify-content-center">
-                    <div class="col-md-12">
-                        <div class="justify-content-center">
-                            <video class="ms-1 mt-5 pt-4 img-fluid " controls autoplay="true" width="1200px" loop="true">
-                                <source src="vidio/vidcreatelier.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                </div><br><br>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="blog__item">
-                            <div class="blog__item__pic set-bg" data-setbg="img/blog/blog1.jpg"></div>
-                            <div class="blog__item__text">
-                                <span><img src="img/icon/calendar.png" alt=""> 15 Oktober 2025</span>
-                                <h5>What Curling Irons Are The Best Ones</h5>
-                                <a href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="blog__item">
-                            <div class="blog__item__pic set-bg" data-setbg="img/blog/blog2.jpg"></div>
-                            <div class="blog__item__text">
-                                <span><img src="img/icon/calendar.png" alt=""> 21 Oktober 2025</span>
-                                <h5>Eternity Bands Do Last Forever</h5>
-                                <a href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="blog__item">
-                            <div class="blog__item__pic set-bg" data-setbg="img/blog/blog3.jpg"></div>
-                            <div class="blog__item__text">
-                                <span><img src="img/icon/calendar.png" alt=""> 28 FOktober 2025</span>
-                                <h5>Necklaces Pink</h5>
-                                <a href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
     </section>
     <!-- Latest Blog Section End -->
-
+    </div>
 </body>
 
 </html>

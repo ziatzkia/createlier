@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
         <?php endif; ?>
 
         <h1>User Balance</h1>
-        <p><img src="img/banner/icon/top-up.png" alt="top-up" width="50px"> Rp.<?php echo number_format($saldo, 0, ',', '.') ?>,-</p>
+        <p><img src="img/icon/top-up.png" alt="top-up" width="50px"> Rp.<?php echo number_format($saldo, 0, ',', '.') ?>,-</p>
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#topUpModal">Top Up Balance</button>
     </div>
 
