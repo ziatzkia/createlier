@@ -48,7 +48,7 @@ include('layouts/header.php');
 <section class="shop spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
+            <!-- <div class="col-lg-3">
                 <div class="shop__sidebar__search">
                     <form action="#">
                         <input type="text" placeholder="Search...">
@@ -124,7 +124,7 @@ include('layouts/header.php');
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="col-lg-9">
                 <div class="shop__product__option">
                     <div class="row">

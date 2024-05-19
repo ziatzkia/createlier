@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
     <link rel="icon" type="x-icon" href="img/logo/logo cc.png">
 </head>
 
-<body class="p-3 m-0 border-0 bd-example m-0 border-0" background="img/walpaper.jpg">
+<body class="p-3 m-0 border-0 bd-example m-0 border-0">
     <a href="index.php"><img src="img/icon/close.png" alt="close" width="30px"></a>
     <div class="row g-0 position-relative bg-profile-1">
     <h1 class="h1-profil">Profile</h1>

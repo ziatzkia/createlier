@@ -30,14 +30,15 @@ include 'layouts/header.php';
     <link rel="icon" type="x-icon" href="img/logo/logo cc.png">
     <title>Createlier</title>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
 
     <!-- Hero Section Begin -->
     <section class="hero">
-        <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="img/hero/5.png">
+        <div class="hero__slider owl-carousel owl-loaded">
+            <div class="hero__items set-bg" data-setbg="img/hero/brand.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
@@ -46,7 +47,7 @@ include 'layouts/header.php';
                                 <h2>Fall - Winter Collections 2030</h2>
                                 <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                     commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                                <a href="shop.php" class="primary-btn">Shop now</span></a>
                                 <div class="hero__social">
                                 </div>
                             </div>
@@ -54,7 +55,7 @@ include 'layouts/header.php';
                     </div>
                 </div>
             </div>
-            <div class="hero__items set-bg" data-setbg="img/hero/c.png">
+            <div class="hero__items set-bg" data-setbg="img/hero/2.png">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
@@ -63,7 +64,7 @@ include 'layouts/header.php';
                                 <h2>Fall - Winter Collections 2030</h2>
                                 <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                     commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                                <a href="custom.php" class="primary-btn">Custom Now</a>
                                 <div class="hero__social">
                                 </div>
                             </div>
@@ -71,23 +72,28 @@ include 'layouts/header.php';
                     </div>
                 </div>
             </div>
-            <div class="hero__items set-bg" data-setbg="img/hero/1.png">
+            <div class="hero__items set-bg" data-setbg="img/hero/3.png">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
                             <div class="hero__text">
-                                <h4 style="color: #850e35;">Collaboration</h4>
+                                <h1 style="color: #850e35;">Collaboration</h1>
                                 <h2>Spring Collections 2025</h2>
-                                <p>A specialist collaboration with K-pop superstars Jennie.
+                                <p>A special collaboration with korean superstars Jennie.
                                     bringing you the latest trends infused with their unique style and flair.
                                     Dive into a world where fashion meets music,
                                     where each piece tells a story of creativity and innovation</p>
+                                <a href="blog.php" class="primary-btn">Look</a>
                                 <div class="hero__social">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="owl-nav">
+                <button type="button" class="owl-prev"><i class="fas fa-arrow-left"></i></button>
+                <button type="button" class="owl-next"><i class="fas fa-arrow-right"></i></button>
             </div>
         </div>
     </section>
@@ -168,8 +174,6 @@ include 'layouts/header.php';
     </div>
     <!-- end page 2 -->
 
-    <hr style="background-color: #850e35;">
-
     <!-- vidio end -->
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -242,6 +246,20 @@ include 'layouts/header.php';
     </section>
     <!-- Latest Blog Section End -->
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".owl-carousel").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true,
+                navigationText: ["<i class='fas fa-arrow-left'></i>", "<i class='fas fa-arrow-right'></i>"]
+            });
+        });
+    </script>
 </body>
 
 </html>
