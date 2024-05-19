@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url(/img/walpaper.jpg);
 }
 
 .container {
@@ -32,7 +31,7 @@ body {
 
 .right-section {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -41,10 +40,10 @@ body {
 .form-container {
     max-width: 400px;
     width: 100%;
-    background-color: white; 
+    background-color: white;
     padding: 25px;
-    border-radius: 15px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     align-items: center;
 }
 
@@ -126,16 +125,19 @@ h2 {
 
 .form-check {
     display: flex;
-    align-items: center; /* Mengatur input dan label agar sejajar */
+    align-items: center;
+    /* Mengatur input dan label agar sejajar */
 }
 
 .form-check-label {
-    margin-right: 10px; /* Atur jarak antara label dan radio button */
-    order: 2; /* Mengatur urutan tampilan label */
+    margin-right: 10px;
+    /* Atur jarak antara label dan radio button */
+    order: 2;
+    /* Mengatur urutan tampilan label */
 }
 
 .form-check-input {
-    order: 2; 
+    order: 2;
     margin-top: -8px;
 }
 
@@ -146,7 +148,7 @@ h2 {
 }
 
 .form-check-input {
-    order: 2; 
+    order: 2;
     margin-top: -8px;
 }
 
@@ -154,4 +156,18 @@ h2 {
 .form-check-label {
     font-size: 12px;
     margin-top: -8px;
+}
+
+
+.vertical-line {
+    margin: 0 10px;
+    color: #ffffff;
+}
+
+.login-bg {
+    background-image: url(/img/walpaper.jpg);
+}
+
+.login-admin-bg {
+    background-color: #850E35;
 }

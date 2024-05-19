@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon">
             <i class="fas fa-tshirt"></i>
         </div>
-        <div class="sidebar-brand-text mx-3"> Male Fashion</div>
+        <div class="sidebar-brand-text mx-3"><img src="../../img/logo/logo.png" alt="logo" width="100%"></div>
     </a>
 
     <!-- Divider -->
