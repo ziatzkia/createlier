@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['admin_logged_in'])) {
-    header('location: login.php');
+    header('location: loginAdmin.php');
 }
 ?>
 
@@ -20,7 +20,7 @@ $orders = $stmt_orders->get_result();
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Orders</h1>
+    <h1 class="h3 mb-2 text-white">Orders</h1>
     <nav class="mt-4 rounded" aria-label="breadcrumb">
         <ol class="breadcrumb px-3 py-2 rounded mb-4">
             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>

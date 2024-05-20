@@ -4,7 +4,7 @@ session_start();
 include('layouts/header.php');
 
 if (!isset($_SESSION['admin_logged_in'])) {
-    header('location: login.php');
+    header('location: loginAdmin.php');
 }
 ?>
 
@@ -72,7 +72,7 @@ if (isset($_POST['create_btn'])) {
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Create Product</h1>
+    <h1 class="h3 mb-2 text-white">Create Product</h1>
     <nav class="mt-4 rounded" aria-label="breadcrumb">
         <ol class="breadcrumb px-3 py-2 rounded mb-4">
             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
@@ -114,11 +114,12 @@ if (isset($_POST['create_btn'])) {
                                     <label>Product Category</label>
                                     <select class="form-control" name="product_category">
                                         <option value="" disabled selected>Select Category</option>
-                                        <option value="sepatu">Sepatu</option>
-                                        <option value="jaket">Jaket</option>
-                                        <option value="kaos">Kaos</option>
-                                        <option value="syal">Syal</option>
-                                        <option value="tas">Tas</option>
+                                        <option value="bracelets">Bracelets</option>
+                                        <option value="earrings">Earrings</option>
+                                        <option value="hair accessories">Hair Accessories</option>
+                                        <option value="key chains">Key Chains</option>
+                                        <option value="necklaces">Necklaces</option>
+                                        <option value="rings">Rings</option>
                                     </select>
                                 </div>
                                 <div class="form-group">

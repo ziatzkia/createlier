@@ -4,7 +4,7 @@ session_start();
 include('layouts/header.php');
 
 if (!isset($_SESSION['admin_logged_in'])) {
-    header('location: login.php');
+    header('location: loginAdmin.php');
 }
 
 if (isset($_GET['product_id'])) {

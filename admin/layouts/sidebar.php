@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon">
             <i class="fas fa-tshirt"></i>
         </div>
-        <div class="sidebar-brand-text mx-3"><img src="../../img/logo/logo.png" alt="logo" width="100%"></div>
+        <div class="sidebar-brand-text mx-3"><img src="../../img/logo/logo.png" alt="logo" width="150%"></div>
     </a>
 
     <!-- Divider -->
@@ -36,7 +36,7 @@
 
     <!-- Nav Item - Products -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="products.php" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-luggage-cart"></i>
             <span>Products</span>
         </a>
@@ -93,7 +93,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm-6 col-md-6 text-center">
-                        <img src="<?php echo '../img/blog/details/' . $_SESSION['admin_photo2']; ?>" alt="" class="rounded-circle img-responsive" width="150" height="200" />
+                        <img src="<?php echo '../img/profil/' . $_SESSION['admin_photo2']; ?>" alt="" class="rounded-circle img-responsive" width="150" height="200" />
                     </div>
                     <div class="col-sm-6 col-md-6">
                         <h4><?php if (isset($_SESSION['admin_name'])) {
