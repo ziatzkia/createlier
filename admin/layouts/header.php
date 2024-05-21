@@ -208,14 +208,14 @@
                                         <i class="fas fa-envelope fa-sm fa-fw mr-2 text-gray-400"></i>
                                         <?php if (isset($_SESSION['email'])) { echo $_SESSION['email']; } ?>
                                     </a>
-                                    <a class="dropdown-item" href="#">
+                                    <!-- <a class="dropdown-item" href="#">
                                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Settings
                                     </a>
                                     <a class="dropdown-item" href="#">
                                         <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Activity Log
-                                    </a>
+                                    </a> -->
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

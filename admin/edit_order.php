@@ -71,15 +71,15 @@
                                         <label>Order Status</label>
                                         <select class="form-control" name="order_status" <?php if ($order['order_status'] == 'delivered') echo ' disabled'; ?>>
                                             <option value="" disabled>Select Status</option>
-                                            <option value="not paid" <?php if ($order['order_status'] == 'not paid') echo ' selected'; ?>>Not Paid</option>
-                                            <option value="paid" <?php if ($order['order_status'] == 'paid') echo ' selected'; ?>>Paid</option>
-                                            <option value="shipped" <?php if ($order['order_status'] == 'shipped') echo ' selected'; ?>>Shipped</option>
-                                            <option value="delivered" <?php if ($order['order_status'] == 'delivered') echo ' selected'; ?>>Delivered</option>
+                                            <option value="NOT PAID" <?php if ($order['order_status'] == 'NOT PAID') echo ' selected'; ?>>NOT PAID</option>
+                                            <option value="PAID" <?php if ($order['order_status'] == 'PAID') echo ' selected'; ?>>PAID</option>
+                                            <option value="SHIPPED" <?php if ($order['order_status'] == 'SHIPPED') echo ' selected'; ?>>SHIPPED</option>
+                                            <option value="DELIVERED" <?php if ($order['order_status'] == 'DELIVERED') echo ' selected'; ?>>DELIVERED</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>User ID</label>
-                                        <input class="form-control" type="text" value="<?php echo $order['user_id']; ?>" disabled>
+                                        <input class="form-control" type="text" value="<?php echo $order['id']; ?>" disabled>
                                     </div>
                                     <div class="form-group">
                                         <label>Order Date</label>
@@ -87,11 +87,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label>User Phone</label>
-                                        <input class="form-control" type="text" value="<?php echo $order['user_phone']; ?>" disabled>
+                                        <input class="form-control" type="text" value="<?php echo $order['phone']; ?>" disabled>
                                     </div>
                                     <div class="form-group">
                                         <label>User Address</label>
-                                        <input class="form-control" type="text" value="<?php echo $order['user_address']; ?>" disabled>
+                                        <input class="form-control" type="text" value="<?php echo $order['alamat']; ?>" disabled>
                                     </div>
                                 </div>
                             <?php } ?>

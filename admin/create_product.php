@@ -112,12 +112,12 @@ if (isset($_POST['create_btn'])) {
                                     <label>Product Category</label>
                                     <select class="form-control" name="product_category">
                                         <option value="" disabled selected>Select Category</option>
-                                        <option value="bracelets">Bracelets</option>
-                                        <option value="earrings">Earrings</option>
-                                        <option value="hair accessories">Hair Accessories</option>
-                                        <option value="key chains">Key Chains</option>
-                                        <option value="necklaces">Necklaces</option>
-                                        <option value="rings">Rings</option>
+                                        <option value="Bracelets">Bracelets</option>
+                                        <option value="Earrings">Earrings</option>
+                                        <option value="Hair Accessories">Hair Accessories</option>
+                                        <option value="Key Chains">Key Chains</option>
+                                        <option value="Necklaces">Necklaces</option>
+                                        <option value="Rings">Rings</option>
                                     </select>
                                 </div>
                                 <div class="form-group">

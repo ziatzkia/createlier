@@ -93,7 +93,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm-6 col-md-6 text-center">
-                        <img src="<?php echo '../img/profil/' . $_SESSION['admin_photo2']; ?>" alt="" class="rounded-circle img-responsive" width="150" height="200" />
+                        <img src="<?php echo 'img/profil/' . $_SESSION['photo']; ?>" alt="profile" class="rounded-circle img-responsive" width="200px"/>
                     </div>
                     <div class="col-sm-6 col-md-6">
                         <h4><?php if (isset($_SESSION['admin_name'])) {

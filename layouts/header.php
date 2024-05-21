@@ -96,7 +96,7 @@ if (isset($_GET['logout'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="logout.php">
+                    <a href="logoutAdmin.php">
                         <button type="button" class="btn btn-primary logout">Logout</button>
                     </a>
                 </div>

@@ -77,30 +77,27 @@
                                         <input class="form-control" type="text" name="product_name" value="<?php echo $product['product_name']; ?>">
                                     </div>
                                     <div class="form-group">
-                                        <label>Paper Type</label>
+                                        <label>Product Brand</label>
                                         <select class="form-control" name="product_brand">
                                             <option value="" disabled>Select Paper Type</option>
-                                            <option value="Art Paper" <?php if ($product['product_brand'] == 'Art Paper') echo ' selected'; ?>>Art Paper</option>
-                                            <option value="Laminasi Glossy" <?php if ($product['product_brand'] == 'Laminasi Glossy') echo ' selected'; ?>>Laminasi Glossy</option>
-                                            <option value="NCR" <?php if ($product['product_brand'] == 'NCR') echo ' selected'; ?>>NCR</option>
-                                            <option value="Concorde" <?php if ($product['product_brand'] == 'Concorde') echo ' selected'; ?>>Concorde</option>
-                                            <option value="Art Carton" <?php if ($product['product_brand'] == 'Art Carton') echo ' selected'; ?>>Art Carton</option>
-                                            <option value="Ivory" <?php if ($product['product_brand'] == 'Ivory') echo ' selected'; ?>>Ivory</option>
-                                            <option value="Linen Jepang" <?php if ($product['product_brand'] == 'Linen Jepang') echo ' selected'; ?>>Linen Jepang</option>
+                                            <option value="ccBracelet" <?php if ($product['product_brand'] == 'ccBracelet') echo ' selected'; ?>>ccBracelet</option>
+                                            <option value="ccEarrings" <?php if ($product['product_brand'] == 'ccEarrings') echo ' selected'; ?>>ccEarrings</option>
+                                            <option value="ccHair Accs" <?php if ($product['product_brand'] == 'ccHair Accs') echo ' selected'; ?>>ccHair Accs</option>
+                                            <option value="ccKChains" <?php if ($product['product_brand'] == 'ccKChains') echo ' selected'; ?>>ccKChains</option>
+                                            <option value="ccNecklaces" <?php if ($product['product_brand'] == 'ccNecklaces') echo ' selected'; ?>>ccNecklaces</option>
+                                            <option value="ccRings" <?php if ($product['product_brand'] == 'ccRings') echo ' selected'; ?>>ccRings</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label>Category</label>
+                                        <label>Product Category</label>
                                         <select class="form-control" name="product_category">
                                             <option value="" disabled>Select Category</option>
-                                            <option value="Alfabet" <?php if ($product['product_category'] == 'Alfabet') echo ' selected'; ?>>Alfabet</option>
-                                            <option value="Angka" <?php if ($product['product_category'] == 'Angka') echo ' selected'; ?>>Angka</option>
-                                            <option value="Kalender" <?php if ($product['product_category'] == 'Kalender') echo ' selected'; ?>>Kalender</option>
-                                            <option value="Peta" <?php if ($product['product_category'] == 'Peta') echo ' selected'; ?>>Peta</option>
-                                            <option value="Hewan" <?php if ($product['product_category'] == 'Hewan') echo ' selected'; ?>>Hewan</option>
-                                            <option value="Tabel Periodik" <?php if ($product['product_category'] == 'Tabel Periodik') echo ' selected'; ?>>Tabel Periodik</option>
-                                            <option value="Buah dan Sayur" <?php if ($product['product_category'] == 'Buah dan Sayur') echo ' selected'; ?>>Buah dan Sayur</option>
-                                            <option value="Hijaiyah" <?php if ($product['product_category'] == 'Hijaiyah') echo ' selected'; ?>>Hijaiyah</option>
+                                            <option value="Bracelets" <?php if ($product['product_category'] == 'Bracelets') echo ' selected'; ?>>Bracelets</option>
+                                            <option value="Earrings" <?php if ($product['product_category'] == 'Earrings') echo ' selected'; ?>>Earrings</option>
+                                            <option value="Hair Accessories" <?php if ($product['product_category'] == 'Hair Accessories') echo ' selected'; ?>>Hair Accessories</option>
+                                            <option value="Key Chains" <?php if ($product['product_category'] == 'Key Chains') echo ' selected'; ?>>Key Chains</option>
+                                            <option value="Necklaces" <?php if ($product['product_category'] == 'Necklaces') echo ' selected'; ?>>Necklaces</option>
+                                            <option value="Rings" <?php if ($product['product_category'] == 'Rings') echo ' selected'; ?>>Rings</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
