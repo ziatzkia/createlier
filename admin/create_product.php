@@ -100,14 +100,12 @@ if (isset($_POST['create_btn'])) {
                                     <label>Product Brand</label>
                                     <select class="form-control" name="product_brand">
                                         <option value="" disabled selected>Select Brand</option>
-                                        <option value="Khamzo">Khamzo</option>
-                                        <option value="Private">Private</option>
-                                        <option value="Spotec">Spotec</option>
-                                        <option value="Fleece">Fleece</option>
-                                        <option value="Houseofcut">Houseofcut</option>
-                                        <option value="Unixcomart">Unixcomart</option>
-                                        <option value="Firefly">Firefly</option>
-                                        <option value="Matsuda">Matsuda</option>
+                                        <option value="ccBracelet">ccBracelet</option>
+                                        <option value="ccEarrings">ccEarrings</option>
+                                        <option value="ccHair Accs">ccHair Accs</option>
+                                        <option value="ccKChains">ccKChains</option>
+                                        <option value="ccNecklaces">ccNecklaces</option>
+                                        <option value="ccRings">ccRings</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
