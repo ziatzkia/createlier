@@ -584,17 +584,28 @@ small {
 
 .hero__slider.owl-carousel .owl-nav button {
 	font-size: 36px;
-	color: #333333;
 	position: absolute;
 	left: 75px;
 	top: 50%;
 	margin-top: -18px;
 	line-height: 29px;
+	background-color: transparent;
+	border: transparent;
+	color: white;
 }
 
 .hero__slider.owl-carousel .owl-nav button.owl-next {
 	left: auto;
 	right: 75px;
+	font-size: 36px;
+	position: absolute;
+	top: 50%;
+	margin-top: -18px;
+	line-height: 29px;
+	background-color: transparent;
+	border: transparent;
+	color: white;
+
 }
 
 .hero__items {
@@ -1440,10 +1451,7 @@ small {
 
 .shop__product__option__right {
 	text-align: right;
-	border: 1px solid #000000;
-	padding: 5px;
-	border-radius: 5px;
-	background-color: #fff;
+
 }
 
 
@@ -2466,7 +2474,7 @@ small {
 }
 
 .cart__discount h6 {
-	color: #111111;
+	color:#000000;
 	font-weight: 700;
 	text-transform: uppercase;
 	margin-bottom: 35px;
@@ -2511,7 +2519,7 @@ small {
 	font-weight: 700;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	background: #111111;
+	background: #850e35;
 	padding: 0 30px;
 	border: none;
 	position: absolute;
@@ -2521,8 +2529,11 @@ small {
 }
 
 .cart__total {
-	background: #f3f2ee;
+	/* background: #f3f2ee; */
 	padding: 35px 40px 40px;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 5px;
 }
 
 .cart__total h6 {

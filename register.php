@@ -9,7 +9,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['phone']
     $gender = $_POST['gender'];
     $pwd = $_POST['pwd'];
 
-    $checkQuery = "SELECT * FROM akun WHERE username = '$username'";
+    $checkQuery = "SELECT * FROM akun WHERE username = '$username' or  email = '$email'";
     $result = mysqli_query($conn, $checkQuery);
 
     if (mysqli_num_rows($result) > 0) {

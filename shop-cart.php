@@ -84,9 +84,9 @@ include('layouts/header.php');
                 <div class="breadcrumb__text">
                     <h4>Keranjang Belanja</h4>
                     <div class="breadcrumb__links">
-                        <a href="index.php">Beranda</a>
-                        <a href="shop.php">Belanja</a>
-                        <span>Keranjang Belanja</span>
+                        <a href="index.php">Home</a>
+                        <a href="shop.php">Shop</a>
+                        <span>Cart</span>
                     </div>
                 </div>
             </div>
@@ -154,26 +154,19 @@ include('layouts/header.php');
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn">
-                            <a href="shop.php" class="btn btn-primary">Lanjutkan Belanja <i class="fa fa-arrow-circle-o-right fa-lg"></i></a>
+                            <a href="shop.php" class="btn btn-primary" style="background-color: #850e35;">Lanjutkan Belanja <i class="bi bi-arrow-right"></i></i></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="cart__discount">
-                    <h6>Kode Diskon</h6>
-                    <form action="#">
-                        <input type="text" placeholder="Kode Kupon">
-                        <button type="submit">Terapkan</button>
-                    </form>
-                </div>
-                <div class="cart__total">
+                <div class="cart__total" >
                     <h6>Total Keranjang</h6>
                     <ul>
                         <li>Total <span><?php if (isset($_SESSION['cart'])) { echo setRupiah($_SESSION['total'] * $kurs_dollar); } ?></span></li>
                     </ul>
                     <form method="POST" action="checkout.php">
-                        <input type="submit" class="primary-btn" value="Checkout" name="checkout">
+                        <input type="submit" class="primary-btn" value="Checkout" name="checkout" style="background-color: #850e35;">
                     </form>
                 </div>
             </div>

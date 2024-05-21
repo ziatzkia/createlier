@@ -11,6 +11,7 @@ if (isset($_GET['logout'])) {
     if (isset($_SESSION['logged_in'])) {
         unset($_SESSION['logged_in']);
         unset($_SESSION['user_email']);
+        unset($_SESSION['photo']);
         header('location: index.php');
         exit;
     }
@@ -37,14 +38,14 @@ include 'layouts/header.php';
 
     <!-- Hero Section Begin -->
     <section class="hero">
-        <div class="hero__slider owl-carousel owl-loaded">
-            <div class="hero__items set-bg" data-setbg="img/hero/brand.jpeg">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__items set-bg" data-setbg="img/hero/1.png">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
                             <div class="hero__text">
-                                <h6>Summer Collection</h6>
-                                <h2>Fall - Winter Collections 2030</h2>
+                                <!-- <h6>Summer Collection</h6> -->
+                                <h2 style="color: #850e35;">Collections 2025</h2>
                                 <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                     commitment to exceptional quality.</p>
                                 <a href="shop.php" class="primary-btn">Shop now</span></a>
@@ -60,10 +61,8 @@ include 'layouts/header.php';
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
                             <div class="hero__text">
-                                <h6>Summer Collection</h6>
-                                <h2>Fall - Winter Collections 2030</h2>
-                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                    commitment to exceptional quality.</p>
+                                <h2 style="color: #850e35;">Make Your Style</Style></h2>
+                                <p>Enhance Your Style with Your Own Unique Touch at Createlier</p>
                                 <a href="custom.php" class="primary-btn">Custom Now</a>
                                 <div class="hero__social">
                                 </div>
@@ -77,28 +76,21 @@ include 'layouts/header.php';
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
                             <div class="hero__text">
-                                <h1 style="color: #850e35;">Collaboration</h1>
-                                <h2>Spring Collections 2025</h2>
+                                <h2 style="color: #850e35;"> Special Collaboration</h2>
                                 <p>A special collaboration with korean superstars Jennie.
                                     bringing you the latest trends infused with their unique style and flair.
                                     Dive into a world where fashion meets music,
                                     where each piece tells a story of creativity and innovation</p>
-                                <a href="blog.php" class="primary-btn">Look</a>
                                 <div class="hero__social">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="owl-nav">
-                <button type="button" class="owl-prev"><i class="fas fa-arrow-left"></i></button>
-                <button type="button" class="owl-next"><i class="fas fa-arrow-right"></i></button>
-            </div>
+</div>
         </div>
     </section>
     <!-- Hero Section End -->
-
 
     <!-- Content page 1 -->
     <div class="container mt-1 mb-4">
@@ -184,7 +176,6 @@ include 'layouts/header.php';
             </div>
         </div>
     </div>
-
     <!-- vidio end -->
 
     <hr style="background-color: #850e35;">
@@ -213,7 +204,7 @@ include 'layouts/header.php';
             <div class="row mt-4">
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog1.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="img/banner/banner1.png"></div>
                         <div class="blog__item__text">
                             <span><img src="img/icon/calendar.png" alt=""> 15 Oktober 2025</span>
                             <h5>New Pop Store</h5>
@@ -223,7 +214,7 @@ include 'layouts/header.php';
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog2.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="img/banner/banner2.png"></div>
                         <div class="blog__item__text">
                             <span><img src="img/icon/calendar.png" alt=""> 21 Oktober 2025</span>
                             <h5>Product Release With Jennie</h5>
@@ -233,7 +224,7 @@ include 'layouts/header.php';
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog3.jpg"></div>
+                        <div class="blog__item__pic set-bg" data-setbg="img/banner/banner3.png"></div>
                         <div class="blog__item__text">
                             <span><img src="img/icon/calendar.png" alt=""> 28 Oktober 2025</span>
                             <h5>Launching New Accessories</h5>
@@ -249,17 +240,6 @@ include 'layouts/header.php';
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(".owl-carousel").owlCarousel({
-                navigation: true,
-                slideSpeed: 300,
-                paginationSpeed: 400,
-                singleItem: true,
-                navigationText: ["<i class='fas fa-arrow-left'></i>", "<i class='fas fa-arrow-right'></i>"]
-            });
-        });
-    </script>
 </body>
 
 </html>

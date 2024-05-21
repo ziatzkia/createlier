@@ -4,7 +4,6 @@ $kurs_dollar = 15000;
 include('server/connection.php');
 
 if (isset($_POST['search']) && isset($_POST['product_category'])) {
-    // Get all products by category
     $category = $_POST['product_category'];
     $query_products = "SELECT * FROM products WHERE product_category = ?";
     $stmt_products = $conn->prepare($query_products);
@@ -12,7 +11,6 @@ if (isset($_POST['search']) && isset($_POST['product_category'])) {
     $stmt_products->execute();
     $products = $stmt_products->get_result();
 } else {
-    // Get all products
     $query_products = "SELECT * FROM products";
     $stmt_products = $conn->prepare($query_products);
     $stmt_products->execute();
@@ -30,7 +28,7 @@ include('layouts/header.php');
 <section class="breadcrumb-option">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-9">
                 <div class="breadcrumb__text">
                     <h4>Shop</h4>
                     <div class="breadcrumb__links">
@@ -48,92 +46,67 @@ include('layouts/header.php');
 <section class="shop spad">
     <div class="container">
         <div class="row">
-            <!-- <div class="col-lg-3">
-                <div class="shop__sidebar__search">
-                    <form action="#">
-                        <input type="text" placeholder="Search...">
-                        <button type="submit"><span class="icon_search"></span></button>
-                    </form>
-                </div>
-                <div class="shop__sidebar">
-                    <div class="shop__sidebar__accordion">
-                        <form method="POST" action="shop.php">
-                            <div class="accordion" id="accordionExample">
-                                <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
-                                    </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__categories">
-                                                <ul class="nice-scroll">
-                                                    <li>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" value="sepatu" name="product_category" id="category_one " <?php if (isset($product_category) && $product_category == 'sepatu') {
-                                                                                                                                                                        echo 'checked';
-                                                                                                                                                                    } ?>>
-                                                            <label class="form-check-label" for="product_category">Necklaces</label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" value="jaket" name="product_category" id="category_one " <?php if (isset($product_category) && $product_category == 'jaket') {
-                                                                                                                                                                        echo 'checked';
-                                                                                                                                                                    } ?>>
-                                                            <label class="form-check-label" for="product_category">Bricelet</label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" value="kaos" name="product_category" id="category_one " <?php if (isset($product_category) && $product_category == 'kaos') {
-                                                                                                                                                                        echo 'checked';
-                                                                                                                                                                    } ?>>
-                                                            <label class="form-check-label" for="product_category">Ring</label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" value="sepatu" name="product_category" id="category_one " <?php if (isset($product_category) && $product_category == 'sepatu') {
-                                                                                                                                                                        echo 'checked';
-                                                                                                                                                                    } ?>>
-                                                            <label class="form-check-label" for="product_category">Key Chain</label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" value="syal" name="product_category" id="category_one " <?php if (isset($product_category) && $product_category == 'syal') {
-                                                                                                                                                                        echo 'checked';
-                                                                                                                                                                    } ?>>
-                                                            <label class="form-check-label" for="product_category">Hair Acc</label>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <button class="btn btn-secondary" onClick="history.go(0);">
-                                            <i class="fa fa-refresh"></i>
-                                        </button>
-                                        <input type="submit" class="btn btn-primary" name="search" value="Search" />
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> -->
-            <div class="col-lg-9">
+            <div class="col-lg-12">
                 <div class="shop__product__option">
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="shop__product__option__left">
-                                <p>Showing 1–12 of 126 results</p>
-                            </div>
+                        <div class="col-lg-9 col-md-6 col-sm-6">
+                            <!-- <form id="category-form" method="POST" action="shop.php">
+                                <input type="hidden" name="product_category" id="product-category-input">
+                                <div class="dropdown-center">
+                                    <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #850e35;">
+                                        Categories
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <input type="radio" id="category_ring" name="product_category" value="Ring" <?php if (isset($product_category) && $product_category == 'Ring') echo 'checked'; ?>>
+                                                <label for="category_ring">Ring</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <input type="radio" id="category_necklaces" name="product_category" value="Necklaces" <?php if (isset($product_category) && $product_category == 'Necklaces') echo 'checked'; ?>>
+                                                <label for="category_necklaces">Necklaces</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <input type="radio" id="category_bracelet" name="product_category" value="Bracelet" <?php if (isset($product_category) && $product_category == 'Bracelet') echo 'checked'; ?>>
+                                                <label for="category_bracelet">Bracelet</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <input type="radio" id="category_hair_acc" name="product_category" value="Hair Acc" <?php if (isset($product_category) && $product_category == 'Hair Acc') echo 'checked'; ?>>
+                                                <label for="category_hair_acc">Hair Acc</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <input type="radio" id="category_key_chain" name="product_category" value="Key Chain" <?php if (isset($product_category) && $product_category == 'keychain') echo 'checked'; ?>>
+                                                <label for="category_key_chain">Key Chain</label>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form> -->
+                            <form id="category-form" method="POST" action="shop.php">
+                                <input type="hidden" name="product_category" id="product-category-input">
+                                <div class="dropdown-center">
+                                    <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #850e35;">
+                                        Categories
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#" data-value="Ring">Ring</a></li>
+                                        <li><a class="dropdown-item" href="#" data-value="Necklaces">Necklaces</a></li>
+                                        <li><a class="dropdown-item" href="#" data-value="Bracelet">Bracelet</a></li>
+                                        <li><a class="dropdown-item" href="#" data-value="Hair Acc">Hair Acc</a></li>
+                                        <li><a class="dropdown-item" href="#" data-value="Key Chain">Key Chain</a></li>
+                                    </ul>
+                                </div>
+                            </form>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="shop__product__option__right">
                                 <p>Sort by Price:</p>
                                 <select>
@@ -147,14 +120,11 @@ include('layouts/header.php');
                 </div>
                 <div class="row">
                     <?php while ($row = $products->fetch_assoc()) { ?>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/<?php echo $row['product_image1']; ?>">
                                     <ul class="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                        <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                        </li>
-                                        <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">

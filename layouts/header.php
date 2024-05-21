@@ -59,9 +59,6 @@ if (isset($_GET['logout'])) {
                         <a class="nav-link active" href="custom.php">Custom</a>
                     </li>
                     <li class="nav-item jarak">
-                        <a class="nav-link active" href="blog.php">Blog</a>
-                    </li>
-                    <li class="nav-item jarak">
                         <a class="nav-link active" href="about.php">About us</a>
                     </li>
                 </ul>
@@ -83,8 +80,7 @@ if (isset($_GET['logout'])) {
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item dd-item" href="../profil.php">Profile</a></li>
-                                <li><a class="dropdown-item dd-item" href="#">Cart</a></li>
-                                <li><a class="dropdown-item dd-item" href="../balance.php">Balance</a></li>
+                                <li><a class="dropdown-item dd-item" href="#">History</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
