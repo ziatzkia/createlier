@@ -4,16 +4,15 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon">
-            <i class="fas fa-tshirt"></i>
+            <img src="../../img/logo/logo.png" alt="logo" width="100%">
         </div>
-        <div class="sidebar-brand-text mx-3"><img src="../../img/logo/logo.png" alt="logo" width="150%"></div>
     </a>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="nav-item">
         <a class="nav-link" href="index.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
@@ -28,6 +27,7 @@
     </div>
 
     <!-- Nav Item - Orders -->
+    <style></style>
     <li class="nav-item">
         <a class="nav-link" href="orders.php">
             <i class="fas fa-shopping-bag"></i>
