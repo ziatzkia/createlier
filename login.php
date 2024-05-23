@@ -2,12 +2,12 @@
 session_start();
 include('server/connection.php');
 
-
-
 if (isset($_SESSION['logged_in'])) {
   header('location: index.php');
   exit;
 }
+
+$failed = false;
 
 if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
   $email_or_phone = $_POST['email_or_phone'];
@@ -35,16 +35,24 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
       $_SESSION['saldo'] = $saldo;
       $_SESSION['logged_in'] = true;
 
-      header('location: index.php?message=Logged in succesfully');
+      echo "<script>
+              window.onload = function() {
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Success',
+                  text: 'Logged in successfully'
+                }).then(function() {
+                  window.location.href = 'index.php';
+                });
+              }
+            </script>";
     } else {
-      header('location: login.php?error=Could not verify your account');
+    $failed = true;
     }
   } else {
-    header('location: login.php?error=Something went wrong!');
+    $failed = true;
   }
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -54,21 +62,25 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="img/logo/logo cc.png">
-  <title> Login | Createlier</title>
+  <title>Login | Createlier</title>
   <link rel="stylesheet" href="style/loginRegister.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body class="login-bg">
-  <div class="wrapper"> <!--wrapper-->
+  <div class="wrapper">
     <form autocomplete="off" id="login-form" method="POST" action="login.php">
-      <?php if (isset($_GET['error'])) ?>
-      <div role="alert">
-        <?php if (isset($_GET['error'])) {
-          echo $_GET['error'];
-        }
-        ?>
         <div class="form-container">
           <img src="img/logo/logo createlier.png" alt="logo" width="100px">
+          <?php if ($failed) { ?>
+            <div class="alert alert-danger alert-dismissible fade show mt-10" role="alert">
+                Incorrect username or password!
+                <a href="login.php" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </a>
+            </div>
+        <?php } ?>
           <h2>Sign in</h2>
           <div class="form-group">
             <input autocomplete="new-email" type="text" name="email_or_phone" placeholder="Email/Phone">

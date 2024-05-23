@@ -23,10 +23,13 @@ body {
 
 .left-section h1 {
     font-size: 60px;
+    margin-top: 30px;
+    /* margin-bottom: 300px; */
 }
 
 .left-section p {
-    font-size: 18px;
+    font-size: 35px;
+    margin-bottom: 150px;
 }
 
 .right-section {
@@ -35,6 +38,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    margin-bottom: 120px;
 }
 
 .form-container {
@@ -53,7 +57,6 @@ body {
 
 .form-group {
     margin-bottom: 15px;
-    margin-right: 25px;
 }
 
 .form-group label {
@@ -74,7 +77,7 @@ button {
     background-color: #EE6983;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
     cursor: pointer;
     margin-top: 17px;
 }
@@ -165,9 +168,15 @@ h2 {
 }
 
 .login-bg {
-    background-image: url(/img/walpaper.jpg);
+    background-image: url(/createlier/img/walpaper.jpg);
 }
 
 .login-admin-bg {
     background-color: #850E35;
+}
+
+.btn-register{
+    background-color:#850E35;
+    border-color: #850E35;
+    border-radius: 7px;
 }

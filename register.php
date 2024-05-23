@@ -9,18 +9,31 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['phone']
     $gender = $_POST['gender'];
     $pwd = $_POST['pwd'];
 
-    $checkQuery = "SELECT * FROM akun WHERE username = '$username' or  email = '$email'";
+    $checkQuery = "SELECT * FROM akun WHERE username = '$username' or  email = '$email' or pwd = '$pwd'";
     $result = mysqli_query($conn, $checkQuery);
 
     if (mysqli_num_rows($result) > 0) {
-        echo "Username already exists. Please choose a different username.";
+        $message = "Username, email, or password already exists in the database.";
     } else {
-        $query = "INSERT INTO akun (username, email, phone, alamat ,gender, pwd) VALUES ('$username', '$email', '$phone', '$alamat' ,'$gender', '$pwd')";
-        mysqli_query($conn, $query);
-        echo "Record inserted successfully!";
+        // Jika tidak ada, insert data ke database
+        $query = "INSERT INTO akun (username, email, phone, alamat, gender, pwd) VALUES ('$username', '$email', '$phone', '$alamat', '$gender', '$pwd')";
+        $insertResult = mysqli_query($conn, $query);
+
+        if ($insertResult) {
+            // Jika berhasil insert, arahkan ke halaman registrasi dengan parameter dataMasuk
+            header("Location: register.php?dataMasuk=true");
+            exit(); // Hentikan eksekusi script setelah melakukan redirect
+        } else {
+            // Jika gagal insert, arahkan kembali ke halaman registrasi dengan parameter error
+            $message = "Failed to register. Please try again later.";
+        }
     }
 }
 
+$q_select = 'SELECT * FROM akun';
+$result = mysqli_query($conn, $q_select);
+
+$dataMasuk = isset($_GET["dataMasuk"]) && $_GET["dataMasuk"] == "true";
 ?>
 
 
@@ -33,6 +46,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['phone']
     <link rel="icon" href="img/logo/logo cc.png">
     <title>Sign Up | Createlier</title>
     <link rel="stylesheet" href="style/loginRegister.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body class="login-bg">
@@ -44,6 +58,23 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['phone']
         <div class="right-section">
             <div class="form-container">
                 <img src="img/logo/logo.png" alt="brand" width="70%">
+                <?php if ($dataMasuk) { ?>
+                    <div class="alert alert-success alert-dismissible fade show mt-10" role="alert">
+                        Anda berhasil registrasi!
+                        <a href="register.php" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </a>
+                    </div>
+                <?php } ?>
+                <?php if (!empty($message)) { ?>
+                    <div class="alert alert-danger alert-dismissible fade show mt-10" role="alert">
+                        <?php echo $message; ?>
+                        <a href="register.php" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </a>
+                    </div>
+                <?php } ?>
+
                 <form method="post" action="register.php">
                     <div class="form-group row">
                         <label for="username" class="col-sm-3 col-form-label">Username:</label>
@@ -87,7 +118,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['phone']
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-9 offset-sm-3">
-                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button type="submit" class="btn-register" background-color="#850E35">Register</button>
                         </div>
                     </div>
                 </form>

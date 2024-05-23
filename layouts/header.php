@@ -41,8 +41,8 @@ if (isset($_GET['logout'])) {
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
-                <img src="../img/logo/logo createlier.png" alt="logo" width="40px">
-                <img src="../img/logo/logo.png" alt="brand" width="200px" height="30px">
+                <img src="./img/logo/logo createlier.png" alt="logo" width="40px">
+                <img src="./img/logo/logo.png" alt="brand" width="200px" height="30px">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -64,27 +64,27 @@ if (isset($_GET['logout'])) {
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <a class="jarak-ikon" href="../favorite.php">
-                        <img src="../img/icon/like.png" alt="favorite" width="25px" height="25px">
+                        <img src="./img/icon/like.png" alt="favorite" width="25px" height="25px">
                     </a>
                     <a class="jarak-ikon" href="../shop-cart.php">
-                        <img src="../img/icon/shopping-bag (2).png" alt="shopping bag" width="30px" height="30px">
+                        <img src="./img/icon/shopping-bag (2).png" alt="shopping bag" width="30px" height="30px">
                     </a>
                     <span class="vertical-line  jarak-ikon">|</span>
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>
                         <?php
                         // Path relatif untuk foto profil
-                        $profilePhoto = isset($_SESSION['photo']) ? '../img/profil/' . $_SESSION['photo'] : 'default_photo.png'; ?>
+                        $profilePhoto = isset($_SESSION['photo']) ? './img/profil/' . $_SESSION['photo'] : 'default_photo.png'; ?>
                         <div class="btn-group dropstart">
                             <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="<?php echo $profilePhoto; ?>" alt="Profile Picture" width="30px" class="dd-profile">
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item dd-item" href="../profil.php">Profile</a></li>
+                                <li><a class="dropdown-item dd-item" href="./profil.php">Profile</a></li>
                                 <li><a class="dropdown-item dd-item" href="#">History</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item dd-logout" href="../logout.php">Logout</a></li>
+                                <li><a class="dropdown-item dd-logout" href="./logout.php">Logout</a></li>
                             </ul>
                         </div>
                     <?php } else { ?>
