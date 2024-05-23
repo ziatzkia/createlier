@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+function setRupiah($amount)
+{
+    return 'Rp ' . number_format($amount, 2, ',', '.');
+}
+
+$kurs_dollar = 15000;
+
 if (!empty($_SESSION['cart'])) {
     // Let user in
 } else {
@@ -12,33 +20,11 @@ if (!empty($_SESSION['cart'])) {
 <?php
     include('layouts/header.php');
 ?>
-
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-option">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb__text">
-                        <h4>Check Out</h4>
-                        <div class="breadcrumb__links">
-                            <a href="index.php">Home</a>
-                            <a href="shop.php">Shop</a>
-                            <a href="shop-details.php">Shop Details</a>
-                            <a href="shopping-cart.php">Shopping Cart</a>
-                            <span>Check Out</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Section End -->
-
     <!-- Checkout Section Begin -->
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form id="checkout-form" method="POST" action="server/place_order.php">
+                <form id="checkout-form" method="POST" action="/server/place_order.php">
                     <div class="alert alert-danger" role="alert">
                         <?php if (isset($_GET['message'])) {
                             echo $_GET['message'];

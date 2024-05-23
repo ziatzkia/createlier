@@ -640,6 +640,7 @@ small {
 	-webkit-transition: all, 0.6s;
 	-o-transition: all, 0.6s;
 	transition: all, 0.6s;
+	text-align: center;
 }
 
 .hero__text p {
@@ -1637,7 +1638,7 @@ small {
 }
 
 .product__details__text {
-	text-align: center;
+	text-align: auto;
 }
 
 .product__details__text h4 {
@@ -2083,6 +2084,12 @@ small {
 /*---------------------
   Breadcrumb
 -----------------------*/
+.breadcrumb-optionfavorite {
+    background-color: #ffffff; 
+    border: 5px solid #850E35; 
+    border-radius: 25px; 
+    padding: 20px 0;
+}
 
 .breadcrumb-option {
 	background: #850E35;
@@ -4014,4 +4021,8 @@ small {
 	.categories__text:before {
 		height: 250px;
 	}
+}
+
+.product__item.clicked {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }

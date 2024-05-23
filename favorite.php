@@ -81,22 +81,17 @@ include('layouts/header.php');
 ?>
 
 <!-- Breadcrumb Section Begin -->
-<!-- <section class="breadcrumb-option">
+<section class="breadcrumb-optionfavorite">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="breadcrumb__text">
-                    <h4>Keranjang Belanja</h4>
-                    <div class="breadcrumb__links">
-                        <a href="index.php">Home</a>
-                        <a href="shop.php">Shop</a>
-                        <span>Cart</span>
-                    </div>
+                <div class="breadcrumb__text" style="text-align: center;">
+                    <h4 style="color: #850E35;">My Favorite</h4>
                 </div>
             </div>
         </div>
     </div>
-</section> -->
+</section>
 <!-- Breadcrumb Section End -->
 
 <!-- Shopping Cart Section Begin -->
@@ -106,14 +101,6 @@ include('layouts/header.php');
             <div class="col-lg-8">
                 <div class="shopping__cart__table">
                     <table>
-                        <thead>
-                            <tr>
-                                <th>Produk</th>
-                                <th>Kuantitas</th>
-                                <th>Sub Total</th>
-                                <th></th>
-                            </tr>
-                        </thead>
                         <tbody>
                             <?php if (isset($_SESSION['cart'])) { ?>
                                 <?php foreach ($_SESSION['cart'] as $product) { ?>
@@ -124,12 +111,11 @@ include('layouts/header.php');
                                             </div>
                                             <div class="product__cart__item__text">
                                                 <h6><?php echo $product['product_name']; ?></h6>
-                                                <h5><?php echo setRupiah($product['product_price'] * $kurs_dollar); ?></h5>
                                             </div>
                                         </td>
                                         <td class="quantity__item">
                                             <div class="quantity">
-                                                <form method="POST" action="shop-cart.php">
+                                                <form method="POST" action="favorite.php">
                                                     <div>
                                                         <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>" />
                                                         <h6><input type="number" name="product_quantity" value="<?php echo $product['product_quantity']; ?>"></h6>
@@ -143,7 +129,7 @@ include('layouts/header.php');
                                         <td class="cart__price">
                                             <span><?php echo setRupiah($product['product_quantity'] * ($product['product_price'] * $kurs_dollar)); ?></span>
                                         </td>
-                                        <form method="POST" action="shop-cart.php">
+                                        <form method="POST" action="favorite.php">
                                             <td>
                                                 <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
                                                 <button type="submit" class="btn btn-danger" name="remove_product"><i class="fa fa-trash"></i></button>
@@ -154,24 +140,6 @@ include('layouts/header.php');
                             <?php } ?>
                         </tbody>
                     </table>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="continue__btn">
-                            <a href="shop.php" class="btn btn-primary" style="background-color: #850e35;"> Shop Again <i class="bi bi-arrow-right"></i></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="cart__total" >
-                    <h6>Total Keranjang</h6>
-                    <ul>
-                        <li>Total <span><?php if (isset($_SESSION['cart'])) { echo setRupiah($_SESSION['total'] * $kurs_dollar); } ?></span></li>
-                    </ul>
-                    <form method="POST" action="checkout.php">
-                        <input type="submit" class="primary-btn" value="Checkout" name="checkout" style="background-color: #850e35;">
-                    </form>
                 </div>
             </div>
         </div>

@@ -30,58 +30,30 @@ include('layouts/header.php');
     <?php while ($row = $product_details->fetch_assoc()) { ?>
         <div class="container">
             <div class="row">
-                <!-- Right side: Image -->
-                <div class="col-lg-6">
-                    <div class="product__details__pic__item">
-                        <img src="img/shop-details/<?php echo $row['product_image1']; ?>" alt="">
+                <div class="col-md-6 mt-5">
+                    <div class="product__details__pic__item" style="align-content: center;">
+                        <img src="img/shop-details/<?php echo $row['product_image2']; ?>" alt="" class="img-fluid" style="align-content: center;">
                     </div>
                 </div>
-                <!-- Left side: Product Details -->
-                <div class="col-lg-6">
+                <div class="col-md-6 mt-5">
                     <div class="product__details__text">
                         <h4><?php echo $row['product_name']; ?></h4>
-                        <!-- <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o"></i>
-                            <span> - 5 Reviews</span>
-                        </div> -->
                         <h3><?php echo setRupiah($row['product_price'] * $kurs_dollar); ?></h3>
                         <p><?php echo $row['product_description']; ?></p>
                         <div class="product__details__option">
                             <div class="product__details__option__size">
                                 <span>Size:</span>
                                 <label for="xxl">xxl
-                                    <input type="radio" id="xxl">
+                                    <input type="radio" id="xxl" name="size">
                                 </label>
                                 <label class="active" for="xl">xl
-                                    <input type="radio" id="xl">
+                                    <input type="radio" id="xl" name="size">
                                 </label>
                                 <label for="l">l
-                                    <input type="radio" id="l">
+                                    <input type="radio" id="l" name="size">
                                 </label>
                                 <label for="sm">s
-                                    <input type="radio" id="sm">
-                                </label>
-                            </div>
-                            <div class="product__details__option__color">
-                                <span>Color:</span>
-                                <label class="c-1" for="sp-1">
-                                    <input type="radio" id="sp-1">
-                                </label>
-                                <label class="c-2" for="sp-2">
-                                    <input type="radio" id="sp-2">
-                                </label>
-                                <label class="c-3" for="sp-3">
-                                    <input type="radio" id="sp-3">
-                                </label>
-                                <label class="c-4" for="sp-4">
-                                    <input type="radio" id="sp-4">
-                                </label>
-                                <label class="c-9" for="sp-9">
-                                    <input type="radio" id="sp-9">
+                                    <input type="radio" id="sm" name="size">
                                 </label>
                             </div>
                         </div>
@@ -96,21 +68,12 @@ include('layouts/header.php');
                                         <input type="number" name="product_quantity" value="1">
                                     </div>
                                 </div>
-                                <button type="submit" name="add_to_cart" class="primary-btn"><i class="fa fa-shopping-cart fa-2x"></i> add to cart</button>
+                                <button type="submit" name="add_to_cart" class="primary-btn">
+                                    <i class="fa fa-shopping-cart fa-2x"></i> add to cart
+                                </button>
+                                <a href="<?php echo "favorite.php?product_id=" . $row['product_id']; ?>" class="add-cart"><i class="bi bi-heart"></i></a>
                             </form>
                         </div>
-                        <div class="product__details__btns__option">
-                            <a href="#"><i class="fa fa-heart"></i> add to wishlist</a>
-                            <a href="#"><i class="fa fa-exchange"></i> Add To Compare</a>
-                        </div>
-                        <!-- <div class="product__details__last__option">
-                            <h5><span>Guaranteed Safe Checkout</span></h5>
-                            <img src="img/shop-details/details-payment.png" alt="">
-                            <ul>
-                                <li><span>SKU:</span> 3812912</li>
-                                <li><span>Categories:</span> <?php echo $row['product_category']; ?></li>
-                            </ul>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -118,6 +81,9 @@ include('layouts/header.php');
     <?php } ?>
 </section>
 <!-- Shop Details Section End -->
+
+<br>
+<br>
 
 <?php
 include('layouts/footer.php');

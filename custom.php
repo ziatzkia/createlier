@@ -18,23 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 include 'layouts/header.php';
 ?>
 
-<!-- Breadcrumb Section Begin -->
-<section class="breadcrumb-option">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb__text">
-                    <h4>Customize</h4>
-                    <div class="breadcrumb__links">
-                        <a href="index.php">Home</a>
-                        <span>Custom Accessories</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Breadcrumb Section End -->
+
 
 <br>
 <br>

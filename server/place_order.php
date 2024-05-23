@@ -17,7 +17,7 @@ if (!isset($_SESSION['logged_in'])) {
         $address = $_POST['address'];
         $order_cost = $_SESSION['total'];
         $order_status = "not paid";
-        $user_id = $_SESSION['user_id'];
+        $user_id = $_SESSION['id'];
         $order_date = date('Y-m-d h:i:s');
 
         $query_orders = "INSERT INTO orders (order_cost, order_status, user_id, user_phone, user_city, user_address, order_date) 

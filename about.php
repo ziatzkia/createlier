@@ -2,24 +2,6 @@
 session_start();
 include 'layouts/header.php';
 ?>
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-option">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb__text">
-                        <h4>About Us</h4>
-                        <div class="breadcrumb__links">
-                            <a href="index.php">Home</a>
-                            <span>About Us</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Section End -->
-
     <!-- About Section Begin -->
     <section class="about spad">
         <div class="container">
@@ -56,6 +38,45 @@ include 'layouts/header.php';
         </div>
     </section>
     <!-- About Section End -->
+
+     <!-- blog -->
+    <section class="latest spad">
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic set-bg" data-setbg="img/banner/banner1.png"></div>
+                        <div class="blog__item__text">
+                            <span><img src="img/icon/calendar.png" alt=""> 15 Oktober 2025</span>
+                            <h5>New Pop Store</h5>
+                            <a href="blog.php">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic set-bg" data-setbg="img/banner/banner2.png"></div>
+                        <div class="blog__item__text">
+                            <span><img src="img/icon/calendar.png" alt=""> 21 Oktober 2025</span>
+                            <h5>Product Release With Jennie</h5>
+                            <a href="blog.php">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic set-bg" data-setbg="img/banner/banner3.png"></div>
+                        <div class="blog__item__text">
+                            <span><img src="img/icon/calendar.png" alt=""> 28 Oktober 2025</span>
+                            <h5>Launching New Accessories</h5>
+                            <a href="blog.php">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blog end -->
 
 
     <!-- Team Section Begin -->
@@ -102,6 +123,16 @@ include 'layouts/header.php';
     </section>
     <!-- Team Section End -->
 
+    <script src="js/jquery-easing/jquery.easing.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/jquery.countdown.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/mixitup.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
 <?php
     include('layouts/footer.php');

@@ -1,9 +1,8 @@
 <?php
 session_start();
-$kurs_dollar = 15000;
 include('server/connection.php');
 
-if (isset($_POST['search']) && isset($_POST['product_category'])) {
+if (isset($_GET['search']) && isset($_POST['product_category'])) {
     $category = $_POST['product_category'];
     $query_products = "SELECT * FROM products WHERE product_category = ?";
     $stmt_products = $conn->prepare($query_products);
@@ -21,26 +20,21 @@ function setRupiah($amount)
 {
     return 'Rp ' . number_format($amount, 2, ',', '.');
 }
+$kurs_dollar = 15000;
 
 include('layouts/header.php');
 ?>
-<!-- Breadcrumb Section Begin -->
-<section class="breadcrumb-option">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9">
-                <div class="breadcrumb__text">
-                    <h4>Shop</h4>
-                    <div class="breadcrumb__links">
-                        <a href="index.php">Home</a>
-                        <span>Shop</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Breadcrumb Section End -->
+
+<!-- search  -->
+<div class="d-flex justify-content-center mt-5">
+    <form action="shop.php" method="GET" class="d-flex" style="position: relative; width: 60%;">
+        <input type="text" name="search" class="form-control me-2" placeholder="Search product" style="border-radius: 15px; padding-right: 30px; height: 40px; font-size: 16px; background-color: #e0e0e0;">
+        <button type="submit" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); border: none; background: none;">
+            <i class="bi bi-search"></i>
+        </button>
+    </form>
+</div>
+<!-- end -->
 
 <!-- Shop Section Begin -->
 <section class="shop spad">
@@ -123,34 +117,14 @@ include('layouts/header.php');
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/<?php echo $row['product_image1']; ?>">
-                                    <ul class="product__hover">
-                                        <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                    </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><?php echo $row['product_name']; ?></h6>
-                                    <h5><?php echo $row['product_brand']; ?></h5>
-                                    <a href="<?php echo "shop-details.php?product_id=" . $row['product_id']; ?>" class="add-cart">+ Add To Cart</a>
-                                    <div class="rating">
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
+                                    <h5><?php echo $row['product_name']; ?></h5>
+                                    <p><?php echo $row['product_category']; ?></p>
                                     <h5><?php echo setRupiah($row['product_price'] * $kurs_dollar); ?></h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-4">
-                                            <input type="radio" id="pc-4">
-                                        </label>
-                                        <label class="active black" for="pc-5">
-                                            <input type="radio" id="pc-5">
-                                        </label>
-                                        <label class="grey" for="pc-6">
-                                            <input type="radio" id="pc-6">
-                                        </label>
-                                    </div>
                                 </div>
+                                <a href="<?php echo "shop-details.php?product_id=" . $row['product_id']; ?>" class="add-cart"><i class="bi bi-bag"></i></a>
+                                <a href="<?php echo "favorite.php?product_id=" . $row['product_id']; ?>" class="add-cart"><i class="bi bi-heart"></i></a>
                             </div>
                         </div>
                     <?php } ?>
