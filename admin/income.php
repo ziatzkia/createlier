@@ -11,7 +11,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 <?php
 $query_incomes = "SELECT o.order_id, o.order_cost, o.order_date, a.id, oi.product_name, oi.product_quantity, oi.product_price
                     FROM `orders` o, `akun` a, `order_items` oi 
-                    WHERE o.id = a.id AND a.id = oi.id AND o.order_status = 'DELIVERED' OR order_status = 'SHIPPED' OR order_status = 'PAID'
+                    WHERE o.id = a.id AND a.id = oi.id AND o.order_status = 'DELIVERED'
                     ORDER BY o.order_date DESC";
 
 
