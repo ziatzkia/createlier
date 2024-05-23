@@ -86,7 +86,7 @@ if (isset($_GET['logout'])) {
                     echo '<td><a href="' . $_SESSION['photo'] . '"><img src="../img/profil/' . $_SESSION['photo'] . '" alt="Foto User" class="profpic"></a></td>';
                     echo '<p><strong>Email:</strong> ' . $_SESSION['email'] . '</p>';
                     echo '<p><strong>Phone:</strong> ' . $_SESSION['phone'] . '</p>';
-                    echo '<p><strong>Address:</strong> ' . $_SESSION['alamat'] . '</p>';
+                    echo '<p><strong>Address:</strong> ' . $_SESSION['user_city'] . '</p>';
                     echo '<p><strong>Gender:</strong> ' . $_SESSION['gender'] . '</p>';
                     echo '<p><strong>Saldo:</strong> ' . $_SESSION['saldo'] . '</p>';
                     echo '</div>';

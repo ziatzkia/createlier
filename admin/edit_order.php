@@ -91,7 +91,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>User Address</label>
-                                        <input class="form-control" type="text" value="<?php echo $order['alamat']; ?>" disabled>
+                                        <input class="form-control" type="text" value="<?php echo $order['user_city']; ?>" disabled>
                                     </div>
                                 </div>
                             <?php } ?>

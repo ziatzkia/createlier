@@ -143,9 +143,11 @@
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-envelope fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        <?php if (isset($_SESSION['email'])) { echo $_SESSION['email']; } ?>
+                                    <a class="dropdown-item" href="#displayAccount" data-toggle="modal">
+                                        <i class="fas fa-envelope fa-sm fa-fw mr-2 text-gray-400 fa-user"></i>
+                                        <?php if (isset($_SESSION['email'])) {
+                                            echo $_SESSION['email'];
+                                        } ?>
                                     </a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -161,3 +163,40 @@
 
                 </nav>
                 <!-- End of Topbar -->
+                <!-- Modal -->
+                <div class="modal fade" id="displayAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Info Admin</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 text-center">
+                                        <img src="<?php echo 'img/profil/' . $_SESSION['photo']; ?>" alt="profile" class="rounded-circle img-responsive" width="200px" />
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <h4><?php if (isset($_SESSION['username'])) {
+                                                echo $_SESSION['username'];
+                                            } ?></h4>
+                                        <p>
+                                            <i class="fas fa-envelope"></i> <?php if (isset($_SESSION['email'])) {
+                                                                                echo $_SESSION['email'];
+                                                                            } ?>
+                                            <br />
+                                            <i class="fas fa-phone"></i> <?php if (isset($_SESSION['phone'])) {
+                                                                                echo $_SESSION['phone'];
+                                                                            } ?>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>

@@ -9,7 +9,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 <?php include('layouts/header.php'); ?>
 
 <?php
-$query_orders = "SELECT o.order_id, o.order_cost, o.order_status, a.username, o.alamat, o.order_date FROM `orders` o, `akun` a WHERE o.id = a.id ORDER BY o.order_date DESC";
+$query_orders = "SELECT o.order_id, o.order_cost, o.order_status, a.username, o.user_city, o.order_date FROM `orders` o, `akun` a WHERE o.id = a.id ORDER BY o.order_date DESC";
 
 $stmt_orders = $conn->prepare($query_orders);
 $stmt_orders->execute();
@@ -56,7 +56,7 @@ $orders = $stmt_orders->get_result();
                             <th>Cost</th>
                             <th>Status</th>
                             <th>Name</th>
-                            <th>Address</th>
+                            <th>City</th>
                             <th>Transaction Date</th>
                             <th>Action</th>
                         </tr>
@@ -68,7 +68,7 @@ $orders = $stmt_orders->get_result();
                                 <td><?php echo $order['order_cost']; ?></td>
                                 <td><?php echo $order['order_status']; ?></td>
                                 <td><?php echo $order['username']; ?></td>
-                                <td><?php echo $order['alamat']; ?></td>
+                                <td><?php echo $order['user_city']; ?></td>
                                 <td><?php echo $order['order_date']; ?></td>
                                 <td class="text-center">
                                     <a href="edit_order.php?order_id=<?php echo $order['order_id']; ?>" class="btn btn-info btn-circle">
