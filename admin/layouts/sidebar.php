@@ -61,7 +61,7 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Income
+        Balance
     </div>
 
     <!-- Nav Item - Customers -->
@@ -69,6 +69,13 @@
         <a class="nav-link" href="income.php">
             <i class="fas fa-wallet"></i>
             <span>Income</span></a>
+    </li>
+
+    <!-- Nav Item - Customers -->
+    <li class="nav-item">
+        <a class="nav-link" href="topup.php">
+            <i class="fas fa-coins"></i>
+            <span>Top Up User</span></a>
     </li>
 
     <!-- Divider -->
