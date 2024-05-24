@@ -14,24 +14,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $price = isset($prices[$category]) ? $prices[$category] : 0;
     $priceFormatted = "Rp " . number_format($price, 0, ',', '.');
 }
-
+?>
+<?php
 include 'layouts/header.php';
 ?>
-
-
-
-<br>
-<br>
-<br>
+<!-- vidio end -->
+<div class="row justify-content-center" style="margin: 0; padding: 0;">
+    <div class="col-md-12" style="margin: 0; padding: 0;">
+        <div class="justify-content-center" style="margin: 0; padding: 0;">
+            <video class="ms-1 mt-0 pt-0 img-fluid" controls autoplay loop width="100%" style="margin: 0; padding: 0;">
+                <source src="vidio/createlier.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+<!-- vidio end -->
 
 <!-- Banner -->
 <div class="card mx-auto" style="width: 50rem;">
     <img src="img/banner/banner4.png" class="card-img-top" alt="...">
-    <div class="card-body">
-        <p class="card-text mx-auto">Enhance Your Style with Your Own Unique Touch at Createlier</p>
-    </div>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#customModal" style="background-color: #850e35;">
-        CREATE
+        Let's Start
     </button>
 </div>
 <!-- Banner end -->
@@ -111,8 +114,6 @@ include 'layouts/header.php';
     </div>
 </div>
 
-<br>
-<br>
 <br>
 <br>
 <br>

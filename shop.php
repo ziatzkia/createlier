@@ -2,11 +2,17 @@
 session_start();
 include('server/connection.php');
 
-if (isset($_GET['search']) && isset($_POST['product_category'])) {
-    $category = $_POST['product_category'];
-    $query_products = "SELECT * FROM products WHERE product_category = ?";
+// Inisialisasi variabel produk
+$products = [];
+
+// Memproses pencarian dan kategori
+if (isset($_GET['search']) || isset($_POST['product_category'])) {
+    $search_term = isset($_GET['search']) ? '%' . $_GET['search'] . '%' : '%';
+    $category = isset($_POST['product_category']) ? $_POST['product_category'] : '%';
+    
+    $query_products = "SELECT * FROM products WHERE product_name LIKE ? AND product_category LIKE ?";
     $stmt_products = $conn->prepare($query_products);
-    $stmt_products->bind_param('s', $category);
+    $stmt_products->bind_param('ss', $search_term, $category);
     $stmt_products->execute();
     $products = $stmt_products->get_result();
 } else {
@@ -25,7 +31,7 @@ $kurs_dollar = 15000;
 include('layouts/header.php');
 ?>
 
-<!-- search  -->
+<!-- search -->
 <div class="d-flex justify-content-center mt-5">
     <form action="shop.php" method="GET" class="d-flex" style="position: relative; width: 60%;">
         <input type="text" name="search" class="form-control me-2" placeholder="Search product" style="border-radius: 15px; padding-right: 30px; height: 40px; font-size: 16px; background-color: #e0e0e0;">
@@ -44,46 +50,6 @@ include('layouts/header.php');
                 <div class="shop__product__option">
                     <div class="row">
                         <div class="col-lg-9 col-md-6 col-sm-6">
-                            <!-- <form id="category-form" method="POST" action="shop.php">
-                                <input type="hidden" name="product_category" id="product-category-input">
-                                <div class="dropdown-center">
-                                    <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #850e35;">
-                                        Categories
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <input type="radio" id="category_ring" name="product_category" value="Ring" <?php if (isset($product_category) && $product_category == 'Ring') echo 'checked'; ?>>
-                                                <label for="category_ring">Ring</label>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <input type="radio" id="category_necklaces" name="product_category" value="Necklaces" <?php if (isset($product_category) && $product_category == 'Necklaces') echo 'checked'; ?>>
-                                                <label for="category_necklaces">Necklaces</label>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <input type="radio" id="category_bracelet" name="product_category" value="Bracelet" <?php if (isset($product_category) && $product_category == 'Bracelet') echo 'checked'; ?>>
-                                                <label for="category_bracelet">Bracelet</label>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <input type="radio" id="category_hair_acc" name="product_category" value="Hair Acc" <?php if (isset($product_category) && $product_category == 'Hair Acc') echo 'checked'; ?>>
-                                                <label for="category_hair_acc">Hair Acc</label>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <input type="radio" id="category_key_chain" name="product_category" value="Key Chain" <?php if (isset($product_category) && $product_category == 'keychain') echo 'checked'; ?>>
-                                                <label for="category_key_chain">Key Chain</label>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </form> -->
                             <form id="category-form" method="POST" action="shop.php">
                                 <input type="hidden" name="product_category" id="product-category-input">
                                 <div class="dropdown-center">
@@ -114,7 +80,7 @@ include('layouts/header.php');
                 </div>
                 <div class="row">
                     <?php while ($row = $products->fetch_assoc()) { ?>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-lg-3 col-md-6 col-sm-6 ">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/<?php echo $row['product_image1']; ?>">
                                 </div>
@@ -124,7 +90,13 @@ include('layouts/header.php');
                                     <h5><?php echo setRupiah($row['product_price'] * $kurs_dollar); ?></h5>
                                 </div>
                                 <a href="<?php echo "shop-details.php?product_id=" . $row['product_id']; ?>" class="add-cart"><i class="bi bi-bag"></i></a>
-                                <a href="<?php echo "favorite.php?product_id=" . $row['product_id']; ?>" class="add-cart"><i class="bi bi-heart"></i></a>
+                                <form method="POST" action="favorite.php">
+                                    <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
+                                    <input type="hidden" name="product_image1" value="<?php echo $row['product_image1']; ?>">
+                                    <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>">
+                                    <input type="hidden" name="product_category" value="<?php echo $row['product_category']; ?>">
+                                    <button type="submit" class="add-cart" name="add_favorite"><i class="bi bi-heart"></i></button>
+                                </form>
                             </div>
                         </div>
                     <?php } ?>
@@ -145,6 +117,16 @@ include('layouts/header.php');
     </div>
 </section>
 <!-- Shop Section End -->
+
+<script>
+document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', event => {
+        event.preventDefault();
+        document.getElementById('product-category-input').value = event.target.getAttribute('data-value');
+        document.getElementById('category-form').submit();
+    });
+});
+</script>
 
 <?php
 include('layouts/footer.php');

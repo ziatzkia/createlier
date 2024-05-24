@@ -162,19 +162,7 @@ include 'layouts/header.php';
     </div>
     </div>
     <!-- end page 2 -->
-
-    <!-- vidio end -->
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="justify-content-center">
-                <video class="ms-1 mt-5 pt-4 img-fluid" controls autoplay loop width="100%">
-                    <source src="vidio/createlier.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </div>
-    <!-- vidio end -->
-
+    
     <hr style="background-color: #850e35;">
 
     <!-- Latest Blog Section Begin -->

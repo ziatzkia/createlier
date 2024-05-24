@@ -1618,6 +1618,7 @@ small {
 
 .product__details__pic__item {
 	position: relative;
+	margin-left: 100px;
 }
 
 .product__details__pic__item a {
@@ -2087,8 +2088,12 @@ small {
 .breadcrumb-optionfavorite {
     background-color: #ffffff; 
     border: 5px solid #850E35; 
-    border-radius: 25px; 
-    padding: 20px 0;
+    border-radius: 0px; 
+	padding: 10px 20px; /* Adjusted padding for more control over the size */
+    width: 100%; /* Set the width to 100% of its container */
+    max-width: 500px; /* Maximum width to prevent it from becoming too large */
+    margin: 0 auto; /* Center the element within its container */
+    box-sizing: border-box; 
 }
 
 .breadcrumb-option {

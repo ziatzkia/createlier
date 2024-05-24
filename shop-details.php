@@ -31,7 +31,7 @@ include('layouts/header.php');
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mt-5">
-                    <div class="product__details__pic__item" style="align-content: center;">
+                    <div class="product__details__pic__item" style="align-content: center; " >
                         <img src="img/shop-details/<?php echo $row['product_image2']; ?>" alt="" class="img-fluid" style="align-content: center;">
                     </div>
                 </div>
