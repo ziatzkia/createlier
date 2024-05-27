@@ -9,7 +9,7 @@ $products = [];
 if (isset($_GET['search']) || isset($_POST['product_category'])) {
     $search_term = isset($_GET['search']) ? '%' . $_GET['search'] . '%' : '%';
     $category = isset($_POST['product_category']) ? $_POST['product_category'] : '%';
-    
+
     $query_products = "SELECT * FROM products WHERE product_name LIKE ? AND product_category LIKE ?";
     $stmt_products = $conn->prepare($query_products);
     $stmt_products->bind_param('ss', $search_term, $category);
@@ -34,7 +34,7 @@ include('layouts/header.php');
 <!-- search -->
 <div class="d-flex justify-content-center mt-5">
     <form action="shop.php" method="GET" class="d-flex" style="position: relative; width: 60%;">
-        <input type="text" name="search" class="form-control me-2" placeholder="Search product" style="border-radius: 15px; padding-right: 30px; height: 40px; font-size: 16px; background-color: #e0e0e0;">
+        <input type="text" name="search" class="form-control me-2" placeholder="Search product" style="border-radius: 15px; padding-right: 30px; height: 40px; font-size: 16px; background-color: white; border: 2px solid #850e35;">
         <button type="submit" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); border: none; background: none;">
             <i class="bi bi-search"></i>
         </button>
@@ -80,27 +80,35 @@ include('layouts/header.php');
                 </div>
                 <div class="row">
                     <?php while ($row = $products->fetch_assoc()) { ?>
-                        <div class="col-lg-3 col-md-6 col-sm-6 ">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/<?php echo $row['product_image1']; ?>">
                                 </div>
                                 <div class="product__item__text">
-                                    <h5><?php echo $row['product_name']; ?></h5>
+                                    <h6><?php echo $row['product_name']; ?></h6>
                                     <p><?php echo $row['product_category']; ?></p>
                                     <h5><?php echo setRupiah($row['product_price'] * $kurs_dollar); ?></h5>
                                 </div>
-                                <a href="<?php echo "shop-details.php?product_id=" . $row['product_id']; ?>" class="add-cart"><i class="bi bi-bag"></i></a>
-                                <form method="POST" action="favorite.php">
-                                    <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
-                                    <input type="hidden" name="product_image1" value="<?php echo $row['product_image1']; ?>">
-                                    <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>">
-                                    <input type="hidden" name="product_category" value="<?php echo $row['product_category']; ?>">
-                                    <button type="submit" class="add-cart" name="add_favorite"><i class="bi bi-heart"></i></button>
-                                </form>
+                                <div class="product__item__actions">
+                                    <button onclick="window.location.href='shop-details.php?product_id=<?php echo $row['product_id']; ?>'" class="add-cart bi-button">
+                                        <i class="bi bi-bag"></i>
+                                    </button>
+                                    <form method="POST" action="favorite.php" class="favorite-form">
+                                        <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
+                                        <input type="hidden" name="product_image1" value="<?php echo $row['product_image1']; ?>">
+                                        <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>">
+                                        <input type="hidden" name="product_category" value="<?php echo $row['product_category']; ?>">
+                                        <input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>">
+                                        <button type="submit" class="add-cart white-button" name="add_favorite">
+                                            <i class="bi bi-heart"></i>
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     <?php } ?>
                 </div>
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__pagination">
@@ -119,15 +127,16 @@ include('layouts/header.php');
 <!-- Shop Section End -->
 
 <script>
-document.querySelectorAll('.dropdown-item').forEach(item => {
-    item.addEventListener('click', event => {
-        event.preventDefault();
-        document.getElementById('product-category-input').value = event.target.getAttribute('data-value');
-        document.getElementById('category-form').submit();
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', event => {
+            event.preventDefault();
+            document.getElementById('product-category-input').value = event.target.getAttribute('data-value');
+            document.getElementById('category-form').submit();
+        });
     });
-});
 </script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 <?php
 include('layouts/footer.php');
 ?>

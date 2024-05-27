@@ -79,8 +79,8 @@ function calculateTotalCart() {
 <?php
 include('layouts/header.php');
 ?>
-<!-- <a href="shop-cart.php" class="btn btn-primary">Produk</a>
-<a href="custom-cart.php" class="btn btn-primary">Custom</a> -->
+<a href="shop-cart.php" class="btn btn-primary">Produk</a>
+<a href="custom-cart.php" class="btn btn-primary">Custom</a>
 <!-- Shopping Cart Section Begin -->
 <section class="shopping-cart spad">
     <div class="container">
@@ -111,7 +111,7 @@ include('layouts/header.php');
                                         </td>
                                         <td class="quantity__item">
                                             <div class="quantity">
-                                                <form method="POST" action="shop-cart.php">
+                                                <form method="POST" action="custom-cart.php">
                                                     <div>
                                                         <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>" />
                                                         <h6><input type="number" name="product_quantity" value="<?php echo $product['product_quantity']; ?>"></h6>
@@ -125,7 +125,7 @@ include('layouts/header.php');
                                         <td class="cart__price">
                                             <span><?php echo setRupiah($product['product_quantity'] * ($product['product_price'] * $kurs_dollar)); ?></span>
                                         </td>
-                                        <form method="POST" action="shop-cart.php">
+                                        <form method="POST" action="custom-cart.php">
                                             <td>
                                                 <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
                                                 <button type="submit" class="btn btn-danger" name="remove_product"><i class="bi bi-trash3"></i></button>

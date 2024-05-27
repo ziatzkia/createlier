@@ -44,8 +44,8 @@ include 'layouts/header.php';
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
                             <div class="hero__text" style="text-align: center;">
-                                <h2 style="color: #850e35;">New Collections Accessories</h2>
-                                <a href="shop.php" class="primary-btn">Shop now</span></a>
+                                <h2 style="color: #850e35; ">New Collections Accessories</h2>
+                                <a href="shop.php" class="primary-btn" >Shop now</span></a>
                                 <div class="hero__social">
                                 </div>
                             </div>

@@ -18,9 +18,9 @@ if (!empty($_SESSION['cart'])) {
 ?>
 
 <?php
-    include('layouts/header.php');
+include('layouts/header.php');
 ?>
-   <section class="checkout spad">
+<section class="checkout spad">
     <div class="container">
         <div class="checkout__form">
             <form id="checkout-form" method="POST" action="/server/place_order.php">
@@ -29,13 +29,11 @@ if (!empty($_SESSION['cart'])) {
                         echo htmlspecialchars($_GET['message']);
                     } ?>
                     <?php if (isset($_GET['message'])) { ?>
-                        <a href="login.php" class="btn btn-primary">Login</a>
+                        <a href="login.php" style="text-decoration: underline;">Login</a>
                     <?php } ?>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 col-md-6">
-                        <h6 class="coupon__code"><span class="icon_tag_alt"></span> Have a coupon? <a href="#">Click
-                                here</a> to enter your code</h6>
+                    <div class="col-lg-7 col-md-5">
                         <h6 class="checkout__title">Billing Details</h6>
                         <div class="checkout__input">
                             <p>Name<span>*</span></p>
@@ -64,23 +62,31 @@ if (!empty($_SESSION['cart'])) {
                             <input type="text" name="address" placeholder="Street Address" class="checkout__input__add">
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-5 col-md-7">
                         <div class="checkout__order">
                             <h4 class="order__title">Your order</h4>
                             <div class="checkout__order__products">Product <span>Price</span></div>
                             <ul class="checkout__total__products">
-                                <?php 
+                                <?php
                                 if (!empty($_SESSION['cart']) && is_array($_SESSION['cart'])) {
-                                    foreach ($_SESSION['cart'] as $key => $value) { ?>
-                                        <li><?php echo htmlspecialchars($value['product_quantity']); ?> <?php echo htmlspecialchars($value['product_name']); ?> <span> <?php echo setRupiah(($value['product_price'] * $kurs_dollar)); ?></span></li>
-                                    <?php }
+                                    foreach ($_SESSION['cart'] as $key => $value) {
+                                        if (isset($_SESSION['total'])) { // Tambahkan pengecekan ini
+                                ?>
+                                            <li><?php echo htmlspecialchars($value['product_quantity']); ?> <?php echo htmlspecialchars($value['product_name']); ?> <span> <?php echo setRupiah(($value['product_price'] * $kurs_dollar)); ?></span></li>
+                                <?php
+                                        }
+                                    }
                                 } ?>
                             </ul>
                             <ul class="checkout__total__all">
-                                <li>Total <span><?php echo setRupiah(($_SESSION['total'] * $kurs_dollar)); ?></span></li>
+                                <?php if (isset($_SESSION['total'])) { ?> <!-- Tambahkan pengecekan ini -->
+                                    <li>Total <span><?php echo setRupiah(($_SESSION['total'] * $kurs_dollar)); ?></span></li>
+                                <?php } ?>
                             </ul>
-
-                            <input type="submit" class="site-btn" id="checkout-btn" name="place_order" value="PLACE ORDER" />
+                            <!-- <ul class="checkout__total__all">
+                                <li>Total <span><?php echo setRupiah(($_SESSION['total'] * $kurs_dollar)); ?></span></li>
+                            </ul> -->
+                            <input type="submit" class="site-btn" id="checkout-btn" name="place_order" value="PAYMENT" style="background-color: #850E35;">
                         </div>
                     </div>
                 </div>
@@ -90,5 +96,5 @@ if (!empty($_SESSION['cart'])) {
 </section>
 <!-- Checkout Section End -->
 <?php
-    include('layouts/footer.php');
+include('layouts/footer.php');
 ?>

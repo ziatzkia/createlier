@@ -47,7 +47,7 @@ if (isset($_GET['logout'])) {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mx-auto">
                     <li class="nav-item jarak">
                         <a class="nav-link active" href="index.php">Home</a>
                     </li>

@@ -31,7 +31,7 @@ include('layouts/header.php');
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mt-5">
-                    <div class="product__details__pic__item" style="align-content: center; " >
+                    <div class="product__details__pic__item" style="align-content: center; ">
                         <img src="img/shop-details/<?php echo $row['product_image2']; ?>" alt="" class="img-fluid" style="align-content: center;">
                     </div>
                 </div>
@@ -64,14 +64,11 @@ include('layouts/header.php');
                                 <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>">
                                 <input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>">
                                 <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="number" name="product_quantity" value="1">
-                                    </div>
+                                    <input type="number" name="product_quantity" value="1">
                                 </div>
-                                <button type="submit" name="add_to_cart" class="primary-btn">
-                                    <i class="fa fa-shopping-cart fa-2x"></i> add to cart
+                                <button type="submit" name="add_to_cart" class="primary-btn" style="background-color: #850E35;">
+                                    <i class="bi bi-cart"></i> add to cart
                                 </button>
-                                <a href="<?php echo "favorite.php?product_id=" . $row['product_id']; ?>" class="add-cart"><i class="bi bi-heart"></i></a>
                             </form>
                         </div>
                     </div>
