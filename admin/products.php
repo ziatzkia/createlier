@@ -19,7 +19,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 
     function setRupiah($price)
     {
-        $result = "Rp".number_format($price, 0, ',', '.');
+        $result = "Rp. ".number_format($price, 0, ',', '.');
         return $result;
     }
 ?>
@@ -116,7 +116,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
                         <?php foreach ($products as $product) { ?>
                             <tr>
                                 <td><?php echo $product['product_id']; ?></td>
-                                <td class="text-center"><img title="product_image" src="<?php echo 'img/products/' . $product['product_image1']; ?>" style="width: 80px; height: 80px;" /></td>
+                                <td class="text-center"><img title="product_image" src="<?php echo 'img/products/' . $product['product_image']; ?>" style="width: 80px; height: 80px;" /></td>
                                 <td><?php echo $product['product_name']; ?></td>
                                 <td><?php echo $product['product_brand']; ?></td>
                                 <td><?php echo $product['product_category']; ?></td>
