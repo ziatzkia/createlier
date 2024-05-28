@@ -2,6 +2,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #850E35, #FF5733);
 }
 
 .container {
@@ -69,6 +73,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
+    
 }
 
 button {
@@ -117,7 +122,6 @@ img {
     align-items: center;
     gap: 20px;
     height: 100%;
-    margin-top: 70px;
 }
 
 h2 {
@@ -144,7 +148,6 @@ h2 {
     margin-top: -8px;
 }
 
-/* CSS */
 .form-check-label {
     font-size: 12px;
     margin-top: -8px;
@@ -154,7 +157,6 @@ h2 {
     order: 2;
     margin-top: -8px;
 }
-
 
 .form-check-label {
     font-size: 12px;

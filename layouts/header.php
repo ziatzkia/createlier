@@ -98,6 +98,43 @@ if (isset($_GET['logout'])) {
         </div>
     </nav>
 
+<<<<<<< HEAD
+=======
+
+    <!-- Modal -->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modalBg">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <?php
+                    echo '<div class="row">';
+                    echo '<div class="col">';
+                    echo '<td><a href="' . $_SESSION['photo'] . '"><img src="../img/profil/' . $_SESSION['photo'] . '" alt="Foto User" class="profpic"></a></td>';
+                    echo '<p><strong>Email:</strong> ' . $_SESSION['email'] . '</p>';
+                    echo '<p><strong>Phone:</strong> ' . $_SESSION['phone'] . '</p>';
+                    echo '<p><strong>Address:</strong> ' . $_SESSION['user_city'] . '</p>';
+                    echo '<p><strong>Gender:</strong> ' . $_SESSION['gender'] . '</p>';
+                    echo '<p><strong>Saldo:</strong> ' . $_SESSION['saldo'] . '</p>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '<hr>';
+                    ?>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="logoutAdmin.php">
+                        <button type="button" class="btn btn-primary logout">Logout</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+>>>>>>> 88b6c26758afca359e8d0aaf4de86ec52fb5ab1a
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
