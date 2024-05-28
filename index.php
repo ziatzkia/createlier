@@ -36,58 +36,59 @@ include 'layouts/header.php';
 
 <body>
 
-    <!-- Hero Section Begin -->
-    <section class="hero">
-        <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="img/hero/1.png">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-5 col-lg-7 col-md-8">
-                            <div class="hero__text" style="text-align: center;">
-                                <h2 style="color: #850e35; ">New Collections Accessories</h2>
-                                <a href="shop.php" class="primary-btn" >Shop now</span></a>
-                                <div class="hero__social">
-                                </div>
-                            </div>
+   <!-- Hero Section Begin -->
+<section class="hero">
+    <div class="hero__slider owl-carousel">
+        <!-- Slide 1 -->
+        <div class="hero__items set-bg" data-setbg="img/hero/1.png">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-5 col-lg-7 col-md-8 text-center">
+                        <div class="hero__text">
+                            <h2 style="color: #850e35;">New Collections Accessories</h2>
+                            <a href="shop.php" class="primary-btn">Shop now</a>
+                            <div class="hero__social"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="hero__items set-bg" data-setbg="img/hero/2.png">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-5 col-lg-7 col-md-8">
-                            <div class="hero__text">
-                                <h2 style="color: #850e35;">Make Your Style</Style></h2>
-                                <p>Enhance Your Style with Your Own Unique Touch at Createlier</p>
-                                <a href="custom.php" class="primary-btn">Custom Now</a>
-                                <div class="hero__social">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__items set-bg" data-setbg="img/hero/3.png">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-5 col-lg-7 col-md-8">
-                            <div class="hero__text">
-                                <h2 style="color: #850e35;"> Special Collaboration</h2>
-                                <p>A special collaboration with korean superstars Jennie.
-                                    bringing you the latest trends infused with their unique style and flair.
-                                    Dive into a world where fashion meets music,
-                                    where each piece tells a story of creativity and innovation</p>
-                                <div class="hero__social">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-</div>
         </div>
-    </section>
-    <!-- Hero Section End -->
+        <!-- Slide 2 -->
+        <div class="hero__items set-bg" data-setbg="img/hero/7.png">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-5 col-lg-7 col-md-8 text-center">
+                        <div class="hero__text">
+                            <h2 style="color: #850e35;">Make Your Style</h2>
+                            <p>Enhance Your Style with Your Own Unique Touch at Createlier</p>
+                            <a href="custom.php" class="primary-btn">Custom Now</a>
+                            <div class="hero__social"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="hero__items set-bg" data-setbg="img/hero/5.png">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-5 col-lg-7 col-md-8 text-center">
+                        <div class="hero__text">
+                            <h2 style="color: #850e35;">Special Collaboration</h2>
+                            <p>A special collaboration with Korean superstars Jennie,
+                               bringing you the latest trends infused with their unique style and flair.
+                               Dive into a world where fashion meets music,
+                               where each piece tells a story of creativity and innovation.</p>
+                            <div class="hero__social"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
 
     <!-- Content page 1 -->
     <div class="container mt-1 mb-4">
@@ -162,11 +163,11 @@ include 'layouts/header.php';
     </div>
     </div>
     <!-- end page 2 -->
-    
+
     <hr style="background-color: #850e35;">
 
     <!-- Latest Blog Section Begin -->
-    <section class="latest spad">
+    <!-- <section class="latest spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -219,7 +220,7 @@ include 'layouts/header.php';
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Latest Blog Section End -->
     </div>
 

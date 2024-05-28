@@ -152,7 +152,7 @@ include('layouts/header.php');
                         <li>Total <span><?php if (isset($_SESSION['cart'])) { echo setRupiah($_SESSION['total'] * $kurs_dollar); } ?></span></li>
                     </ul>
                     <form method="POST" action="checkout.php">
-                        <input type="submit" class="primary-btn" value="Checkout" name="checkout" style="background-color: #850e35;">
+                        <input type="submit" class="primary-btn" value="Checkout" name="checkout" style="background-color: #850e35; color: white;">
                     </form>
                 </div>
             </div>

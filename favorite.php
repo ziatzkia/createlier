@@ -21,7 +21,7 @@ if (isset($_POST['add_favorite'])) {
             'product_id' => $_POST['product_id'],
             'product_name' => $_POST['product_name'],
             'product_category' => $_POST['product_category'],
-            'product_price' => $_POST['product_price'],
+            'product_price' => $_POST['product_price']
         );
         $_SESSION['fav'][$product_id] = $product_array;
         echo '<script>alert("Produk berhasil ditambahkan ke favorit")</script>';

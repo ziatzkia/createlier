@@ -66,8 +66,8 @@ include('layouts/header.php');
                                 <div class="quantity">
                                     <input type="number" name="product_quantity" value="1">
                                 </div>
-                                <button type="submit" name="add_to_cart" class="primary-btn" style="background-color: #850E35;">
-                                    <i class="bi bi-cart"></i> add to cart
+                                <button type="submit" name="add_to_cart" class="primary-btn" style="background-color: #850E35; color: white;">
+                                    <i class="bi bi-cart"></i> add to chart
                                 </button>
                             </form>
                         </div>

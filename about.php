@@ -92,28 +92,28 @@ include 'layouts/header.php';
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="team__item">
-                        <img src="img/about/team-1.jpg" alt="">
+                        <img src="img/banner/3.png" alt="">
                         <h4>Ananda Putri</h4>
                         <span>Software Tester</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="team__item">
-                        <img src="img/about/team-2.jpg" alt="">
+                        <img src="img/banner/1.png" alt="">
                         <h4>Jamilah Kamaliah</h4>
-                        <span>Data Analys</span>
+                        <span>Data Analyst</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="team__item">
-                        <img src="img/about/team-3.jpg" alt="">
+                        <img src="img/banner/2.png" alt="">
                         <h4>Zia Tazkiatul Aisya</h4>
                         <span>Software Developer</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="team__item">
-                        <img src="img/about/team-4.jpg" alt="">
+                        <img src="img/banner/4.png" alt="">
                         <h4>Diyan Pebriyanti</h4>
                         <span>Software Developer</span>
                     </div>

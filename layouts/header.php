@@ -79,7 +79,7 @@ if (isset($_GET['logout'])) {
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item dd-item" href="./profil.php">Profile</a></li>
-                                <li><a class="dropdown-item dd-item" href="#">History</a></li>
+                                <li><a class="dropdown-item dd-item" href="../account.php">History</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -96,11 +96,7 @@ if (isset($_GET['logout'])) {
                 </form>
             </div>
         </div>
-    </nav>
-
-<<<<<<< HEAD
-=======
-
+    </nav> 
     <!-- Modal -->
     <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -134,7 +130,6 @@ if (isset($_GET['logout'])) {
         </div>
     </div>
 
->>>>>>> 88b6c26758afca359e8d0aaf4de86ec52fb5ab1a
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 

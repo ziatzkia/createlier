@@ -10,10 +10,8 @@ $kurs_dollar = 15000;
 
 
 if (isset($_POST['add_to_cart'])) {
-    // Jika pengguna sudah menambahkan produk ke keranjang
     if (isset($_SESSION['cart'])) {
         $products_array_ids = array_column($_SESSION['cart'], "product_id");
-        // Jika produk belum ditambahkan ke keranjang
         if (!in_array($_POST['product_id'], $products_array_ids)) {
             $product_id = $_POST['product_id'];
 
