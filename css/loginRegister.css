@@ -1,0 +1,361 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #850E35, #FF5733);
+}
+
+.container {
+    display: flex;
+    height: 130vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.left-section {
+    flex: 1;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.right-section {
+    color: black;
+}
+
+.left-section h1 {
+    font-size: 60px;
+    margin-top: 30px;
+    /* margin-bottom: 300px; */
+}
+
+.left-section p {
+    font-size: 35px;
+    margin-bottom: 150px;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 120px;
+}
+
+.form-container {
+    max-width: 400px;
+    width: 100%;
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.form-container h2 {
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #EE6983;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 17px;
+}
+
+button:hover {
+    background-color: #850E35;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+a {
+    color: #FFC4C4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #EE6983;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    /* Mengatur input dan label agar sejajar */
+}
+
+.form-check-label {
+    margin-right: 10px;
+    /* Atur jarak antara label dan radio button */
+    order: 2;
+    /* Mengatur urutan tampilan label */
+}
+
+.form-check-input {
+    order: 2;
+    margin-top: -8px;
+}
+
+.form-check-label {
+    font-size: 12px;
+    margin-top: -8px;
+}
+
+.form-check-input {
+    order: 2;
+    margin-top: -8px;
+}
+
+.form-check-label {
+    font-size: 12px;
+    margin-top: -8px;
+}
+
+
+.vertical-line {
+    margin: 0 10px;
+    color: #ffffff;
+}
+
+.login-bg {
+    background-image: url(/img/walpaper.jpg);
+}
+
+.login-admin-bg {
+    background-color: #850E35;
+}
+
+.btn-register{
+    background-color:#850E35;
+    border-color: #850E35;
+    border-radius: 7px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #850E35, #FF5733);
+}
+
+.container {
+    display: flex;
+    height: 130vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.left-section {
+    flex: 1;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.right-section {
+    color: black;
+}
+
+.left-section h1 {
+    font-size: 60px;
+}
+
+.left-section p {
+    font-size: 18px;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.form-container {
+    max-width: 400px;
+    width: 100%;
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.form-container h2 {
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    margin-right: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #EE6983;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 17px;
+}
+
+button:hover {
+    background-color: #850E35;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+a {
+    color: #FFC4C4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #EE6983;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    /* Mengatur input dan label agar sejajar */
+}
+
+.form-check-label {
+    margin-right: 10px;
+    /* Atur jarak antara label dan radio button */
+    order: 2;
+    /* Mengatur urutan tampilan label */
+}
+
+.form-check-input {
+    order: 2;
+    margin-top: -8px;
+}
+
+.form-check-label {
+    font-size: 12px;
+    margin-top: -8px;
+}
+
+.form-check-input {
+    order: 2;
+    margin-top: -8px;
+}
+
+.form-check-label {
+    font-size: 12px;
+    margin-top: -8px;
+}
+
+.vertical-line {
+    margin: 0 10px;
+    color: #ffffff;
+}
+
+.login-bg {
+    background-image: url(/img/walpaper.jpg);
+}
+
+.login-admin-bg {
+    background: linear-gradient(to bottom, #850E35, #EE6983);
+    height: 100vh; /* pastikan tinggi penuh */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
