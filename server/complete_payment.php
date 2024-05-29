@@ -7,7 +7,6 @@ if ($conn->connect_error) {
 }
 
 if (isset($_GET['transaction_id']) && isset($_GET['order_id']) && isset($_SESSION['user_id'])) {
-
     $order_id = $_GET['order_id'];
     $order_status = "paid";
     $transaction_id = $_GET['transaction_id'];

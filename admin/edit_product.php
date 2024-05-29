@@ -26,14 +26,13 @@
         $color = $_POST['product_color'];
         $description = $_POST['product_description'];
         $price = $_POST['product_price'];
-        $special_offer = $_POST['product_special_offer'];
 
         $query_update_product = "UPDATE products SET product_name = ?, product_brand = ?, product_category = ?, 
-            product_criteria = ?, product_color = ?, product_description = ?, product_price = ?, product_special_offer = ? 
+            product_criteria = ?, product_color = ?, product_description = ?, product_price = ?
             WHERE product_id = ?";
 
         $stmt_update_product = $conn->prepare($query_update_product);
-        $stmt_update_product->bind_param('ssssssssi', $name, $brand, $category, $criteria, $color, $description, $price, $special_offer, $id);
+        $stmt_update_product->bind_param('sssssssi', $name, $brand, $category, $criteria, $color, $description, $price, $id);
 
         if ($stmt_update_product->execute()) {
             header('location: products.php?success_update_message=Product has been updated successfully');
@@ -80,12 +79,8 @@
                                         <label>Product Brand</label>
                                         <select class="form-control" name="product_brand">
                                             <option value="" disabled>Select Paper Type</option>
-                                            <option value="ccBracelet" <?php if ($product['product_brand'] == 'ccBracelet') echo ' selected'; ?>>ccBracelet</option>
-                                            <option value="ccEarrings" <?php if ($product['product_brand'] == 'ccEarrings') echo ' selected'; ?>>ccEarrings</option>
-                                            <option value="ccHair Accs" <?php if ($product['product_brand'] == 'ccHair Accs') echo ' selected'; ?>>ccHair Accs</option>
-                                            <option value="ccKChains" <?php if ($product['product_brand'] == 'ccKChains') echo ' selected'; ?>>ccKChains</option>
-                                            <option value="ccNecklaces" <?php if ($product['product_brand'] == 'ccNecklaces') echo ' selected'; ?>>ccNecklaces</option>
-                                            <option value="ccRings" <?php if ($product['product_brand'] == 'ccRings') echo ' selected'; ?>>ccRings</option>
+                                            <option value="Storenvy" <?php if ($product['product_brand'] == 'Storenvy') echo ' selected'; ?>>Storenvy</option>
+                                            <option value="Beadiful Creations" <?php if ($product['product_brand'] == 'Beadiful Creations') echo ' selected'; ?>>Beadiful Creations</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -135,10 +130,6 @@
                                     <div class="form-group">
                                         <label>Price</label>
                                         <input class="form-control" type="text" name="product_price" value="<?php echo $product['product_price']; ?>">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Special Offer</label>
-                                        <input class="form-control" type="text" name="product_special_offer" value="<?php echo $product['product_special_offer']; ?>">
                                     </div>
                                 </div>
                             <?php } ?>

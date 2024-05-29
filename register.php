@@ -1,11 +1,11 @@
 <?php
 include 'server/connection.php';
 
-if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['alamat']) && isset($_POST['gender']) && isset($_POST['pwd'])) {
+if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['user_city']) && isset($_POST['gender']) && isset($_POST['pwd'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $alamat = $_POST['alamat'];
+    $user_city = $_POST['user_city'];
     $gender = $_POST['gender'];
     $pwd = $_POST['pwd'];
 
@@ -16,7 +16,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['phone']
         $message = "Username, email, or password already exists in the database.";
     } else {
         // Jika tidak ada, insert data ke database
-        $query = "INSERT INTO akun (username, email, phone, alamat, gender, pwd) VALUES ('$username', '$email', '$phone', '$alamat', '$gender', '$pwd')";
+        $query = "INSERT INTO akun (username, email, phone, user_city, gender, pwd) VALUES ('$username', '$email', '$phone', '$user_city', '$gender', '$pwd')";
         $insertResult = mysqli_query($conn, $query);
 
         if ($insertResult) {
@@ -95,9 +95,9 @@ $dataMasuk = isset($_GET["dataMasuk"]) && $_GET["dataMasuk"] == "true";
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="alamat" class="col-sm-3 col-form-label">Address:</label>
+                        <label for="user_city" class="col-sm-3 col-form-label">Address:</label>
                         <div class="col-sm-9">
-                            <input type="text" id="alamat" name="alamat" class="form-control" required>
+                            <input type="text" id="user_city" name="user_city" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row">

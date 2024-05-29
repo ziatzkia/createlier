@@ -9,10 +9,14 @@ if (!isset($_SESSION['admin_logged_in'])) {
 <?php include('layouts/header.php'); ?>
 
 <?php
-$query_incomes = "SELECT o.order_id, o.order_cost, o.order_date, a.id, oi.product_name, oi.product_quantity, oi.product_price
-                    FROM `orders` o, `akun` a, `order_items` oi 
-                    WHERE o.id = a.id AND a.id = oi.id AND o.order_status = 'DELIVERED'
-                    ORDER BY o.order_date DESC";
+$query_incomes = "SELECT DISTINCT o.order_id, o.order_cost, o.order_date, a.id, 
+p.product_name, oi.product_quantity, p.product_price
+FROM `orders` o
+JOIN `akun` a ON o.id = a.id
+JOIN `order_items` oi ON o.order_id = oi.order_id
+JOIN `products` p ON oi.product_id = p.product_id
+WHERE o.order_status IN ('Paid', 'shipped', 'delivered')
+ORDER BY o.order_date DESC";
 
 
 $stmt_incomes = $conn->prepare($query_incomes);
@@ -30,7 +34,7 @@ $kurs_dollar = 15722;
 
 function setRupiah($price)
 {
-    $result = "Rp" . number_format($price, 0, ',', '.');
+    $result = "Rp. " . number_format($price, 0, ',', '.');
     return $result;
 }
 ?>
@@ -136,22 +140,21 @@ function setRupiah($price)
                         <p>Income: </p>
                     </div>
                     <div class="col-sm-6 col-md-6">
-                                        <p><?php echo $income['order_id']; ?></p>  
-                                        <p><?php echo $income['id']; ?></p> 
-                                        <p><?php echo $income['order_date']; ?></p>
-                                        <p><?php echo $income['product_name']; ?> x<?php echo $income['product_quantity']; ?></p> 
-                                        <p><?php echo setRupiah(($income['product_price'] * $kurs_dollar)); ?></p>
-                                        <p><?php echo setRupiah(($income['order_cost'] * $kurs_dollar)); ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class=" modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <p><?php echo $income['order_id']; ?></p>
+                        <p><?php echo $income['id']; ?></p>
+                        <p><?php echo $income['order_date']; ?></p>
+                        <p><?php echo $income['product_name']; ?> x<?php echo $income['product_quantity']; ?></p>
+                        <p><?php echo setRupiah(($income['product_price'] * $kurs_dollar)); ?></p>
+                        <p><?php echo setRupiah(($income['order_cost'] * $kurs_dollar)); ?></p>
                     </div>
                 </div>
             </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
         </div>
-
     </div>
-    <!-- End of Main Content -->
-    <?php include('layouts/footer.php'); ?>
+</div>
+
+<!-- End of Main Content -->
+<?php include('layouts/footer.php'); ?>

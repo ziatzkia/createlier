@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('server/connection.php');
+include 'server/connection.php';
 
 // Inisialisasi variabel produk
 $products = [];
@@ -22,13 +22,7 @@ if (isset($_GET['search']) || isset($_POST['product_category'])) {
     $products = $stmt_products->get_result();
 }
 
-function setRupiah($amount)
-{
-    return 'Rp ' . number_format($amount, 2, ',', '.');
-}
-$kurs_dollar = 15000;
-
-include('layouts/header.php');
+include 'layouts/header.php';
 ?>
 
 <!-- search -->
@@ -65,16 +59,6 @@ include('layouts/header.php');
                                     </ul>
                                 </div>
                             </form>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="shop__product__option__right">
-                                <p>Sort by Price:</p>
-                                <select>
-                                    <option value="">Low To High</option>
-                                    <option value="">$0 - $55</option>
-                                    <option value="">$55 - $100</option>
-                                </select>
-                            </div>
                         </div>
                     </div>
                 </div>

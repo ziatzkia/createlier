@@ -9,7 +9,13 @@ if (!isset($_SESSION['admin_logged_in'])) {
 <?php include('layouts/header.php'); ?>
 
 <?php
-$query_orders = "SELECT o.order_id, o.order_cost, o.order_status, a.username, o.user_city, o.order_date FROM `orders` o, `akun` a WHERE o.id = a.id ORDER BY o.order_date DESC";
+$query_orders = "SELECT o.order_id, o.order_cost, o.order_status, a.username, o.user_city, o.order_date 
+FROM `orders` o, `akun` a WHERE o.id = a.id
+ORDER BY o.order_date DESC";
+// "SELECT o.order_id, o.order_cost, o.order_status, a.username, o.user_city, o.order_date 
+// FROM `orders` o
+// JOIN `akun` a ON o.user_id = a.id
+// ORDER BY o.order_date DESC";
 
 $stmt_orders = $conn->prepare($query_orders);
 $stmt_orders->execute();

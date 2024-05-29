@@ -9,7 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $alamat = $_POST['alamat'];
+    $user_city = $_POST['user_city'];
+    $user_address = $_POST['user_address'];
 
     // Check if a new photo is uploaded
     if (!empty($_FILES['photo']['name'])) {
@@ -22,18 +23,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             error_log("Photo updated to: " . $_SESSION['photo']);
 
             // Update query with photo
-            $query = "UPDATE akun SET username = ?, email = ?, phone = ?, alamat = ?, photo = ? WHERE id = ?";
+            $query = "UPDATE akun SET username = ?, email = ?, phone = ?, user_city = ?, user_address = ?, photo = ? WHERE id = ?";
             $stmt = $conn->prepare($query);
-            $stmt->bind_param('sssssi', $username, $email, $phone, $alamat, $photo, $id);
+            $stmt->bind_param('ssssssi', $username, $email, $phone, $user_city, $user_address, $photo, $id);
         } else {
             echo "Failed to upload photo";
             exit;
         }
     } else {
         // Update query without photo
-        $query = "UPDATE akun SET username = ?, email = ?, phone = ?, alamat = ? WHERE id = ?";
+        $query = "UPDATE akun SET username = ?, email = ?, phone = ?, user_city = ?, user_address = ? WHERE id = ?";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param('ssssi', $username, $email, $phone, $alamat, $id);
+        $stmt->bind_param('sssssi', $username, $email, $phone, $user_city, $user_address, $id);
     }
 
     // Execute the query

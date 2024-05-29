@@ -19,8 +19,11 @@ if (isset($_GET['logout'])) {
 
 $q_select = 'SELECT * FROM akun';
 $result = mysqli_query($conn, $q_select);
-include 'layouts/header.php';
+?>
 
+<?php
+include 'layouts/header.php';
+include('server/controller_favourite_product.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,58 +39,90 @@ include 'layouts/header.php';
 
 <body>
 
-   <!-- Hero Section Begin -->
-<section class="hero">
-    <div class="hero__slider owl-carousel">
-        <!-- Slide 1 -->
-        <div class="hero__items set-bg" data-setbg="img/hero/1.png">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-5 col-lg-7 col-md-8 text-center">
-                        <div class="hero__text">
-                            <h2 style="color: #850e35;">New Collections Accessories</h2>
-                            <a href="shop.php" class="primary-btn">Shop now</a>
-                            <div class="hero__social"></div>
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="hero__slider owl-carousel">
+            <!-- Slide 1 -->
+            <div class="hero__items set-bg" data-setbg="img/hero/1.png">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-5 col-lg-7 col-md-8 text-center">
+                            <div class="hero__text">
+                                <h2 style="color: #850e35;">New Collections Accessories</h2>
+                                <a href="shop.php" class="primary-btn">Shop now</a>
+                                <div class="hero__social"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero__items set-bg" data-setbg="img/hero/7.png">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-5 col-lg-7 col-md-8 text-center">
+                            <div class="hero__text">
+                                <h2 style="color: #850e35;">Make Your Style</h2>
+                                <p style="color: white;">Enhance Your Style with Your Own Unique Touch at Createlier</p>
+                                <a href="shop.php" class="primary-btn">Buy Now</a>
+                                <div class="hero__social"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero__items set-bg" data-setbg="img/hero/5.png">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-5 col-lg-7 col-md-8 text-center">
+                            <div class="hero__text">
+                                <h2 style="color: #850e35;">Special Accessories</h2>
+                                <div class="hero__social"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Slide 2 -->
-        <div class="hero__items set-bg" data-setbg="img/hero/7.png">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-5 col-lg-7 col-md-8 text-center">
-                        <div class="hero__text">
-                            <h2 style="color: #850e35;">Make Your Style</h2>
-                            <p>Enhance Your Style with Your Own Unique Touch at Createlier</p>
-                            <a href="shop.php" class="primary-btn">Buy Now</a>
-                            <div class="hero__social"></div>
-                        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <br>
+    <br>
+    <br>
+
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <br>
+                        <br>
+                        <h2 style="color: #850e35">Best Seller</h2>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="hero__items set-bg" data-setbg="img/hero/5.png">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-5 col-lg-7 col-md-8 text-center">
-                        <div class="hero__text">
-                            <h2 style="color: #850e35;">Special Accessories</h2>
-                            <p>A special collaboration with Korean superstars Jennie,
-                               bringing you the latest trends infused with their unique style and flair.
-                               Dive into a world where fashion meets music,
-                               where each piece tells a story of creativity and innovation.</p>
-                            <div class="hero__social"></div>
+            <div class="row product__filter_slide">
+                <?php while ($row = $fav_products->fetch_assoc()) { ?>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="img/product/<?php echo $row['product_image']; ?>">
+                                <span class="label">New</span>
+                            </div>
+                            <div class="product__item__text">
+                                <h6><?php echo $row['product_name']; ?></h6>
+                                <h5><?php echo setRupiah(($row['product_price'] * $kurs_dollar)); ?></h5>
+                            </div>
+                            <a href="<?php echo "shop-details.php?product_id=" . $row['product_id']; ?>" class="add-cart"><i class="bi bi-bag"></i></a>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
-    </div>
-</section>
-<!-- Hero Section End -->
+    </section>
+    <!-- Product Section End -->
 
 
     <!-- Content page 1 -->
@@ -164,7 +199,6 @@ include 'layouts/header.php';
     </div>
     <!-- end page 2 -->
 
-    <hr style="background-color: #850e35;">
 
     <!-- Latest Blog Section Begin -->
     <!-- <section class="latest spad">
@@ -223,7 +257,6 @@ include 'layouts/header.php';
     </section> -->
     <!-- Latest Blog Section End -->
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 </body>

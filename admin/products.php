@@ -9,7 +9,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 <?php include('layouts/header.php'); ?>
 
 <?php
-    $query_products = "SELECT * FROM products";
+    $query_products = "SELECT * FROM products ORDER BY product_id DESC";
 
     $stmt_products = $conn->prepare($query_products);
     $stmt_products->execute();
@@ -121,7 +121,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
                                 <td><?php echo $product['product_brand']; ?></td>
                                 <td><?php echo $product['product_category']; ?></td>
                                 <td><?php echo setRupiah(($product['product_price'] * $kurs_dollar)); ?></td>
-                                <td class="text-center">
+                               <td class="text-center">
                                     <a href="<?php echo 'edit_image.php?product_id=' . $product['product_id'] . '&product_name=' . $product['product_name']; ?>" class="btn btn-warning btn-circle">
                                         <i class="fas fa-images"></i>
                                     </a>

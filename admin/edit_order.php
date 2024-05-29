@@ -1,40 +1,39 @@
 <?php
-    ob_start();
-    session_start();
-    include('layouts/header.php');
+ob_start();
+session_start();
+include('layouts/header.php');
 
-    if (!isset($_SESSION['admin_logged_in'])) {
-        header('location: loginAdmin.php');
-    }
+if (!isset($_SESSION['admin_logged_in'])) {
+    header('location: loginAdmin.php');
+}
 ?>
 
-<?php 
-    if (isset($_GET['order_id'])) {
-        $order_id = $_GET['order_id'];
-        $query_edit_order = "SELECT * FROM orders WHERE order_id = ?";
-        $stmt_edit_order = $conn->prepare($query_edit_order);
-        $stmt_edit_order->bind_param('i', $order_id);
-        $stmt_edit_order->execute();
-        $orders = $stmt_edit_order->get_result();
+<?php
+if (isset($_GET['order_id'])) {
+    $order_id = $_GET['order_id'];
+    $query_edit_order = "SELECT * FROM orders WHERE order_id = ?";
+    $stmt_edit_order = $conn->prepare($query_edit_order);
+    $stmt_edit_order->bind_param('i', $order_id);
+    $stmt_edit_order->execute();
+    $orders = $stmt_edit_order->get_result();
+} else if (isset($_POST['edit_btn'])) {
+    $o_id = $_POST['order_id'];
+    $o_status = $_POST['order_status'];
 
-    } else if (isset($_POST['edit_btn'])) {
-        $o_id = $_POST['order_id'];
-        $o_status = $_POST['order_status'];
+    $query_update_status = "UPDATE orders SET order_status = ? WHERE order_id = ?";
 
-        $query_update_status = "UPDATE orders SET order_status = ? WHERE order_id = ?";
+    $stmt_update_status = $conn->prepare($query_update_status);
+    $stmt_update_status->bind_param('si', $o_status, $o_id);
 
-        $stmt_update_status = $conn->prepare($query_update_status);
-        $stmt_update_status->bind_param('si', $o_status, $o_id);
-
-        if ($stmt_update_status->execute()) {
-            header('location: orders.php?success_status=Status has been updated successfully');
-        } else {
-            header('location: orders.php?fail_status=Could not update order status!');
-        }
+    if ($stmt_update_status->execute()) {
+        header('location: orders.php?success_status=Status has been updated successfully');
     } else {
-        header('location: orders.php');
-        exit;
+        header('location: orders.php?fail_status=Could not update order status!');
     }
+} else {
+    header('location: orders.php');
+    exit;
+}
 ?>
 
 <!-- Begin Page Content -->
@@ -85,10 +84,13 @@
                                         <label>Order Date</label>
                                         <input class="form-control" type="text" value="<?php echo $order['order_date']; ?>" disabled>
                                     </div>
-                                    <div class="form-group">
-                                        <label>User Phone</label>
-                                        <input class="form-control" type="text" value="<?php echo $order['phone']; ?>" disabled>
-                                    </div>
+                                    <?php if (isset($order['user_phone'])) { ?>
+                                        <div class="form-group">
+                                            <label>User Phone</label>
+                                            <input class="form-control" type="text" value="<?php echo $order['user_phone']; ?>" disabled>
+                                        </div>
+                                    <?php } ?>
+
                                     <div class="form-group">
                                         <label>User Address</label>
                                         <input class="form-control" type="text" value="<?php echo $order['user_city']; ?>" disabled>

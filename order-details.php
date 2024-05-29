@@ -39,14 +39,6 @@ function calculateTotalOrderPrice($order_details)
     return $total;
 }
 
-$kurs_dollar = 15722;
-
-function setRupiah($price)
-{
-    $result = "Rp" . number_format($price, 0, ',', '.');
-    return $result;
-}
-
 ?>
 <?php
 include('layouts/header.php');
@@ -78,9 +70,6 @@ include('layouts/header.php');
 </head>
 
 <body>
-
-
-    
 
     <!-- Order Details Section Begin -->
     <section id="orders" class="shopping-cart spad">

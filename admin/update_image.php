@@ -15,8 +15,8 @@ if (isset($_POST['update_image_btn'])) {
     $image_name2 = str_replace(' ', '_', $product_name) . "2.jpg";
 
     // Upload image
-    move_uploaded_file($image, "img/products/" . $image_name);
-    move_uploaded_file($image2, "../img/product/" . $image_name2);
+    move_uploaded_file($image, "../img/product/" . $image_name);
+    move_uploaded_file($image2, "img/shop-details/" . $image_name2);
 
     $query_update_image = "UPDATE products SET product_image = ?, product_image2 = ? WHERE product_id = ?";
 

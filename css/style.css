@@ -2127,14 +2127,14 @@ small {
 }
 
 .breadcrumb__text h4 {
-	color: #111111;
+	color: #ffffff;
 	font-weight: 700;
 	margin-bottom: 8px;
 }
 
 .breadcrumb__links a {
 	font-size: 15px;
-	color: #111111;
+	color: #b7b7b7;
 	margin-right: 18px;
 	display: inline-block;
 	position: relative;
@@ -2149,7 +2149,7 @@ small {
 
 .breadcrumb__links span {
 	font-size: 15px;
-	color: #b7b7b7;
+	color: #ffffff;
 	display: inline-block;
 }
 
@@ -4225,3 +4225,47 @@ small {
     border-color: #dc3545;
 }
 
+/* breadcrumb-option_about */
+
+.breadcrumb-option_about{
+	background: #850E35;
+	padding: 80px 0;
+
+}
+.service-item {
+	text-align: center;
+	padding: 20px;
+	border: 1px solid #eaeaea;
+	border-radius: 10px;
+	background-color: #f9f9f9;
+}
+
+.service-item img {
+	max-width: 100px;
+	margin-bottom: 20px;
+}
+
+.service-item h4 {
+	margin-bottom: 10px;
+}
+
+.service-item p {
+	color: #666;
+}
+
+.service-item img.service-img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Sesuaikan tinggi maksimal sesuai kebutuhan */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.service-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}

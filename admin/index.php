@@ -234,36 +234,36 @@ $best_selling_products_data = $stmt_best_selling_products->get_result()->fetch_a
         </div>
 
         <div class="col">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Best Selling Products</h6>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Quantity Sold</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                // Tampilkan data dari query $best_selling_products_data
-                                foreach ($best_selling_products_data as $product) {
-                                    echo "<tr>";
-                                    echo "<td>" . $product['product_name'] . "</td>";
-                                    echo "<td>" . $product['total_sold'] . "</td>";
-                                    echo "</tr>";
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Best Selling Products</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Sold</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        // Tampilkan data dari query $best_selling_products_data
+                        foreach ($best_selling_products_data as $product) {
+                            echo "<tr>";
+                            echo "<td>" . $product['product_name'] . "</td>";
+                            echo "<td>" . $product['total_sold'] . "</td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+</div>
+
     <!-- End of Main Content -->
 
 

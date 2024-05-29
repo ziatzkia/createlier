@@ -1,12 +1,7 @@
 <?php
+session_start();
+
 include('server/connection.php');
-
-function setRupiah($amount)
-{
-    return 'Rp. ' . number_format($amount, 2, ',', '.');
-}
-
-$kurs_dollar = 15000;
 
 if (isset($_GET['product_id'])) {
     $product_id = $_GET['product_id'];

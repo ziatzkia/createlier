@@ -41,11 +41,11 @@ if (isset($_GET['product_id'])) {
                             <div class="col-sm-12">
                                 <input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
                                 <input type="hidden" name="product_name" value="<?php echo $product_name; ?>" />
-                                <label>Image</label>
+                                <label>Image 1</label>
                                 <div class="input-group mb-3">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="editImage" name="image" aria-describedby="inputGroupFileAddon01">
-                                        <label class="custom-file-label" for="editImage" aria-placeholder="<?php echo $image; ?>">Choose file...</label>
+                                        <label class="custom-file-label" for="editImage">Choose file...</label>
                                     </div>
                                 </div>
                                 <label>Image 2</label>

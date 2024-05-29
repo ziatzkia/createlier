@@ -17,26 +17,24 @@ if (isset($_POST['create_btn'])) {
     $product_color = $_POST['product_color'];
     $product_description = $_POST['product_description'];
     $product_price = $_POST['product_price'];
-    $product_special_offer = $_POST['product_special_offer'];
 
     // This is image file
     $product_image = $_FILES['product_image']['tmp_name'];
 
     // Images name
-    $image_name1 = str_replace(' ', '_', $product_name) . ".jpg";
+    $image_name = str_replace(' ', '_', $product_name) . ".jpg";
 
     // Upload image
     move_uploaded_file($product_image, "../img/product/" . $image_name);
 
     $query_insert_product = "INSERT INTO products (product_name, product_brand, product_category, 
-        product_criteria, product_color, product_description, product_price, special_offer, 
-        product_image) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        product_criteria, product_color, product_description, product_price, product_image) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt_insert_product = $conn->prepare($query_insert_product);
 
     $stmt_insert_product->bind_param(
-        'sssssssss',
+        'ssssssss',
         $product_name,
         $product_brand,
         $product_category,
@@ -44,7 +42,6 @@ if (isset($_POST['create_btn'])) {
         $product_color,
         $product_description,
         $product_price,
-        $product_special_offer,
         $image_name
     );
 
@@ -88,12 +85,8 @@ if (isset($_POST['create_btn'])) {
                                     <label>Product Brand</label>
                                     <select class="form-control" name="product_brand">
                                         <option value="" disabled selected>Select Brand</option>
-                                        <option value="ccBracelet">ccBracelet</option>
-                                        <option value="ccEarrings">ccEarrings</option>
-                                        <option value="ccHair Accs">ccHair Accs</option>
-                                        <option value="ccKChains">ccKChains</option>
-                                        <option value="ccNecklaces">ccNecklaces</option>
-                                        <option value="ccRings">ccRings</option>
+                                        <option value="Storenvy">Storenvy</option>
+                                        <option value="Beadiful Creations">Beadiful Creations</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -101,7 +94,6 @@ if (isset($_POST['create_btn'])) {
                                     <select class="form-control" name="product_category">
                                         <option value="" disabled selected>Select Category</option>
                                         <option value="Bracelets">Bracelets</option>
-                                        <option value="Earrings">Earrings</option>
                                         <option value="Hair Accessories">Hair Accessories</option>
                                         <option value="Key Chains">Key Chains</option>
                                         <option value="Necklaces">Necklaces</option>
@@ -143,10 +135,6 @@ if (isset($_POST['create_btn'])) {
                                 <div class="form-group">
                                     <label>Price</label>
                                     <input class="form-control" type="text" name="product_price">
-                                </div>
-                                <div class="form-group">
-                                    <label>Special Offer</label>
-                                    <input class="form-control" type="text" name="product_special_offer">
                                 </div>
                                 <label>Image</label>
                                 <div class="input-group mb-3">

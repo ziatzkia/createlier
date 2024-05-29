@@ -1,6 +1,13 @@
 <?php
 include 'server/connection.php';
 
+function setRupiah($amount)
+{
+    return 'Rp ' . number_format($amount, 2, ',', '.');
+}
+
+$kurs_dollar = 15000;
+
 if (isset($_GET['logout'])) {
     if (isset($_SESSION['logged_in'])) {
         unset($_SESSION['logged_in']);
@@ -78,12 +85,12 @@ if (isset($_GET['logout'])) {
                                 <img src="<?php echo $profilePhoto; ?>" alt="Profile Picture" width="30px" class="dd-profile">
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item dd-item" href="./profil.php">Profile</a></li>
-                                <li><a class="dropdown-item dd-item" href="../account.php">History</a></li>
+                                <li><a class="dropdown-item dd-item" href="/profil.php">Profile</a></li>
+                                <li><a class="dropdown-item dd-item" href="/account.php">History</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item dd-logout" href="./logout.php">Logout</a></li>
+                                <li><a class="dropdown-item dd-logout" href="/logout.php">Logout</a></li>
                             </ul>
                         </div>
                     <?php } else { ?>

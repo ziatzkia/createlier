@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
 </head>
 
 <body class="p-3 m-0 border-0 bd-example m-0 border-0">
-    <a href="index.php"><img src="img/icon/close.png" alt="close" width="30px"></a>
+    <a href="index.php" style="text-decoration: none; color: black;"><h1>x</h1></a>
     <div class="row g-0 position-relative bg-profile-1">
     <h1 class="h1-profil">Profile</h1>
         <div class="col-md-6 mb-md-0 p-md-4">
@@ -44,7 +44,8 @@ if ($result->num_rows > 0) {
             <p><strong  class="text-profile-1">Username: </strong> <?php echo $user['username']; ?></p>
             <p><strong  class="text-profile-1">Email: </strong><?php echo $user['email']; ?></p>
             <p><strong  class="text-profile-1">Phone: </strong><?php echo $user['phone']; ?></p>
-            <p><strong  class="text-profile-1">Address: </strong><?php echo $user['user_city']; ?></p>
+            <p><strong  class="text-profile-1">City: </strong><?php echo $user['user_city']; ?></p>
+            <p><strong  class="text-profile-1">Address: </strong><?php echo $user['user_address']; ?></p>
             <p><strong  class="text-profile-1">Gender: </strong><?php echo $user['gender']; ?></p>
             <button class="btn-edit-profile btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">
                 Edit Profile
@@ -71,16 +72,16 @@ if ($result->num_rows > 0) {
                             <input type="text" class="form-control" id="username" name="username" value="<?php echo $user['username']; ?>" required>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" value="<?php echo $user['email']; ?>" required>
-                        </div>
-                        <div class="mb-3">
                             <label for="phone" class="form-label">Phone</label>
                             <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $user['phone']; ?>" required>
                         </div>
                         <div class="mb-3">
-                            <label for="alamat" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo $user['alamat']; ?>" required>
+                            <label for="user_city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="user_city" name="user_city" value="<?php echo $user['user_city']; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="user_address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="user_address" name="user_address" value="<?php echo $user['user_address']; ?>" required>
                         </div>
                         <div class="mb-3">
                             <label for="gender" class="form-label">Gender</label>

@@ -10,21 +10,21 @@ if (!isset($_SESSION['logged_in'])) {
 } else {
     if (isset($_POST['place_order'])) {
         // 1. Get user info and save to the database
-        $name = $_POST['username'];
+        $username = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        $city = $_POST['user_city'];
-        $address = $_POST['user_address'];
+        $user_city = $_POST['city'];
+        $user_address = $_POST['address'];
         $order_cost = $_SESSION['total'];
-        $order_status = "not paid";
-        $user_id = $_SESSION['id'];
+        $order_status = "paid";
+        $id = $_SESSION['id'];
         $order_date = date('Y-m-d h:i:s');
 
-        $query_orders = "INSERT INTO orders (order_cost, order_status, id, phone, user_city, user_address, order_date) 
+        $query_orders = "INSERT INTO orders (order_cost, order_status, id, user_phone, user_city, user_address, order_date) 
                     VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         $stmt_orders = $conn->prepare($query_orders);
-        $stmt_orders->bind_param('ssissss', $order_cost, $order_status, $user_id, $phone, $city, $address, $order_date);
+        $stmt_orders->bind_param('ssissss', $order_cost, $order_status, $id, $phone, $user_city, $user_address, $order_date);
         $stmt_status = $stmt_orders->execute();
 
         if (!$stmt_status) {
@@ -49,7 +49,7 @@ if (!isset($_SESSION['logged_in'])) {
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
             $stmt_order_items = $conn->prepare($query_order_items);
-            $stmt_order_items->bind_param('iissssis', $order_id, $product_id, $product_name, $product_image, $product_price, $product_quantity, $user_id, $order_date);
+            $stmt_order_items->bind_param('iissssis', $order_id, $product_id, $product_name, $product_image, $product_price, $product_quantity, $id, $order_date);
             $stmt_order_items->execute();
         }
 

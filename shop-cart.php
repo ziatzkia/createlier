@@ -1,14 +1,6 @@
 <?php
 session_start();
 
-function setRupiah($amount)
-{
-    return 'Rp ' . number_format($amount, 2, ',', '.');
-}
-
-$kurs_dollar = 15000;
-
-
 if (isset($_POST['add_to_cart'])) {
     // Jika pengguna sudah menambahkan produk ke keranjang
     if (isset($_SESSION['cart'])) {

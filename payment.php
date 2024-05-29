@@ -1,12 +1,6 @@
 <?php
 session_start();
 
-function setRupiah($amount)
-{
-    return 'Rp ' . number_format($amount, 2, ',', '.');
-}
-$kurs_dollar = 15000;
-
 if (isset($_POST['order_pay_btn'])) {
     $order_id = $_POST['order_id'];
     $order_status = $_POST['order_status'];
@@ -45,7 +39,7 @@ if (isset($_POST['order_pay_btn'])) {
                 <div class="row">
                     <div class="col-lg-8 col-md-6">
                         <div class="checkout__input">
-                            <h6 class="coupon__code"><span class="icon_tag_alt"></span>
+                            <!-- <h6 class="coupon__code"><span class="icon_tag_alt"></span> -->
                                 <?php if (isset($_POST['order_status'])) {
                                     echo $_POST['order_status'];
                                 } ?>
@@ -114,4 +108,3 @@ if (isset($_POST['order_pay_btn'])) {
 <?php
     include('layouts/footer.php');
 ?>
-s
