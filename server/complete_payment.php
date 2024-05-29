@@ -29,7 +29,7 @@ if (isset($_GET['transaction_id']) && isset($_GET['order_id']) && isset($_SESSIO
     }
 
     // Store payment info
-    $query_save_payment = "INSERT INTO payments (order_id, user_id, transaction_id, payment_date) VALUES (?, ?, ?, ?)";
+    $query_save_payment = "INSERT INTO payments (order_id, id, transaction_id, payment_date) VALUES (?, ?, ?, ?)";
     $stmt_save_payment = $conn->prepare($query_save_payment);
 
     if ($stmt_save_payment === false) {

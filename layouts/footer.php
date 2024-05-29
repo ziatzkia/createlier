@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../style/style.css">
+<link rel="stylesheet" href="../css/style2.css">
 <!-- Footer Section Begin -->
 <footer class="footer ">
     <div class="container">

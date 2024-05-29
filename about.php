@@ -2,8 +2,11 @@
 session_start();
 include 'layouts/header.php';
 ?>
-    <!-- About Section Begin -->
-    <section class="about spad">
+
+
+
+<!-- About Section Begin -->
+<!-- <section class="about spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -36,11 +39,13 @@ include 'layouts/header.php';
                 </div>
             </div>
         </div>
-    </section>
-    <!-- About Section End -->
+    </section> -->
+<!-- About Section End -->
 
-     <!-- blog -->
-    <section class="latest spad">
+
+
+<!-- blog -->
+<!-- <section class="latest spad">
         <div class="container">
             <div class="row mt-4">
                 <div class="col-lg-4 col-md-6 col-sm-6">
@@ -75,55 +80,55 @@ include 'layouts/header.php';
                 </div>
             </div>
         </div>
-    </section>
-    <!-- blog end -->
+    </section> -->
+<!-- blog end -->
 
 
-    <!-- Team Section Begin -->
-    <section class="team spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>Our Team</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="team__item">
-                        <img src="img/banner/3.png" alt="">
-                        <h4>Ananda Putri</h4>
-                        <span>Software Tester</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="team__item">
-                        <img src="img/banner/1.png" alt="">
-                        <h4>Jamilah Kamaliah</h4>
-                        <span>Data Analyst</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="team__item">
-                        <img src="img/banner/2.png" alt="">
-                        <h4>Zia Tazkiatul Aisya</h4>
-                        <span>Software Developer</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="team__item">
-                        <img src="img/banner/4.png" alt="">
-                        <h4>Diyan Pebriyanti</h4>
-                        <span>Software Developer</span>
-                    </div>
+<!-- Team Section Begin -->
+<section class="team spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title ">
+                    <span>Our Team</span>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Team Section End -->
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="img/banner/3.png" alt="">
+                    <h4>Ananda Putri</h4>
+                    <span>Software Tester</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="img/banner/1.png" alt="">
+                    <h4>Jamilah Kamaliah</h4>
+                    <span>Data Analyst</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="img/banner/2.png" alt="">
+                    <h4>Zia Tazkiatul Aisya</h4>
+                    <span>Software Developer</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="img/banner/4.png" alt="">
+                    <h4>Diyan Pebriyanti</h4>
+                    <span>Software Developer</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Team Section End -->
 
-    <script src="js/jquery-easing/jquery.easing.min.js"></script>
+<script src="js/jquery-easing/jquery.easing.min.js"></script>
 <script src="js/jquery.nice-select.min.js"></script>
 <script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
@@ -134,6 +139,8 @@ include 'layouts/header.php';
 <script src="js/main.js"></script>
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
+
+</body>
 <?php
-    include('layouts/footer.php');
+include('layouts/footer.php');
 ?>

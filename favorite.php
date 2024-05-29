@@ -17,7 +17,7 @@ if (isset($_POST['add_favorite'])) {
         echo '<script>alert("Produk sudah ditambahkan ke favorit")</script>';
     } else {
         $product_array = array(
-            'product_image1' => $_POST['product_image1'],
+            'product_image' => $_POST['product_image'],
             'product_id' => $_POST['product_id'],
             'product_name' => $_POST['product_name'],
             'product_category' => $_POST['product_category'],
@@ -64,7 +64,7 @@ include('layouts/header.php');
                 <?php foreach ($_SESSION['fav'] as $product) { ?>
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                         <div class="card">
-                            <img src="img/product/<?php echo $product['product_image1']; ?>" class="card-img-top" alt="Gambar produk <?php echo $product['product_name']; ?>">
+                            <img src="img/product/<?php echo $product['product_image']; ?>" class="card-img-top" alt="Gambar produk <?php echo $product['product_name']; ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $product['product_name']; ?></h5>
                                 <p class="card-text"><?php echo setRupiah($product['product_price']); ?></p>

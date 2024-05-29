@@ -54,7 +54,7 @@ if (isset($_POST['change_password'])) {
 if (isset($_SESSION['logged_in'])) {
     $user_id = $_SESSION['id'];
 
-    $query_orders = "SELECT * FROM orders WHERE user_id = ? ORDER BY order_date DESC";
+    $query_orders = "SELECT * FROM orders WHERE id = ? ORDER BY order_date DESC";
 
     $stmt_orders = $conn->prepare($query_orders);
     $stmt_orders->bind_param('i', $user_id);

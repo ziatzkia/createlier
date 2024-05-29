@@ -48,6 +48,13 @@ if (isset($_GET['product_id'])) {
                                         <label class="custom-file-label" for="editImage" aria-placeholder="<?php echo $image; ?>">Choose file...</label>
                                     </div>
                                 </div>
+                                <label>Image 2</label>
+                                <div class="input-group mb-3">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="editImage2" name="image2" aria-describedby="inputGroupFileAddon01">
+                                        <label class="custom-file-label" for="editImage2">Choose file...</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="m-t-20 text-right">

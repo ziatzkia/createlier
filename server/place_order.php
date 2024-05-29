@@ -10,17 +10,17 @@ if (!isset($_SESSION['logged_in'])) {
 } else {
     if (isset($_POST['place_order'])) {
         // 1. Get user info and save to the database
-        $name = $_POST['name'];
+        $name = $_POST['username'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        $city = $_POST['city'];
-        $address = $_POST['address'];
+        $city = $_POST['user_city'];
+        $address = $_POST['user_address'];
         $order_cost = $_SESSION['total'];
         $order_status = "not paid";
         $user_id = $_SESSION['id'];
         $order_date = date('Y-m-d h:i:s');
 
-        $query_orders = "INSERT INTO orders (order_cost, order_status, user_id, user_phone, user_city, user_address, order_date) 
+        $query_orders = "INSERT INTO orders (order_cost, order_status, id, phone, user_city, user_address, order_date) 
                     VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         $stmt_orders = $conn->prepare($query_orders);
@@ -45,7 +45,7 @@ if (!isset($_SESSION['logged_in'])) {
             $product_quantity = $product['product_quantity'];
 
             // 4. Store each single item to the order item in database
-            $query_order_items = "INSERT INTO order_items (order_id, product_id, product_name, product_image, product_price, product_quantity, user_id, order_date) 
+            $query_order_items = "INSERT INTO order_items (order_id, product_id, product_name, product_image, product_price, product_quantity, id, order_date) 
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
             $stmt_order_items = $conn->prepare($query_order_items);

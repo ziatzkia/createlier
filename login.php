@@ -63,7 +63,7 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="img/logo/logo cc.png">
   <title>Login | Createlier</title>
-  <link rel="stylesheet" href="style/loginRegister.css">
+  <link rel="stylesheet" href="css/loginRegister.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>

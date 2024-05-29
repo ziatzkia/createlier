@@ -71,13 +71,6 @@
             <span>Income</span></a>
     </li>
 
-    <!-- Nav Item - Customers -->
-    <li class="nav-item">
-        <a class="nav-link" href="topup.php">
-            <i class="fas fa-coins"></i>
-            <span>Top Up User</span></a>
-    </li>
-
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

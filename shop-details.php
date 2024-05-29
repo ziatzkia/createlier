@@ -3,7 +3,7 @@ include('server/connection.php');
 
 function setRupiah($amount)
 {
-    return 'Rp ' . number_format($amount, 2, ',', '.');
+    return 'Rp. ' . number_format($amount, 2, ',', '.');
 }
 
 $kurs_dollar = 15000;
@@ -60,7 +60,7 @@ include('layouts/header.php');
                         <div class="product__details__cart__option">
                             <form method="POST" action="shop-cart.php">
                                 <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
-                                <input type="hidden" name="product_image" value="<?php echo $row['product_image1']; ?>">
+                                <input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>">
                                 <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>">
                                 <input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>">
                                 <div class="quantity">
@@ -70,6 +70,40 @@ include('layouts/header.php');
                                     <i class="bi bi-cart"></i> add to chart
                                 </button>
                             </form>
+                        </div>
+                        <div>
+                            <!-- <button name="custom" class="primary-btn" style="background-color: white; border: solid 2px; border-color: #850E35;"> -->
+                            <!-- <a href="custom-cart.php" style="color: #850E35;">Custom</a> -->
+                            <!-- <a href="#" class="btn btn-primary mb-3" data-toggle="modal" data-target="#insertModal" style="background-color: white; border: solid 2px; border-color: #850E35; color: #850E35;">Custom</a> -->
+
+                            <!-- Modal -->
+                            <!-- <div class="modal fade" id="insertModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="index.php" method="POST" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <label for="ukuran"> Custom name:</label>
+                                                    <input type="text" class="form-control" id="ukuran" name="ukuran" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="colour"> Colour:</label>
+                                                    <input type="color" class="form-control" id="colour" name="colour" style="width: 50px; height: 30px;" required>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- </button> -->
                         </div>
                     </div>
                 </div>

@@ -61,7 +61,7 @@ include('layouts/header.php');
                                         <li><a class="dropdown-item" href="#" data-value="Necklaces">Necklaces</a></li>
                                         <li><a class="dropdown-item" href="#" data-value="Bracelet">Bracelet</a></li>
                                         <li><a class="dropdown-item" href="#" data-value="Hair Acc">Hair Acc</a></li>
-                                        <li><a class="dropdown-item" href="#" data-value="Key Chain">Key Chain</a></li>
+                                        <li><a class="dropdown-item" href="#" data-value="Keychain">Key Chain</a></li>
                                     </ul>
                                 </div>
                             </form>
@@ -82,7 +82,7 @@ include('layouts/header.php');
                     <?php while ($row = $products->fetch_assoc()) { ?>
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/<?php echo $row['product_image1']; ?>">
+                                <div class="product__item__pic set-bg" data-setbg="img/product/<?php echo $row['product_image']; ?>">
                                 </div>
                                 <div class="product__item__text">
                                     <h6><?php echo $row['product_name']; ?></h6>
@@ -95,7 +95,7 @@ include('layouts/header.php');
                                     </button>
                                     <form method="POST" action="favorite.php" class="favorite-form">
                                         <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
-                                        <input type="hidden" name="product_image1" value="<?php echo $row['product_image1']; ?>">
+                                        <input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>">
                                         <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>">
                                         <input type="hidden" name="product_category" value="<?php echo $row['product_category']; ?>">
                                         <input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>">
@@ -126,15 +126,7 @@ include('layouts/header.php');
 </section>
 <!-- Shop Section End -->
 
-<script>
-    document.querySelectorAll('.dropdown-item').forEach(item => {
-        item.addEventListener('click', event => {
-            event.preventDefault();
-            document.getElementById('product-category-input').value = event.target.getAttribute('data-value');
-            document.getElementById('category-form').submit();
-        });
-    });
-</script>
+<script src="js/jquery-search.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 <?php

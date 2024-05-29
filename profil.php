@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="css/style2.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
             <p><strong  class="text-profile-1">Username: </strong> <?php echo $user['username']; ?></p>
             <p><strong  class="text-profile-1">Email: </strong><?php echo $user['email']; ?></p>
             <p><strong  class="text-profile-1">Phone: </strong><?php echo $user['phone']; ?></p>
-            <p><strong  class="text-profile-1">Address: </strong><?php echo $user['alamat']; ?></p>
+            <p><strong  class="text-profile-1">Address: </strong><?php echo $user['user_city']; ?></p>
             <p><strong  class="text-profile-1">Gender: </strong><?php echo $user['gender']; ?></p>
             <button class="btn-edit-profile btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">
                 Edit Profile

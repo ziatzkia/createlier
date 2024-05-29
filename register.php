@@ -45,7 +45,7 @@ $dataMasuk = isset($_GET["dataMasuk"]) && $_GET["dataMasuk"] == "true";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/logo/logo cc.png">
     <title>Sign Up | Createlier</title>
-    <link rel="stylesheet" href="style/loginRegister.css">
+    <link rel="stylesheet" href="css/loginRegister.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 

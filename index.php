@@ -61,7 +61,7 @@ include 'layouts/header.php';
                         <div class="hero__text">
                             <h2 style="color: #850e35;">Make Your Style</h2>
                             <p>Enhance Your Style with Your Own Unique Touch at Createlier</p>
-                            <a href="custom.php" class="primary-btn">Custom Now</a>
+                            <a href="shop.php" class="primary-btn">Buy Now</a>
                             <div class="hero__social"></div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@ include 'layouts/header.php';
                 <div class="row justify-content-center">
                     <div class="col-xl-5 col-lg-7 col-md-8 text-center">
                         <div class="hero__text">
-                            <h2 style="color: #850e35;">Special Collaboration</h2>
+                            <h2 style="color: #850e35;">Special Accessories</h2>
                             <p>A special collaboration with Korean superstars Jennie,
                                bringing you the latest trends infused with their unique style and flair.
                                Dive into a world where fashion meets music,

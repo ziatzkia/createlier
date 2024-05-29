@@ -97,7 +97,6 @@ $best_selling_products_data = $stmt_best_selling_products->get_result()->fetch_a
             </div>
         </div>
 
-<?php include('layouts/footer.php'); ?>
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2">

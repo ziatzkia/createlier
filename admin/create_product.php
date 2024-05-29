@@ -20,32 +20,23 @@ if (isset($_POST['create_btn'])) {
     $product_special_offer = $_POST['product_special_offer'];
 
     // This is image file
-    $product_image1 = $_FILES['product_image1']['tmp_name'];
-    $product_image2 = $_FILES['product_image2']['tmp_name'];
-    $product_image3 = $_FILES['product_image3']['tmp_name'];
-    $product_image4 = $_FILES['product_image4']['tmp_name'];
+    $product_image = $_FILES['product_image']['tmp_name'];
 
     // Images name
-    $image_name1 = str_replace(' ', '_', $product_name) . "1.jpg";
-    $image_name2 = str_replace(' ', '_', $product_name) . "2.jpg";
-    $image_name3 = str_replace(' ', '_', $product_name) . "3.jpg";
-    $image_name4 = str_replace(' ', '_', $product_name) . "4.jpg";
+    $image_name1 = str_replace(' ', '_', $product_name) . ".jpg";
 
     // Upload image
-    move_uploaded_file($product_image1, "../img/product/" . $image_name1);
-    move_uploaded_file($product_image2, "../img/product/" . $image_name2);
-    move_uploaded_file($product_image3, "../img/product/" . $image_name3);
-    move_uploaded_file($product_image4, "../img/product/" . $image_name4);
+    move_uploaded_file($product_image, "../img/product/" . $image_name);
 
     $query_insert_product = "INSERT INTO products (product_name, product_brand, product_category, 
         product_criteria, product_color, product_description, product_price, special_offer, 
-        product_image1, product_image2, product_image3, product_image4) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        product_image) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt_insert_product = $conn->prepare($query_insert_product);
 
     $stmt_insert_product->bind_param(
-        'ssssssssssss',
+        'sssssssss',
         $product_name,
         $product_brand,
         $product_category,
@@ -54,10 +45,7 @@ if (isset($_POST['create_btn'])) {
         $product_description,
         $product_price,
         $product_special_offer,
-        $image_name1,
-        $image_name2,
-        $image_name3,
-        $image_name4
+        $image_name
     );
 
     if ($stmt_insert_product->execute()) {
@@ -160,32 +148,11 @@ if (isset($_POST['create_btn'])) {
                                     <label>Special Offer</label>
                                     <input class="form-control" type="text" name="product_special_offer">
                                 </div>
-                                <label>Image 1</label>
+                                <label>Image</label>
                                 <div class="input-group mb-3">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="addImage1" name="product_image1" aria-describedby="inputGroupFileAddon01">
+                                        <input type="file" class="custom-file-input" id="addImage1" name="product_image" aria-describedby="inputGroupFileAddon01">
                                         <label class="custom-file-label" for="addImage1">Choose file...</label>
-                                    </div>
-                                </div>
-                                <label>Image 2</label>
-                                <div class="input-group mb-3">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="addImage2" name="product_image2" aria-describedby="inputGroupFileAddon01">
-                                        <label class="custom-file-label" for="addImage2">Choose file...</label>
-                                    </div>
-                                </div>
-                                <label>Image 3</label>
-                                <div class="input-group mb-3">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="addImage3" name="product_image3" aria-describedby="inputGroupFileAddon01">
-                                        <label class="custom-file-label" for="addImage3">Choose file...</label>
-                                    </div>
-                                </div>
-                                <label>Image 4</label>
-                                <div class="input-group mb-3">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="addImage4" name="product_image4" aria-describedby="inputGroupFileAddon01">
-                                        <label class="custom-file-label" for="addImage4">Choose file...</label>
                                     </div>
                                 </div>
                             </div>
