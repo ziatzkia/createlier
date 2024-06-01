@@ -23,7 +23,7 @@ $orders = $stmt_orders->get_result();
 ?>
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid content-wrapper">
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-white">Orders</h1>
@@ -58,7 +58,6 @@ $orders = $stmt_orders->get_result();
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Cost</th>
                             <th>Status</th>
                             <th>Name</th>
@@ -70,8 +69,7 @@ $orders = $stmt_orders->get_result();
                     <tbody>
                         <?php foreach($orders as $order) { ?>
                             <tr>
-                                <td><?php echo $order['order_id']; ?></td>
-                                <td><?php echo $order['order_cost']; ?></td>
+                                <td><?php echo setRupiah ($order['order_cost']* $kurs_dollar); ?></td>
                                 <td><?php echo $order['order_status']; ?></td>
                                 <td><?php echo $order['username']; ?></td>
                                 <td><?php echo $order['user_city']; ?></td>

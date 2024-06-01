@@ -12,10 +12,11 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item">
+    <li class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? 'active' : ''; ?>">
         <a class="nav-link" href="index.php">
             <i class="fas fa-fw fa-home"></i>
-            <span>Dashboard</span></a>
+            <span>Dashboard</span>
+        </a>
     </li>
 
     <!-- Divider -->
@@ -28,32 +29,34 @@
 
     <!-- Nav Item - Orders -->
     <style></style>
-    <li class="nav-item">
+    <li class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'orders.php') ? 'active' : ''; ?>">
         <a class="nav-link" href="orders.php">
             <i class="fas fa-shopping-cart"></i>
-            <span>Orders</span></a>
+            <span>Orders</span>
+        </a>
     </li>
 
     <!-- Nav Item - Products -->
-    <li class="nav-item">
+    <li class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'products.php') ? 'active' : ''; ?>">
         <a class="nav-link collapsed" href="products.php" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-gem"></i>
             <span>Products</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Products Management</h6>
-                <a class="collapse-item" href="products.php">Product List</a>
-                <a class="collapse-item" href="create_product.php">Create Product</a>
-            </div>
+        <div id="collapseTwo" class="collapse <?php echo (basename($_SERVER['PHP_SELF']) == 'products.php') ? 'show' : ''; ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Products Management</h6>
+            <a class="collapse-item" href="products.php">Product List</a>
+            <a class="collapse-item" href="create_product.php">Create Product</a>
         </div>
+    </div>
     </li>
 
     <!-- Nav Item - Customers -->
-    <li class="nav-item">
+    <li class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'customers.php') ? 'active' : ''; ?>">
         <a class="nav-link" href="customers.php">
             <i class="fas fa-users"></i>
-            <span>Customers</span></a>
+            <span>Customers</span>
+        </a>
     </li>
 
     <!-- Divider -->
@@ -65,10 +68,11 @@
     </div>
 
     <!-- Nav Item - Customers -->
-    <li class="nav-item">
+    <li class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'income.php') ? 'active' : ''; ?>">
         <a class="nav-link" href="income.php">
             <i class="fas fa-wallet"></i>
-            <span>Income</span></a>
+            <span>Income</span>
+        </a>
     </li>
 
     <!-- Divider -->

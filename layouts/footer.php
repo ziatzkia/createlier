@@ -29,15 +29,15 @@
                     <h4>Service</h4>
                     <ul style="list-style-type: none;">
                         <li><a href="blog.php">Blog</a></li>
-                        <li><a href="#">Payment Methods</a></li>
-                        <li><a href="#">Delivery Service</a></li>
+                        <li><a href="payment.php">Payment Methods</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                         <li><a href="about.php">About us</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-6">
                 <div class="footer__widget">
-                    <h4>Contact us</h4><br>
+                    <a href="contact.php"><h4>Contact us</h4><br></a>
                     <ul class="list-unstyled d-flex justify-content-start" style="color: white;">
                         <li class="me-3"><a href="https://www.instagram.com/ndnptrr_?igsh=bXg1bmNuNHpiOXF6" target="_blank"><i class="bi bi-instagram" style="font-size: 30px;"></i></a></li>
                         <li class="me-3"><a href="zia.tazkiatul@mhs.itenas.ac.id"><i class="bi bi-envelope" style="font-size: 30px;"></i></a></li>

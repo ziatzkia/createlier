@@ -37,7 +37,7 @@ if (isset($_GET['order_id'])) {
 ?>
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid content-wrapper">
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Edit Order</h1>
@@ -70,10 +70,10 @@ if (isset($_GET['order_id'])) {
                                         <label>Order Status</label>
                                         <select class="form-control" name="order_status" <?php if ($order['order_status'] == 'delivered') echo ' disabled'; ?>>
                                             <option value="" disabled>Select Status</option>
-                                            <option value="NOT PAID" <?php if ($order['order_status'] == 'NOT PAID') echo ' selected'; ?>>NOT PAID</option>
-                                            <option value="PAID" <?php if ($order['order_status'] == 'PAID') echo ' selected'; ?>>PAID</option>
-                                            <option value="SHIPPED" <?php if ($order['order_status'] == 'SHIPPED') echo ' selected'; ?>>SHIPPED</option>
-                                            <option value="DELIVERED" <?php if ($order['order_status'] == 'DELIVERED') echo ' selected'; ?>>DELIVERED</option>
+                                            <option value="Not Paid" <?php if ($order['order_status'] == 'Not Paid') echo ' selected'; ?>>Not Paid</option>
+                                            <option value="Paid" <?php if ($order['order_status'] == 'Paid') echo ' selected'; ?>>Paid</option>
+                                            <option value="Shipped" <?php if ($order['order_status'] == 'Shipped') echo ' selected'; ?>>Shipped</option>
+                                            <option value="Delivered" <?php if ($order['order_status'] == 'Delivered') echo ' selected'; ?>>Delivered</option>
                                         </select>
                                     </div>
                                     <div class="form-group">

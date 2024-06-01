@@ -54,7 +54,7 @@ if (isset($_POST['create_btn'])) {
 ?>
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid content-wrapper">
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-white">Create Product</h1>

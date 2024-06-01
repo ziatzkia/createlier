@@ -30,17 +30,11 @@ $stmt_total_payments->bind_result($total_payments);
 $stmt_total_payments->store_result();
 $stmt_total_payments->fetch();
 
-$kurs_dollar = 15722;
 
-function setRupiah($price)
-{
-    $result = "Rp. " . number_format($price, 0, ',', '.');
-    return $result;
-}
 ?>
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid content-wrapper">
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-white">Income</h1>

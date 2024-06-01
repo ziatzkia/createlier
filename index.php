@@ -42,7 +42,6 @@ include('server/controller_favourite_product.php');
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
-            <!-- Slide 1 -->
             <div class="hero__items set-bg" data-setbg="img/hero/1.png">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -56,7 +55,6 @@ include('server/controller_favourite_product.php');
                     </div>
                 </div>
             </div>
-            <!-- Slide 2 -->
             <div class="hero__items set-bg" data-setbg="img/hero/7.png">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -71,7 +69,6 @@ include('server/controller_favourite_product.php');
                     </div>
                 </div>
             </div>
-            <!-- Slide 3 -->
             <div class="hero__items set-bg" data-setbg="img/hero/5.png">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -98,8 +95,6 @@ include('server/controller_favourite_product.php');
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <br>
-                        <br>
                         <h2 style="color: #850e35">Best Seller</h2>
                     </div>
                 </div>
@@ -108,14 +103,15 @@ include('server/controller_favourite_product.php');
                 <?php while ($row = $fav_products->fetch_assoc()) { ?>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                         <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="img/product/<?php echo $row['product_image']; ?>">
-                                <span class="label">New</span>
-                            </div>
-                            <div class="product__item__text">
-                                <h6><?php echo $row['product_name']; ?></h6>
-                                <h5><?php echo setRupiah(($row['product_price'] * $kurs_dollar)); ?></h5>
-                            </div>
-                            <a href="<?php echo "shop-details.php?product_id=" . $row['product_id']; ?>" class="add-cart"><i class="bi bi-bag"></i></a>
+                            <a href="<?php echo "shop-details.php?product_id=" . $row['product_id']; ?>">
+                                <div class="product__item__pic set-bg" data-setbg="img/product/<?php echo $row['product_image']; ?>">
+                                    <span class="label" style="background-color: white;">Favourite</span>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6><?php echo $row['product_name']; ?></h6>
+                                    <h5><?php echo setRupiah(($row['product_price'] * $kurs_dollar)); ?></h5>
+                                </div>
+                                <a href="<?php echo "shop-details.php?product_id=" . $row['product_id']; ?>" class=""></a>
                         </div>
                     </div>
                 <?php } ?>
@@ -125,7 +121,7 @@ include('server/controller_favourite_product.php');
     <!-- Product Section End -->
 
 
-    <!-- Content page 1 -->
+    <!--  page 1 -->
     <div class="container mt-1 mb-4">
         <div class="row">
             <div class="col-md-7 mt-5">
@@ -147,7 +143,7 @@ include('server/controller_favourite_product.php');
             <div class="col-md-5 mt-5 ">
                 <div class="jumbotron" style="background-color: #850e35;">
                     <div class="card bg-dark text-white">
-                        <img src="img/hero/brand4.jpeg" style="opacity: 0.5;" width="400px" height="450px" class="card-img object-fit-cover" alt="...">
+                        <img src="img/hero/brand4.jpeg" style="opacity: 0.6;" width="400px" height="450px" class="card-img object-fit-cover" alt="...">
                         <div class="card-img-overlay mt-5">
                             <div class="align-items-center mt-5 pt-5">
                                 <h5 class="card-title text-center">Beauty & Luxury</h5>
@@ -168,7 +164,7 @@ include('server/controller_favourite_product.php');
             <div class="col-md-5 mt-5">
                 <div class="jumbotron" style="background-color: #850e35;">
                     <div class="card bg-dark text-white">
-                        <img src="img/hero/brand3.jpeg" style="opacity: 0.5;" width="400px" height="450px" class="card-img object-fit-cover" alt="...">
+                        <img src="img/hero/brand3.jpeg" style="opacity: 0.6;" width="400px" height="450px" class="card-img object-fit-cover" alt="...">
                         <div class="card-img-overlay mt-5">
                             <div class="align-items-center mt-5 pt-5">
                                 <h5 class="card-title text-center">Customize your own accessories</h5>
@@ -186,10 +182,10 @@ include('server/controller_favourite_product.php');
                     <ul class="list-unstyled">
                         <p>At Createlier, we don't just offer beautiful ready-to-wear accessories,</p>
                         <p>but also provide you with the opportunity to create something truly unique.</p>
-                        <p>With our custom product service, you can express your own creativity</p>
+                        <p>With our handmade product service, you can express your own creativity</p>
                         <p>and have accessories made specifically to your liking.</p><br><br><br>
-                        <a href="custom.php">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #850e35;">Custom now</button>
+                        <a href="shop.php">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #850e35;">Buy now</button>
                         </a>
                     </ul>
                 </div>

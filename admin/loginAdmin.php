@@ -73,7 +73,7 @@ $failed = true;
         <img src="../img/logo/logo createlier.png" alt="logo" width="100px">
         <?php if ($failed) { ?>
           <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            Incorrect username or password!
+            Incorrect Email/No telp or password!
             <a href="login.php" class="close" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </a>

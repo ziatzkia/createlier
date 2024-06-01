@@ -21,7 +21,7 @@ $customers = $stmt_customers->get_result();
 ?>
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid content-wrapper">
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-white">Customers</h1>

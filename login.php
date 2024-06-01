@@ -75,7 +75,7 @@ if (isset($_POST['email_or_phone']) && isset($_POST['pwd'])) {
           <img src="img/logo/logo createlier.png" alt="logo" width="100px">
           <?php if ($failed) { ?>
             <div class="alert alert-danger alert-dismissible fade show mt-10" role="alert">
-                Incorrect username or password!
+                  Incorrec t Email/No telp or password!
                 <a href="login.php" class="close" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </a>

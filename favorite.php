@@ -60,7 +60,7 @@ include('layouts/header.php');
                             <img src="img/product/<?php echo $product['product_image']; ?>" class="card-img-top" alt="Gambar produk <?php echo $product['product_name']; ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $product['product_name']; ?></h5>
-                                <p class="card-text"><?php echo setRupiah($product['product_price']); ?></p>
+                                <p class="card-text"><?php echo setRupiah($product['product_price'] * $kurs_dollar); ?></p>
                                 <div class="d-flex justify-content-between">
                                     <form method="POST" action="favorite.php">
                                         <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">

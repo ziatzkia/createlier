@@ -989,6 +989,8 @@ small {
 .product__item.sale .product__item__pic .label {
 	color: #ffffff;
 	background: #111111;
+	width: 250px;
+    height: 250px;
 }
 
 .product__item.sale .product__item__text .rating i {
@@ -1019,9 +1021,11 @@ small {
 }
 
 .product__item__pic {
-	height: 260px;
-	position: relative;
-	background-position: center center;
+    width: 250px;
+    height: 260px;
+    position: relative;
+    background-position: center center;
+    background-size: cover; 
 }
 
 .product__item__pic .label {
@@ -2648,6 +2652,7 @@ small {
 	border-bottom: 1px solid #e1e1e1;
 	padding-bottom: 25px;
 	margin-bottom: 30px;
+	align-items: center;
 }
 
 .checkout__input {
@@ -4120,6 +4125,7 @@ small {
 }
 
 .product__item__pic {
+	width: 250px;
     height: 250px;
     background-size: cover; 
     background-position: center; 
@@ -4268,4 +4274,36 @@ small {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+}
+
+.product__item__pic {
+    width: 230px; 
+    height: 250px; 
+    background-size: cover; 
+}
+
+.jumbotron {
+    background-color: transparent !important;
+    border: none;
+    padding: 0;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	margin: 0;
+}
+
+.payment-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 300px;
+    background-color: #ffffff;
 }

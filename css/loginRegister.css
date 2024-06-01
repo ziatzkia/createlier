@@ -171,13 +171,14 @@ h2 {
 
 .login-bg {
     background-image: url(/img/walpaper.jpg);
+    margin-top: 50px;
 }
 
 .login-admin-bg {
     background-color: #850E35;
 }
 
-.btn-register{
+.btn{
     background-color:#850E35;
     border-color: #850E35;
     border-radius: 7px;
@@ -248,11 +249,11 @@ body {
 }
 
 .form-group input {
-    width: 100%;
+    width: 110%;
+    height: 37px;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
-    
 }
 
 button {

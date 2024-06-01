@@ -37,13 +37,6 @@ $stmt_total_not_paid->bind_result($total_not_paid);
 $stmt_total_not_paid->store_result();
 $stmt_total_not_paid->fetch();
 
-$kurs_dollar = 15722;
-
-function setRupiah($price)
-{
-    $result = "Rp. " . number_format($price, 0, ',', '.');
-    return $result;
-}
 
 // Query to fetch weekly orders count along with order_date
 $query_weekly_orders = "SELECT COUNT(*) AS orders_count, order_date FROM orders GROUP BY WEEK(order_date)";
@@ -67,7 +60,7 @@ $best_selling_products_data = $stmt_best_selling_products->get_result()->fetch_a
 
 <?php include('layouts/header.php'); ?>
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid content-wrapper">
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -84,7 +77,7 @@ $best_selling_products_data = $stmt_best_selling_products->get_result()->fetch_a
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Total Orders</div>
+                                Process Order</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php if (isset($total_orders)) {
                                                                                     echo $total_orders;
                                                                                 } ?></div>
@@ -160,86 +153,79 @@ $best_selling_products_data = $stmt_best_selling_products->get_result()->fetch_a
     <!-- Content Row -->
 
 </div>
+
 <!-- /.container-fluid -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Number of Orders Each Week</h6>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable1" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Period</th>
-                                    <th>Total Orders</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                // Tampilkan data dari query $weekly_orders_data
-                                foreach ($weekly_orders_data as $week_data) {
-                                    // Mendapatkan tanggal awal dan akhir untuk setiap minggu
-                                    $week_start = date("d/m", strtotime("monday this week", strtotime($week_data['order_date'])));
-                                    $week_end = date("d/m", strtotime("sunday this week", strtotime($week_data['order_date'])));
+<div class="container-fluid content-wrapper">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Number of Orders Each Week</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive" style="max-height: 160px; overflow-y: auto;">
+                <table class="table table-bordered" id="dataTable1" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>Total Orders</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($weekly_orders_data as $week_data) {
+                            $week_start = date("d/m", strtotime("monday this week", strtotime($week_data['order_date'])));
+                            $week_end = date("d/m", strtotime("sunday this week", strtotime($week_data['order_date'])));
 
-                                    // Menampilkan durasi hari dalam format yang diminta
-                                    echo "<td>$week_start - $week_end</td>";
-                                    echo "<td>" . $week_data['orders_count'] . "</td>";
-                                    echo "</tr>";
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                            echo "<td>$week_start - $week_end</td>";
+                            echo "<td>" . $week_data['orders_count'] . "</td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="col">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Earnings Every Week</h6>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Period</th>
-                                    <th>Income</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                // Tampilkan data dari query $weekly_earnings_data
-                                foreach ($weekly_earnings_data as $week_earning) {
-                                    // Mendapatkan tanggal awal dan akhir untuk setiap minggu
-                                    $week_start = date("d/m", strtotime("monday this week", strtotime($week_earning['week'])));
-                                    $week_end = date("d/m", strtotime("sunday this week", strtotime($week_earning['week'])));
+    </div>
+</div>
+<div class="container-fluid content-wrapper">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Earnings Every Week</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive" style="max-height: 160px; overflow-y: auto;">
+                <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>Income</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($weekly_earnings_data as $week_earning) {
+                            $week_start = date("d/m", strtotime("monday this week", strtotime($week_earning['week'])));
+                            $week_end = date("d/m", strtotime("sunday this week", strtotime($week_earning['week'])));
 
-                                    // Menampilkan durasi hari dalam format yang diminta
-                                    echo "<tr>";
-                                    echo "<td>$week_start - $week_end</td>";
-                                    echo "<td>" . setRupiah(($week_earning['earnings'] * $kurs_dollar)) . "</td>";
-                                    echo "</tr>";
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                            echo "<tr>";
+                            echo "<td>$week_start - $week_end</td>";
+                            echo "<td>" . setRupiah(($week_earning['earnings'] * $kurs_dollar)) . "</td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
+    </div>
+</div>
 
-        <div class="col">
+<div class="container-fluid content-wrapper">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Best Selling Products</h6>
         </div>
         <div class="card-body">
-            <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+            <div class="table-responsive" style="max-height: 160px; overflow-y: auto;">
                 <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
                     <thead>
                         <tr>
@@ -249,7 +235,6 @@ $best_selling_products_data = $stmt_best_selling_products->get_result()->fetch_a
                     </thead>
                     <tbody>
                         <?php
-                        // Tampilkan data dari query $best_selling_products_data
                         foreach ($best_selling_products_data as $product) {
                             echo "<tr>";
                             echo "<td>" . $product['product_name'] . "</td>";

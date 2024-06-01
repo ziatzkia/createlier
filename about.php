@@ -23,29 +23,29 @@ include 'layouts/header.php';
     <!-- Services Section Begin -->
     <section class="services spad">
         <div class="container">
-        <h2 style="text-align: center; font-weight: bold;">Our Story</h2>
-        <br>
-        <br>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6 mb-6">
-                    <div class="service-item bg-white p-3 rounded shadow-sm">
-                        <img src="/img/banner/ab3.png" alt="100% Handmade" class="img-fluid mb-3">
-                        <h4>100% Handmade</h4>
-                        <p>Our products are crafted with utmost care and precision, ensuring 100% handmade quality.</p>
+            <h2 style="text-align: center; font-weight: bold;">Our Story</h2>
+            <br>
+            <br>
+            <div class="card-group">
+                <div class="card">
+                    <img src="img/banner/about (3).png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #850E35;">Written by Creatives, For Creatives</h5>
+                        <p class="card-text">We are a journey initiated by a group of creative individuals driven by the passion to create beauty. From artists to craftsmen, we come from diverse backgrounds but share a common vision: to inspire the world with boundless creativity. With skilled hands and imaginative minds, we weave beautiful stories through our handmade goods.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 mb-6">
-                    <div class="service-item bg-white p-3 rounded shadow-sm">
-                        <img src="/img/banner/ab2.png" alt="Created by Creative People" class="img-fluid mb-3">
-                        <h4>Created by Creative People</h4>
-                        <p>Our items are designed and made by a team of highly creative and skilled individuals.</p>
+                <div class="card">
+                    <img src="img/banner/about (1).png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #850E35;">Crafted with Quality Materials</h5>
+                        <p class="card-text">Quality is the cornerstone of every creation we make. We are committed to using the finest materials available, from soft yarns to sturdy woods, ensuring that each product we produce is not only visually pleasing but also long-lasting. With meticulous craftsmanship and genuine love, we create works that not only meet the highest quality standards but also evoke enduring memories.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 mb-6">
-                    <div class="service-item bg-white p-3 rounded shadow-sm">
-                        <img src="/img/banner/ab1.png" alt="From Good Beads Products" class="img-fluid mb-3">
-                        <h4>From Good Quality Beads</h4>
-                        <p>We source only the best materials to create products that stand out in quality and beauty.</p>
+                <div class="card">
+                    <img src="img/banner/about (2).png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #850E35;">Timeless Sophistication</h5>
+                        <p class="card-text">Indulge in the artistry of CreateLier and embrace timeless sophistication. Our accessories are more than adornments; they're reflections of your impeccable taste and appreciation for quality craftsmanship. Elevate your style journey with CreateLier today.</p>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,57 @@ include 'layouts/header.php';
     </section>
     <!-- Services Section End -->
 
-
+    <!-- story begin -->
+    <section class="why-choose-us py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-title">
+                    <h2>Why Choose Us?</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="img/hero/stry (4).png" class="card-img-top" alt="Handmade with Love">
+                    <div class="card-body">
+                        <h5 class="card-title">Handmade with Love</h5>
+                        <p class="card-text">Every piece is handcrafted with meticulous attention to detail, making each accessory truly unique.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="img/hero/stry (3).png" class="card-img-top" alt="Unique Designs">
+                    <div class="card-body">
+                        <h5 class="card-title">Unique Designs</h5>
+                        <p class="card-text">Our designs are original and exclusive, ensuring you stand out with accessories you won't find anywhere else.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="img/hero/stry (1).png" class="card-img-top" alt="Excellent Customer Service">
+                    <div class="card-body">
+                        <h5 class="card-title">Excellent Customer Service</h5>
+                        <p class="card-text">Our friendly and responsive team is here to assist you with any questions or special requests you may have about order.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="img/hero/stry (2).png" class="card-img-top" alt="Eco-Friendly Practices">
+                    <div class="card-body">
+                        <h5 class="card-title">Eco-Friendly Practices</h5>
+                        <p class="card-text">We are committed to sustainable practices, using eco-friendly materials and packaging wherever possible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end -->
 
     <!-- Team Section Begin -->
     <section class="team spad">
@@ -61,7 +111,8 @@ include 'layouts/header.php';
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <span >Our Team</span>
+                        <h2>Meet With</h2>
+                        <span>Our Team</span>
                     </div>
                 </div>
             </div>

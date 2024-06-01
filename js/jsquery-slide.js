@@ -1,18 +1,14 @@
-document.ready(function(){
-    $(".owl-carousel").owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:3
-            },
-            1000:{
-                items:4
-            }
-        }
+
+document.addEventListener("DOMContentLoaded", function () {
+    var dropdownItems = document.querySelectorAll(".dropdown-item");
+
+    dropdownItems.forEach(function (item) {
+        item.addEventListener("click", function () {
+            var selectedCategory = this.getAttribute("data-value");
+            document.getElementById("product-category-input").value = selectedCategory;
+            document.getElementById("category-form").submit();
+        });
     });
 });
+
+s

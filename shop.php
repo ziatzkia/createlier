@@ -66,28 +66,30 @@ include 'layouts/header.php';
                     <?php while ($row = $products->fetch_assoc()) { ?>
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/<?php echo $row['product_image']; ?>">
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><?php echo $row['product_name']; ?></h6>
-                                    <p><?php echo $row['product_category']; ?></p>
-                                    <h5><?php echo setRupiah($row['product_price'] * $kurs_dollar); ?></h5>
-                                </div>
-                                <div class="product__item__actions">
-                                    <button onclick="window.location.href='shop-details.php?product_id=<?php echo $row['product_id']; ?>'" class="add-cart bi-button">
-                                        <i class="bi bi-bag"></i>
-                                    </button>
-                                    <form method="POST" action="favorite.php" class="favorite-form">
-                                        <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
-                                        <input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>">
-                                        <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>">
-                                        <input type="hidden" name="product_category" value="<?php echo $row['product_category']; ?>">
-                                        <input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>">
-                                        <button type="submit" class="add-cart white-button" name="add_favorite">
-                                            <i class="bi bi-heart"></i>
+                                <a href="<?php echo "shop-details.php?product_id=" . $row['product_id']; ?>">
+                                    <div class="product__item__pic set-bg" data-setbg="img/product/<?php echo $row['product_image']; ?>">
+                                    </div>
+                                    <div class="product__item__text">
+                                        <h6><?php echo $row['product_name']; ?></h6>
+                                        <p><?php echo $row['product_category']; ?></p>
+                                        <h5><?php echo setRupiah($row['product_price'] * $kurs_dollar); ?></h5>
+                                    </div>
+                                    <div class="product__item__actions">
+                                        <button onclick="window.location.href='shop-details.php?product_id=<?php echo $row['product_id']; ?>'" class="add-cart bi-button">
+                                            <i class="bi bi-bag"></i>
                                         </button>
-                                    </form>
-                                </div>
+                                        <form method="POST" action="favorite.php" class="favorite-form">
+                                            <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
+                                            <input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>">
+                                            <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>">
+                                            <input type="hidden" name="product_category" value="<?php echo $row['product_category']; ?>">
+                                            <input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>">
+                                            <button type="submit" class="add-cart white-button" name="add_favorite">
+                                                <i class="bi bi-heart"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     <?php } ?>
@@ -110,7 +112,7 @@ include 'layouts/header.php';
 </section>
 <!-- Shop Section End -->
 
-<script src="js/jquery-search.js"></script>
+<script src="js/jsquery-slide.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 <?php

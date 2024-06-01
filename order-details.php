@@ -6,6 +6,7 @@
     Shipped
     Delivered
     */
+session_start();
 include('./server/connection.php');
 
 if (isset($_POST['order_details_btn']) && isset($_POST['order_id'])) {

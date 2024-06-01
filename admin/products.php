@@ -15,17 +15,11 @@ if (!isset($_SESSION['admin_logged_in'])) {
     $stmt_products->execute();
     $products = $stmt_products->get_result();
 
-    $kurs_dollar = 15722;
 
-    function setRupiah($price)
-    {
-        $result = "Rp. ".number_format($price, 0, ',', '.');
-        return $result;
-    }
 ?>
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid content-wrapper">
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-white">Products</h1>
